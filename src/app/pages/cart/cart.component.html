@@ -1,0 +1,216 @@
+<article class="cart-page">
+	<section class="mx-auto flex w-full max-w-[var(--container)] flex-col gap-8 px-4 py-10 sm:px-6 lg:py-14">
+		<div class="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+			<div class="max-w-3xl">
+				<p class="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--c-primary)]">
+					AI prompt cart
+				</p>
+				<h1 class="mt-3 text-3xl font-semibold text-[var(--c-text-strong)] sm:text-4xl">
+					Select one light and one dark design
+				</h1>
+				<p class="mt-3 text-base leading-7 text-[var(--c-text-muted)]">
+					Choose two catalog briefs and copy the combined prompt below.
+				</p>
+			</div>
+
+			<div class="flex flex-wrap items-center gap-2">
+				<a
+					class="theme-interactive theme-focus inline-flex items-center gap-2 rounded-full border border-[var(--c-border)] bg-[var(--c-bg-primary)] px-4 py-2 text-sm font-medium text-[var(--c-text-strong)] shadow-[var(--shadow-sm)] hover:border-[var(--c-primary)] hover:text-[var(--c-primary)]"
+					routerLink="/"
+				>
+					<span class="material-symbols-outlined text-[20px]" aria-hidden="true">home</span>
+					Catalog
+				</a>
+				<button
+					class="theme-interactive theme-focus inline-flex items-center gap-2 rounded-full border border-[var(--c-border)] bg-[var(--c-bg-primary)] px-4 py-2 text-sm font-medium text-[var(--c-text-strong)] shadow-[var(--shadow-sm)] hover:border-[var(--c-primary)] hover:text-[var(--c-primary)] disabled:cursor-not-allowed disabled:opacity-50"
+					type="button"
+					(click)="clear()"
+					[disabled]="selectedCount() === 0"
+				>
+					<span class="material-symbols-outlined text-[20px]" aria-hidden="true">remove_shopping_cart</span>
+					Clear
+				</button>
+			</div>
+		</div>
+
+		<div class="grid gap-6 lg:grid-cols-2">
+			<section class="flex flex-col gap-4" aria-labelledby="light-designs">
+				<div>
+					<h2 id="light-designs" class="text-xl font-semibold text-[var(--c-text-strong)]">
+						Light design
+					</h2>
+					<p class="mt-1 text-sm text-[var(--c-text-muted)]">
+						Selected: {{ selectedLight()?.label ?? 'None' }}
+					</p>
+				</div>
+
+				@if (selectedLight() && expandedTheme() !== 'light') {
+					<div class="cart-option cart-option--selected">
+						<span class="cart-option__icon material-symbols-outlined" aria-hidden="true">
+							{{ selectedLight()?.icon }}
+						</span>
+						<span class="min-w-0">
+							<span class="block font-semibold text-[var(--c-text-strong)]">
+								{{ selectedLight()?.label }}
+							</span>
+							<span class="mt-1 block text-sm leading-6 text-[var(--c-text-muted)]">
+								{{ selectedLight()?.description }}
+							</span>
+							<span class="mt-3 flex flex-wrap gap-2">
+								<button
+									class="theme-interactive theme-focus inline-flex items-center gap-2 rounded-full border border-[var(--c-border)] bg-[var(--c-bg-primary)] px-3 py-1.5 text-sm font-medium text-[var(--c-text-strong)] hover:border-[var(--c-primary)] hover:text-[var(--c-primary)]"
+									type="button"
+									(click)="expandTheme('light')"
+								>
+									<span class="material-symbols-outlined text-[18px]" aria-hidden="true">edit</span>
+									Change
+								</button>
+								<button
+									class="theme-interactive theme-focus inline-flex items-center gap-2 rounded-full border border-[var(--c-border)] bg-[var(--c-bg-primary)] px-3 py-1.5 text-sm font-medium text-[var(--c-text-strong)] hover:border-[var(--c-primary)] hover:text-[var(--c-primary)]"
+									type="button"
+									(click)="toggle(selectedLight()!.slug)"
+								>
+									<span class="material-symbols-outlined text-[18px]" aria-hidden="true">close</span>
+									Remove
+								</button>
+							</span>
+						</span>
+					</div>
+				} @else {
+					<div class="grid gap-3">
+						@for (design of lightDesigns; track design.slug) {
+							<button
+								class="cart-option theme-interactive theme-focus text-left"
+								type="button"
+								[class.cart-option--selected]="isSelected(design.slug)"
+								(click)="toggle(design.slug)"
+								[attr.aria-pressed]="isSelected(design.slug)"
+							>
+								<span class="cart-option__icon material-symbols-outlined" aria-hidden="true">
+									{{ design.icon }}
+								</span>
+								<span class="min-w-0">
+									<span class="block font-semibold text-[var(--c-text-strong)]">
+										{{ design.label }}
+									</span>
+									<span class="mt-1 block text-sm leading-6 text-[var(--c-text-muted)]">
+										{{ design.description }}
+									</span>
+								</span>
+							</button>
+						}
+					</div>
+				}
+			</section>
+
+			<section class="flex flex-col gap-4" aria-labelledby="dark-designs">
+				<div>
+					<h2 id="dark-designs" class="text-xl font-semibold text-[var(--c-text-strong)]">
+						Dark design
+					</h2>
+					<p class="mt-1 text-sm text-[var(--c-text-muted)]">
+						Selected: {{ selectedDark()?.label ?? 'None' }}
+					</p>
+				</div>
+
+				@if (selectedDark() && expandedTheme() !== 'dark') {
+					<div class="cart-option cart-option--selected">
+						<span class="cart-option__icon material-symbols-outlined" aria-hidden="true">
+							{{ selectedDark()?.icon }}
+						</span>
+						<span class="min-w-0">
+							<span class="block font-semibold text-[var(--c-text-strong)]">
+								{{ selectedDark()?.label }}
+							</span>
+							<span class="mt-1 block text-sm leading-6 text-[var(--c-text-muted)]">
+								{{ selectedDark()?.description }}
+							</span>
+							<span class="mt-3 flex flex-wrap gap-2">
+								<button
+									class="theme-interactive theme-focus inline-flex items-center gap-2 rounded-full border border-[var(--c-border)] bg-[var(--c-bg-primary)] px-3 py-1.5 text-sm font-medium text-[var(--c-text-strong)] hover:border-[var(--c-primary)] hover:text-[var(--c-primary)]"
+									type="button"
+									(click)="expandTheme('dark')"
+								>
+									<span class="material-symbols-outlined text-[18px]" aria-hidden="true">edit</span>
+									Change
+								</button>
+								<button
+									class="theme-interactive theme-focus inline-flex items-center gap-2 rounded-full border border-[var(--c-border)] bg-[var(--c-bg-primary)] px-3 py-1.5 text-sm font-medium text-[var(--c-text-strong)] hover:border-[var(--c-primary)] hover:text-[var(--c-primary)]"
+									type="button"
+									(click)="toggle(selectedDark()!.slug)"
+								>
+									<span class="material-symbols-outlined text-[18px]" aria-hidden="true">close</span>
+									Remove
+								</button>
+							</span>
+						</span>
+					</div>
+				} @else {
+					<div class="grid gap-3">
+						@for (design of darkDesigns; track design.slug) {
+							<button
+								class="cart-option theme-interactive theme-focus text-left"
+								type="button"
+								[class.cart-option--selected]="isSelected(design.slug)"
+								(click)="toggle(design.slug)"
+								[attr.aria-pressed]="isSelected(design.slug)"
+							>
+								<span class="cart-option__icon material-symbols-outlined" aria-hidden="true">
+									{{ design.icon }}
+								</span>
+								<span class="min-w-0">
+									<span class="block font-semibold text-[var(--c-text-strong)]">
+										{{ design.label }}
+									</span>
+									<span class="mt-1 block text-sm leading-6 text-[var(--c-text-muted)]">
+										{{ design.description }}
+									</span>
+								</span>
+							</button>
+						}
+					</div>
+				}
+			</section>
+		</div>
+
+		<section class="prompt-panel" aria-labelledby="combined-prompt">
+			<div class="flex flex-col gap-3 border-b border-[var(--c-border)] p-4 sm:flex-row sm:items-center sm:justify-between">
+				<div>
+					<h2 id="combined-prompt" class="text-xl font-semibold text-[var(--c-text-strong)]">
+						Combined prompt
+					</h2>
+					<p class="mt-1 text-sm text-[var(--c-text-muted)]">
+						{{ selectedCount() }} / 2 selected
+					</p>
+				</div>
+
+				<button
+					class="cart-primary-button theme-interactive theme-focus inline-flex items-center justify-center gap-2 rounded-full bg-[var(--c-primary)] px-4 py-2 text-sm font-semibold shadow-[var(--shadow-sm)] hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-50"
+					type="button"
+					(click)="copyPrompt()"
+					[disabled]="!promptReady() || loadingPrompt()"
+				>
+					<span class="material-symbols-outlined text-[20px]" aria-hidden="true">
+						{{ copied() ? 'check' : 'content_copy' }}
+					</span>
+					{{ copied() ? 'Copied' : 'Copy prompt' }}
+				</button>
+			</div>
+
+			@if (loadingPrompt()) {
+				<div class="p-5 text-sm text-[var(--c-text-muted)]">Loading selected briefs...</div>
+			} @else if (promptReady()) {
+				<textarea
+					class="min-h-[28rem] w-full resize-y bg-[var(--c-bg-primary)] p-4 font-mono text-sm leading-6 text-[var(--c-text-strong)] outline-none"
+					readonly
+					[value]="prompt()"
+					aria-label="Combined AI prompt"
+				></textarea>
+			} @else {
+				<div class="p-5 text-sm text-[var(--c-text-muted)]">
+					Select a light design and a dark design to generate the combined prompt.
+				</div>
+			}
+		</section>
+	</section>
+</article>

@@ -1,0 +1,523 @@
+:host {
+	display: block;
+}
+
+.boutique-hotel {
+	--hotel-charcoal: #3d3d3d;
+	--hotel-warm-gray: #8a8a84;
+	--hotel-taupe: #a39f99;
+	--hotel-muted-rose: #c4b5ac;
+	--hotel-pale-blush: #f0e8e4;
+	--hotel-ivory: #faf9f7;
+	--hotel-cream: #f5f2ed;
+	--hotel-line: #dcd7d0;
+
+	min-height: 100%;
+	overflow: hidden;
+	background: linear-gradient(180deg, var(--hotel-ivory), var(--hotel-cream) 100%);
+	color: var(--hotel-charcoal);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	letter-spacing: 0;
+}
+
+.boutique-hotel__header,
+.boutique-hotel__hero,
+.boutique-hotel__intro,
+.boutique-hotel__section,
+.boutique-hotel__gallery,
+.boutique-hotel__book,
+.boutique-hotel__footer {
+	width: min(100% - 2rem, 1280px);
+	margin-inline: auto;
+}
+
+.boutique-hotel__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 1.8rem 0;
+	border-bottom: 1px solid var(--hotel-line);
+}
+
+.boutique-hotel__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	color: var(--hotel-charcoal);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	text-decoration: none;
+	letter-spacing: 0.02em;
+}
+
+.boutique-hotel__brand-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.4rem;
+	height: 2.4rem;
+	border: 1px solid var(--hotel-taupe);
+	background: linear-gradient(135deg, var(--hotel-pale-blush), var(--hotel-cream));
+	color: var(--hotel-charcoal);
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+.boutique-hotel__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 1rem 1.8rem;
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.77rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.boutique-hotel__nav a,
+.boutique-hotel__text-link {
+	color: var(--hotel-warm-gray);
+	text-decoration: none;
+	transition: all 0.3s ease;
+	position: relative;
+}
+
+.boutique-hotel__nav a::after {
+	content: '';
+	position: absolute;
+	bottom: -3px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background: var(--hotel-charcoal);
+	transition: width 0.3s ease;
+}
+
+.boutique-hotel__nav a:hover::after,
+.boutique-hotel__text-link:hover {
+	color: var(--hotel-charcoal);
+	width: 100%;
+}
+
+.boutique-hotel__hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.08fr) minmax(20rem, 0.92fr);
+	align-items: center;
+	gap: clamp(3.5rem, 8vw, 8rem);
+	padding: clamp(5.5rem, 10vw, 8.5rem) 0 clamp(4.5rem, 9vw, 7.5rem);
+}
+
+.boutique-hotel__hero-copy {
+	max-width: 48rem;
+}
+
+.boutique-hotel__eyebrow,
+.boutique-hotel__section-kicker {
+	margin: 0;
+	color: var(--hotel-muted-rose);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.74rem;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.boutique-hotel h1,
+.boutique-hotel h2,
+.boutique-hotel h3,
+.boutique-hotel p {
+	margin: 0;
+}
+
+.boutique-hotel h1 {
+	margin-top: 1.3rem;
+	max-width: 52rem;
+	color: var(--hotel-charcoal);
+	font-size: clamp(2.8rem, 8vw, 6.8rem);
+	font-weight: 500;
+	line-height: 1.08;
+	letter-spacing: -0.01em;
+}
+
+.boutique-hotel__hero-copy > p:not(.boutique-hotel__eyebrow),
+.boutique-hotel__intro > p:last-child,
+.boutique-hotel__book > p {
+	max-width: 48rem;
+	margin-top: 1.5rem;
+	color: var(--hotel-warm-gray);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 1.04rem;
+	line-height: 1.8;
+}
+
+.boutique-hotel__hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem 1.5rem;
+	margin-top: 2.5rem;
+}
+
+.boutique-hotel__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3.1rem;
+	padding: 0.9rem 1.6rem;
+	border: 1.5px solid var(--hotel-charcoal);
+	background: var(--hotel-charcoal);
+	color: white;
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.boutique-hotel__button:hover {
+	background: transparent;
+	color: var(--hotel-charcoal);
+	border-color: var(--hotel-muted-rose);
+}
+
+.boutique-hotel__text-link {
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	color: var(--hotel-warm-gray);
+}
+
+.boutique-hotel__hero-visual {
+	position: relative;
+	min-height: 38rem;
+	border: 1px solid var(--hotel-line);
+	background: linear-gradient(
+		180deg,
+		rgb(250 249 247 / 0.9),
+		rgb(240 232 228 / 0.9)
+	);
+	padding: clamp(1.5rem, 2.5vw, 2rem);
+	box-shadow: 0 12px 40px rgb(61 61 61 / 0.07);
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.boutique-hotel__hero-visual::before {
+	position: absolute;
+	inset: 1.5rem;
+	border: 1px solid rgb(160 160 155 / 0.15);
+	content: '';
+	pointer-events: none;
+}
+
+.boutique-hotel__scene {
+	position: relative;
+	display: grid;
+	min-height: 100%;
+	place-items: center;
+	overflow: hidden;
+	background: linear-gradient(135deg, #faf8f4, #f0e8e0);
+}
+
+.boutique-hotel__window {
+	position: absolute;
+	top: 12%;
+	right: 15%;
+	width: 12rem;
+	height: 9rem;
+	border: 1px solid var(--hotel-line);
+	background: linear-gradient(180deg, #e8dfd5, #f5ede3);
+	border-radius: 0.3rem;
+	box-shadow: inset 0 1px 3px rgb(61 61 61 / 0.05);
+}
+
+.boutique-hotel__window::before {
+	content: '';
+	position: absolute;
+	inset: 2px;
+	border: 1px solid rgb(160 160 155 / 0.2);
+	border-radius: 0.2rem;
+}
+
+.boutique-hotel__furniture {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: 3rem;
+	width: min(68%, 22rem);
+	height: 10rem;
+	margin-bottom: 4rem;
+}
+
+.boutique-hotel__furniture span {
+	display: block;
+	background: linear-gradient(135deg, var(--hotel-pale-blush), var(--hotel-taupe));
+	border-radius: 0.3rem;
+}
+
+.boutique-hotel__furniture span:nth-child(1) {
+	width: 4rem;
+	height: 6.5rem;
+}
+
+.boutique-hotel__furniture span:nth-child(2) {
+	width: 5rem;
+	height: 5rem;
+}
+
+.boutique-hotel__intro {
+	display: grid;
+	grid-template-columns: minmax(13rem, 0.45fr) minmax(0, 1fr);
+	gap: clamp(1.5rem, 5vw, 5rem);
+	padding: clamp(3.5rem, 8vw, 6rem) 0;
+	border-top: 1px solid var(--hotel-line);
+	border-bottom: 1px solid var(--hotel-line);
+}
+
+.boutique-hotel__intro h2,
+.boutique-hotel__section-heading h2,
+.boutique-hotel__book h2 {
+	margin-top: 0.7rem;
+	color: var(--hotel-charcoal);
+	font-size: clamp(2.1rem, 4.5vw, 4rem);
+	font-weight: 500;
+	line-height: 1.08;
+	letter-spacing: -0.01em;
+}
+
+.boutique-hotel__section,
+.boutique-hotel__gallery,
+.boutique-hotel__book {
+	padding: clamp(4.5rem, 8vw, 7rem) 0;
+}
+
+.boutique-hotel__section-heading {
+	max-width: 50rem;
+}
+
+.boutique-hotel__cards {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin-top: 3rem;
+}
+
+.boutique-hotel__card {
+	min-height: 24rem;
+	padding: clamp(1.8rem, 3.5vw, 2.4rem);
+	border: 1px solid var(--hotel-line);
+	background: linear-gradient(
+		135deg,
+		rgb(250 249 247 / 0.7),
+		rgb(240 232 228 / 0.5)
+	);
+	border-radius: 0.4rem;
+	backdrop-filter: blur(8px);
+	transition: all 0.3s ease;
+}
+
+.boutique-hotel__card:hover {
+	border-color: var(--hotel-muted-rose);
+	background: linear-gradient(
+		135deg,
+		rgb(250 249 247 / 0.95),
+		rgb(240 232 228 / 0.7)
+	);
+	box-shadow: 0 10px 32px rgb(61 61 61 / 0.08);
+}
+
+.boutique-hotel__card > p:first-child {
+	color: var(--hotel-muted-rose);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.71rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	line-height: 1.7;
+	text-transform: uppercase;
+}
+
+.boutique-hotel__card h3 {
+	margin-top: 2.4rem;
+	font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+	font-weight: 500;
+	color: var(--hotel-charcoal);
+}
+
+.boutique-hotel__card span {
+	display: block;
+	width: 3.2rem;
+	height: 1px;
+	margin: 1.4rem 0;
+	background: linear-gradient(90deg, var(--hotel-muted-rose), transparent);
+	border-radius: 0.5px;
+}
+
+.boutique-hotel__card > p:last-child,
+.boutique-hotel__gallery-item p,
+.boutique-hotel__footer p {
+	color: var(--hotel-warm-gray);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.97rem;
+	line-height: 1.8;
+}
+
+.boutique-hotel__gallery {
+	border-top: 1px solid var(--hotel-line);
+}
+
+.boutique-hotel__gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin-top: 3rem;
+}
+
+.boutique-hotel__gallery-item {
+	border: 1px solid var(--hotel-line);
+	background: var(--hotel-pale-blush);
+	border-radius: 0.4rem;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.boutique-hotel__gallery-item:hover {
+	border-color: var(--hotel-muted-rose);
+	box-shadow: 0 8px 28px rgb(61 61 61 / 0.07);
+}
+
+.boutique-hotel__gallery-item > div:last-child {
+	padding: 1.4rem;
+}
+
+.boutique-hotel__gallery-item h3 {
+	font-size: 1.35rem;
+	font-weight: 500;
+	color: var(--hotel-charcoal);
+}
+
+.boutique-hotel__gallery-art {
+	aspect-ratio: 4 / 5;
+	border-bottom: 1px solid var(--hotel-line);
+	background:
+		radial-gradient(circle at 50% 40%, rgb(196 181 172 / 0.1), transparent 26%),
+		linear-gradient(180deg, #faf8f4, #f0e8e0);
+}
+
+.boutique-hotel__gallery-item:nth-child(2) .boutique-hotel__gallery-art {
+	background:
+		radial-gradient(ellipse at 65% 35%, rgb(138 138 132 / 0.08), transparent 24%),
+		linear-gradient(135deg, #fbf9f5, #ede5dd);
+}
+
+.boutique-hotel__gallery-item:nth-child(3) .boutique-hotel__gallery-art {
+	background:
+		radial-gradient(circle at 40% 45%, rgb(196 181 172 / 0.08), transparent 20%),
+		linear-gradient(180deg, #faf8f5, #f2ead8);
+}
+
+.boutique-hotel__gallery-item:nth-child(4) .boutique-hotel__gallery-art {
+	background:
+		radial-gradient(circle at 50% 50%, rgb(61 61 61 / 0.05), transparent 30%),
+		linear-gradient(225deg, #f9f7f3, #ede5dd);
+}
+
+.boutique-hotel__book {
+	display: grid;
+	justify-items: center;
+	border-top: 1px solid var(--hotel-line);
+	border-bottom: 1px solid var(--hotel-line);
+	background: linear-gradient(
+		180deg,
+		rgb(250 249 247 / 0.5),
+		rgb(240 232 228 / 0.4)
+	);
+	text-align: center;
+	border-radius: 0.4rem;
+	padding: clamp(4.5rem, 8vw, 7rem) 2rem;
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+.boutique-hotel__book .boutique-hotel__button {
+	margin-top: 2.5rem;
+}
+
+.boutique-hotel__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 2.5rem 0;
+	border-top: 1px solid var(--hotel-line);
+}
+
+@media (max-width: 900px) {
+	.boutique-hotel__hero,
+	.boutique-hotel__intro {
+		grid-template-columns: 1fr;
+	}
+
+	.boutique-hotel__hero-visual {
+		min-height: 32rem;
+	}
+
+	.boutique-hotel__cards,
+	.boutique-hotel__gallery-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 640px) {
+	.boutique-hotel__header,
+	.boutique-hotel__footer {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.boutique-hotel__nav {
+		justify-content: flex-start;
+		gap: 0.8rem 1.2rem;
+	}
+
+	.boutique-hotel__hero {
+		padding-top: 3rem;
+	}
+
+	.boutique-hotel__hero-actions {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.boutique-hotel__button,
+	.boutique-hotel__text-link {
+		width: 100%;
+		text-align: center;
+	}
+
+	.boutique-hotel__hero-visual {
+		min-height: 26rem;
+	}
+
+	.boutique-hotel__cards,
+	.boutique-hotel__gallery-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.boutique-hotel__card {
+		min-height: auto;
+	}
+
+	.boutique-hotel__book {
+		border-radius: 0.3rem;
+	}
+}

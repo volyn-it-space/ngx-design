@@ -1,0 +1,109 @@
+<article class="luxury-dark">
+	<header class="luxury-dark__header" aria-label="Luxury dark page header">
+		<a class="luxury-dark__brand theme-focus" routerLink="/">
+			<span class="luxury-dark__brand-mark" aria-hidden="true">H</span>
+			<span>Luxury Dark</span>
+		</a>
+
+		<nav class="luxury-dark__nav" aria-label="Luxury dark sections">
+			<a href="#experience">Experiences</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section class="luxury-dark__hero">
+		<div class="luxury-dark__hero-copy">
+			<p class="luxury-dark__eyebrow">Exclusive Luxury</p>
+			<h1>Where discretion meets uncompromising excellence.</h1>
+			<p>
+				A premium landing page concept for luxury restaurants, high-end lounges, and
+				exclusive hospitality venues where privacy, sophistication, and impeccable service
+				define the experience.
+			</p>
+			<div class="luxury-dark__hero-actions">
+				<a class="luxury-dark__button theme-focus" href="#reserve">Request Access</a>
+				<a class="luxury-dark__text-link theme-focus" href="#experience">Discover Our Venues</a>
+			</div>
+		</div>
+
+		<div class="luxury-dark__hero-visual" aria-label="Luxury dark venue preview">
+			<div class="luxury-dark__scene">
+				<div class="luxury-dark__glass" aria-hidden="true"></div>
+				<div class="luxury-dark__bottle" aria-hidden="true"></div>
+			</div>
+		</div>
+	</section>
+
+	<section class="luxury-dark__intro" aria-labelledby="luxury-dark-intro">
+		<p class="luxury-dark__section-kicker">Philosophy</p>
+		<h2 id="luxury-dark-intro">Exclusive hospitality for the discerning guest.</h2>
+		<p>
+			We cater to those who accept nothing less than perfection. Every aspect of our venues
+			is designed with meticulous attention to detail. From the moment you arrive, you are
+			enveloped in an atmosphere of quiet elegance, premium service, and absolute discretion.
+		</p>
+	</section>
+
+	<section
+		id="experience"
+		class="luxury-dark__section"
+		aria-labelledby="luxury-dark-experience"
+	>
+		<div class="luxury-dark__section-heading">
+			<p class="luxury-dark__section-kicker">Signature Experiences</p>
+			<h2 id="luxury-dark-experience">Three expressions of luxury.</h2>
+		</div>
+
+		<div class="luxury-dark__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="luxury-dark__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="luxury-dark__gallery" aria-labelledby="luxury-dark-gallery">
+		<div class="luxury-dark__section-heading">
+			<p class="luxury-dark__section-kicker">Gallery</p>
+			<h2 id="luxury-dark-gallery">Elegance in every detail.</h2>
+		</div>
+
+		<div class="luxury-dark__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="luxury-dark__gallery-item">
+					<div class="luxury-dark__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="reserve" class="luxury-dark__reserve" aria-labelledby="luxury-dark-reserve">
+		<p class="luxury-dark__section-kicker">Private Access</p>
+		<h2 id="luxury-dark-reserve">Experience our private world.</h2>
+		<p>
+			Our venues are reserved for members and invited guests only. To arrange access or
+			inquire about membership, please contact our concierge. We look forward to welcoming
+			you into our world of exclusive luxury.
+		</p>
+		<a class="luxury-dark__button theme-focus" href="/">
+			Contact Our Concierge
+		</a>
+	</section>
+
+	<footer class="luxury-dark__footer">
+		<a class="luxury-dark__brand theme-focus" routerLink="/">
+			<span class="luxury-dark__brand-mark" aria-hidden="true">H</span>
+			<span>Luxury Dark</span>
+		</a>
+		<p>Premium and exclusive luxury hospitality website direction for discerning guests.</p>
+	</footer>
+</article>

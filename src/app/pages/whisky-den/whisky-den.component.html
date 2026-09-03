@@ -1,0 +1,67 @@
+<article class="whisky-den">
+	<header class="whisky-den__header" aria-label="Whisky Den page header">
+		<a class="whisky-den__brand theme-focus" routerLink="/">
+			<span class="whisky-den__brand-mark" aria-hidden="true">W</span>
+			<span>Whisky Den</span>
+		</a>
+
+		<nav class="whisky-den__nav" aria-label="Whisky Den sections">
+			<a href="#signature">The Library</a>
+			<a href="#room">The Room</a>
+			<a href="#reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section class="whisky-den__hero">
+		<p class="whisky-den__eyebrow">Members &amp; invited guests</p>
+		<h1>A library of bottles, and the hour to read it.</h1>
+		<p class="whisky-den__lede">
+			A whisky-den demo for whisky bars, cigar lounges, and members-only nightcap rooms â€”
+			tobacco brown, oxblood, tarnished brass. Quiet authority, not luxury gloss.
+		</p>
+		<div class="whisky-den__hero-actions">
+			<a class="whisky-den__button theme-focus" href="#reserve">Reserve The Library</a>
+			<a class="whisky-den__text-link theme-focus" href="#signature">Tonight's Pour</a>
+		</div>
+	</section>
+
+	<section id="signature" class="whisky-den__section">
+		<p class="whisky-den__kicker">The Library</p>
+		<h2>Three bottles, opened tonight.</h2>
+		<div class="whisky-den__grid">
+			@for (item of signatures; track item.title) {
+				<article class="whisky-den__card">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<span class="whisky-den__detail">{{ item.detail }}</span>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="room" class="whisky-den__section">
+		<p class="whisky-den__kicker">The Room</p>
+		<h2>House notes for guests.</h2>
+		<ul class="whisky-den__list">
+			@for (line of experiencePoints; track line) {
+				<li>{{ line }}</li>
+			}
+		</ul>
+	</section>
+
+	<section id="reserve" class="whisky-den__reserve">
+		<p class="whisky-den__kicker">Reserve</p>
+		<h2>By reservation, evenings.</h2>
+		<p>2 Athenaeum Lane Â· The Old Hotel</p>
+		<p>Wed â€“ Sat, 7pm â€“ 1am</p>
+		<p>+1 (555) 010 1856</p>
+		<a class="whisky-den__button theme-focus" href="/"
+			>Request Access</a
+		>
+	</section>
+
+	<footer class="whisky-den__footer">
+		<p>Â© Demo Â· scaffolded preview</p>
+		<a class="whisky-den__text-link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

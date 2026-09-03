@@ -1,0 +1,417 @@
+:host {
+	display: block;
+}
+
+.cozy-family {
+	--family-ink: #3d2a1f;
+	--family-muted: #7a6354;
+	--family-cream: #fff6e8;
+	--family-peach: #ffd9bd;
+	--family-yellow: #f7c968;
+	--family-panel: #fffaf1;
+	--family-line: #eccca9;
+	--family-brown: #8a5a3a;
+	--family-coral: #d86d4d;
+
+	min-height: 100%;
+	overflow: hidden;
+	background: linear-gradient(180deg, var(--family-cream), #ffe2c8 52%, #f5d49a);
+	color: var(--family-ink);
+	font-family: Georgia, 'Times New Roman', serif;
+	letter-spacing: 0;
+}
+
+.cozy-family__header,
+.cozy-family__hero,
+.cozy-family__intro,
+.cozy-family__section,
+.cozy-family__gallery,
+.cozy-family__booking,
+.cozy-family__footer {
+	width: min(100% - 2rem, 1180px);
+	margin-inline: auto;
+}
+
+.cozy-family__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 1.4rem 0;
+}
+
+.cozy-family__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	color: var(--family-ink);
+	font-size: 1rem;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.cozy-family__brand-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.45rem;
+	height: 2.45rem;
+	border: 1px solid var(--family-line);
+	border-radius: 999px;
+	background: var(--family-panel);
+	color: var(--family-brown);
+	font-size: 1.2rem;
+	box-shadow: 0 12px 28px rgb(138 90 58 / 0.14);
+}
+
+.cozy-family__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 0.8rem 1.35rem;
+	font-family: var(--ff-base);
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+.cozy-family__nav a,
+.cozy-family__text-link {
+	color: var(--family-brown);
+	text-decoration: none;
+}
+
+.cozy-family__hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
+	align-items: center;
+	gap: clamp(2.5rem, 6vw, 5.5rem);
+	padding: clamp(3.5rem, 8vw, 6.5rem) 0 clamp(3rem, 7vw, 5.5rem);
+}
+
+.cozy-family__hero-copy {
+	max-width: 43rem;
+}
+
+.cozy-family h1,
+.cozy-family h2,
+.cozy-family h3,
+.cozy-family p {
+	margin: 0;
+}
+
+.cozy-family__eyebrow,
+.cozy-family__section-kicker {
+	color: var(--family-coral);
+	font-family: var(--ff-base);
+	font-size: 0.75rem;
+	font-weight: 800;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.cozy-family h1 {
+	margin-top: 1rem;
+	max-width: 45rem;
+	font-size: clamp(2.8rem, 7vw, 6.2rem);
+	font-weight: 600;
+	line-height: 0.98;
+}
+
+.cozy-family__hero-copy > p:not(.cozy-family__eyebrow),
+.cozy-family__intro > p:last-child,
+.cozy-family__booking > p {
+	max-width: 42rem;
+	margin-top: 1.35rem;
+	color: var(--family-muted);
+	font-family: var(--ff-base);
+	font-size: 1.04rem;
+	line-height: 1.85;
+}
+
+.cozy-family__hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem 1.4rem;
+	margin-top: 2rem;
+}
+
+.cozy-family__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3.1rem;
+	padding: 0.85rem 1.35rem;
+	border-radius: 999px;
+	background: var(--family-brown);
+	color: var(--family-panel);
+	font-family: var(--ff-base);
+	font-size: 0.84rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-decoration: none;
+	text-transform: uppercase;
+	box-shadow: 0 14px 28px rgb(138 90 58 / 0.22);
+}
+
+.cozy-family__text-link {
+	font-family: var(--ff-base);
+	font-size: 0.85rem;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}
+
+.cozy-family__hero-visual {
+	position: relative;
+	display: grid;
+	min-height: 34rem;
+	place-items: center;
+	overflow: hidden;
+	border: 1px solid rgb(236 204 169 / 0.82);
+	border-radius: 2rem;
+	background:
+		radial-gradient(circle at 24% 22%, rgb(247 201 104 / 0.48), transparent 18%),
+		linear-gradient(180deg, #fffaf1, #ffd9bd);
+	box-shadow: 0 28px 70px rgb(138 90 58 / 0.18);
+}
+
+.cozy-family__sun {
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	width: 8rem;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: var(--family-yellow);
+	box-shadow: 0 0 0 1rem rgb(247 201 104 / 0.18);
+}
+
+.cozy-family__table {
+	position: relative;
+	display: flex;
+	align-items: end;
+	justify-content: center;
+	gap: 1rem;
+	width: min(72%, 24rem);
+	height: 15rem;
+	border-radius: 1.5rem;
+	background: linear-gradient(180deg, rgb(255 250 241 / 0.84), rgb(255 217 189 / 0.68));
+	box-shadow: inset 0 -1.4rem 0 rgb(138 90 58 / 0.18);
+}
+
+.cozy-family__table span {
+	display: block;
+	width: 3.2rem;
+	height: 3.2rem;
+	margin-bottom: 4.4rem;
+	border-radius: 50%;
+	background: var(--family-coral);
+	box-shadow: 4.2rem 1rem 0 var(--family-yellow), -4.2rem 1rem 0 var(--family-brown);
+}
+
+.cozy-family__table span:nth-child(2),
+.cozy-family__table span:nth-child(3) {
+	display: none;
+}
+
+.cozy-family__intro {
+	display: grid;
+	grid-template-columns: minmax(12rem, 0.45fr) minmax(0, 1fr);
+	gap: clamp(1.5rem, 5vw, 4rem);
+	padding: clamp(2.5rem, 6vw, 5rem);
+	border: 1px solid var(--family-line);
+	border-radius: 2rem;
+	background: rgb(255 250 241 / 0.64);
+	box-shadow: 0 18px 48px rgb(138 90 58 / 0.1);
+}
+
+.cozy-family__intro h2,
+.cozy-family__section-heading h2,
+.cozy-family__booking h2 {
+	margin-top: 0.7rem;
+	font-size: clamp(2rem, 4vw, 3.6rem);
+	font-weight: 600;
+	line-height: 1.06;
+}
+
+.cozy-family__section,
+.cozy-family__gallery,
+.cozy-family__booking {
+	padding: clamp(4rem, 7vw, 6.5rem) 0;
+}
+
+.cozy-family__section-heading {
+	max-width: 45rem;
+}
+
+.cozy-family__cards,
+.cozy-family__gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+	margin-top: 2.4rem;
+}
+
+.cozy-family__gallery-grid {
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.cozy-family__card,
+.cozy-family__gallery-item {
+	overflow: hidden;
+	border: 1px solid var(--family-line);
+	border-radius: 1.35rem;
+	background: rgb(255 250 241 / 0.76);
+	box-shadow: 0 16px 38px rgb(138 90 58 / 0.1);
+}
+
+.cozy-family__card {
+	min-height: 21rem;
+	padding: clamp(1.35rem, 3vw, 1.9rem);
+}
+
+.cozy-family__card > p:first-child {
+	color: var(--family-coral);
+	font-family: var(--ff-base);
+	font-size: 0.72rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	line-height: 1.7;
+	text-transform: uppercase;
+}
+
+.cozy-family__card h3 {
+	margin-top: 2.6rem;
+	font-size: clamp(1.75rem, 3vw, 2.45rem);
+	font-weight: 600;
+}
+
+.cozy-family__card span {
+	display: block;
+	width: 3rem;
+	height: 2px;
+	margin: 1.15rem 0;
+	background: var(--family-yellow);
+}
+
+.cozy-family__card > p:last-child,
+.cozy-family__gallery-item p,
+.cozy-family__footer p {
+	color: var(--family-muted);
+	font-family: var(--ff-base);
+	font-size: 0.95rem;
+	line-height: 1.75;
+}
+
+.cozy-family__gallery-item > div:last-child {
+	padding: 1.15rem;
+}
+
+.cozy-family__gallery-item h3 {
+	font-size: 1.3rem;
+	font-weight: 600;
+}
+
+.cozy-family__gallery-art {
+	aspect-ratio: 4 / 5;
+	border-bottom: 1px solid var(--family-line);
+	background:
+		radial-gradient(circle at 50% 34%, rgb(216 109 77 / 0.5), transparent 18%),
+		radial-gradient(circle at 62% 58%, rgb(247 201 104 / 0.58), transparent 24%),
+		linear-gradient(180deg, #fffaf1, #ffd9bd);
+}
+
+.cozy-family__gallery-item:nth-child(2) .cozy-family__gallery-art {
+	background:
+		radial-gradient(ellipse at 50% 66%, rgb(138 90 58 / 0.26), transparent 32%),
+		linear-gradient(180deg, #fff6e8, #f7c968);
+}
+
+.cozy-family__gallery-item:nth-child(3) .cozy-family__gallery-art {
+	background:
+		linear-gradient(90deg, rgb(255 250 241 / 0.7) 50%, transparent 50%) 0 0 / 2rem 2rem,
+		linear-gradient(180deg, #ffd9bd, #fffaf1);
+}
+
+.cozy-family__gallery-item:nth-child(4) .cozy-family__gallery-art {
+	background:
+		radial-gradient(circle at 38% 38%, rgb(247 201 104 / 0.7), transparent 16%),
+		radial-gradient(circle at 62% 42%, rgb(216 109 77 / 0.48), transparent 16%),
+		linear-gradient(180deg, #fffaf1, #f1bd8d);
+}
+
+.cozy-family__booking {
+	display: grid;
+	justify-items: center;
+	border-radius: 2rem;
+	background: rgb(255 250 241 / 0.7);
+	text-align: center;
+	box-shadow: inset 0 0 0 1px var(--family-line);
+}
+
+.cozy-family__booking .cozy-family__button {
+	margin-top: 2rem;
+}
+
+.cozy-family__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 2rem 0;
+}
+
+@media (max-width: 900px) {
+	.cozy-family__hero,
+	.cozy-family__intro {
+		grid-template-columns: 1fr;
+	}
+
+	.cozy-family__hero-visual {
+		min-height: 28rem;
+	}
+
+	.cozy-family__cards,
+	.cozy-family__gallery-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 640px) {
+	.cozy-family__header,
+	.cozy-family__footer {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.cozy-family__nav {
+		justify-content: flex-start;
+	}
+
+	.cozy-family__hero-actions {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.cozy-family__button,
+	.cozy-family__text-link {
+		width: 100%;
+		text-align: center;
+	}
+
+	.cozy-family__hero-visual {
+		min-height: 23rem;
+	}
+
+	.cozy-family__cards,
+	.cozy-family__gallery-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.cozy-family__card {
+		min-height: auto;
+	}
+}

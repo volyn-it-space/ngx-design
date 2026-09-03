@@ -1,0 +1,69 @@
+<article class="industrial-brewery">
+	<header class="industrial-brewery__header" aria-label="Industrial Brewery page header">
+		<a class="industrial-brewery__brand theme-focus" routerLink="/">
+			<span class="industrial-brewery__brand-mark" aria-hidden="true">B</span>
+			<span>Industrial Brewery</span>
+		</a>
+
+		<nav class="industrial-brewery__nav" aria-label="Brewery sections">
+			<a href="#signature">Tap List</a>
+			<a href="#brewhouse">Brewhouse</a>
+			<a href="#visit">Visit</a>
+		</nav>
+	</header>
+
+	<section class="industrial-brewery__hero">
+		<p class="industrial-brewery__eyebrow">BREWING ON-SITE SINCE 2018</p>
+		<h1>BEER FROM THE ROOM IT'S POURED IN.</h1>
+		<p class="industrial-brewery__lede">
+			A craft brewery and taproom demo for gastropubs and beer halls with in-house brewing â€”
+			concrete, iron, copper, amber. The tap list is the homepage.
+		</p>
+		<div class="industrial-brewery__hero-actions">
+			<a class="industrial-brewery__button theme-focus" href="#signature">View Tap List</a>
+			<a class="industrial-brewery__text-link theme-focus" href="#brewhouse"
+				>Visit The Brewhouse</a
+			>
+		</div>
+	</section>
+
+	<section id="signature" class="industrial-brewery__section">
+		<p class="industrial-brewery__kicker">Tap List</p>
+		<h2>WHAT'S ON TONIGHT.</h2>
+		<div class="industrial-brewery__grid">
+			@for (item of signatures; track item.title) {
+				<article class="industrial-brewery__card">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<span class="industrial-brewery__detail">{{ item.detail }}</span>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="brewhouse" class="industrial-brewery__section">
+		<p class="industrial-brewery__kicker">Brewhouse</p>
+		<h2>HOW THE BEER GETS HERE.</h2>
+		<ul class="industrial-brewery__list">
+			@for (line of experiencePoints; track line) {
+				<li>{{ line }}</li>
+			}
+		</ul>
+	</section>
+
+	<section id="visit" class="industrial-brewery__reserve">
+		<p class="industrial-brewery__kicker">Visit</p>
+		<h2>OPEN WEDNESDAY THROUGH SUNDAY.</h2>
+		<p>88 Foundry Row Â· Industrial District</p>
+		<p>Wed â€“ Sun, 3pm â€“ 11pm</p>
+		<p>+1 (555) 010 2018</p>
+		<a class="industrial-brewery__button theme-focus" href="/"
+			>Reserve a Long Table</a
+		>
+	</section>
+
+	<footer class="industrial-brewery__footer">
+		<p>Â© Demo Â· scaffolded preview</p>
+		<a class="industrial-brewery__text-link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

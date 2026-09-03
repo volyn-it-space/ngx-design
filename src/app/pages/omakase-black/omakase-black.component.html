@@ -1,0 +1,67 @@
+<article class="omakase-black">
+	<header class="omakase-black__header" aria-label="Omakase Black page header">
+		<a class="omakase-black__brand theme-focus" routerLink="/">
+			<span class="omakase-black__brand-mark" aria-hidden="true">O</span>
+			<span>Omakase Black</span>
+		</a>
+
+		<nav class="omakase-black__nav" aria-label="Omakase sections">
+			<a href="#signature">Course</a>
+			<a href="#counter">The Counter</a>
+			<a href="#reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section class="omakase-black__hero">
+		<p class="omakase-black__eyebrow">Counter omakase Â· 10 seats</p>
+		<h1>Ten seats. One sitting. One conversation with the season.</h1>
+		<p class="omakase-black__lede">
+			An omakase demo for sushi counters, kaiseki rooms, and chef-led tasting venues â€” sumi
+			ink, rice paper, lacquer red, bamboo. Restraint is the design.
+		</p>
+		<div class="omakase-black__hero-actions">
+			<a class="omakase-black__button theme-focus" href="#reserve">Reserve The Counter</a>
+			<a class="omakase-black__text-link theme-focus" href="#signature">Tonight's Course</a>
+		</div>
+	</section>
+
+	<section id="signature" class="omakase-black__section">
+		<p class="omakase-black__kicker">Course</p>
+		<h2>A few notes from tonight's ten.</h2>
+		<div class="omakase-black__grid">
+			@for (item of signatures; track item.title) {
+				<article class="omakase-black__card">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<span class="omakase-black__detail">{{ item.detail }}</span>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="counter" class="omakase-black__section">
+		<p class="omakase-black__kicker">The Counter</p>
+		<h2>How a sitting works.</h2>
+		<ul class="omakase-black__list">
+			@for (line of experiencePoints; track line) {
+				<li>{{ line }}</li>
+			}
+		</ul>
+	</section>
+
+	<section id="reserve" class="omakase-black__reserve">
+		<p class="omakase-black__kicker">Reserve</p>
+		<h2>By reservation only.</h2>
+		<p>5 Lantern Lane Â· Old Town</p>
+		<p>Wed â€“ Sun, sittings 6pm and 9pm</p>
+		<p>+1 (555) 010 1006</p>
+		<a class="omakase-black__button theme-focus" href="/"
+			>Reserve a Seat</a
+		>
+	</section>
+
+	<footer class="omakase-black__footer">
+		<p>Â© Demo Â· scaffolded preview</p>
+		<a class="omakase-black__text-link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

@@ -1,0 +1,67 @@
+<article class="speakeasy-cocktail">
+	<header class="speakeasy-cocktail__header" aria-label="Speakeasy Cocktail page header">
+		<a class="speakeasy-cocktail__brand theme-focus" routerLink="/">
+			<span class="speakeasy-cocktail__brand-mark" aria-hidden="true">S</span>
+			<span>Speakeasy Cocktail</span>
+		</a>
+
+		<nav class="speakeasy-cocktail__nav" aria-label="Speakeasy sections">
+			<a href="#signature">Signature</a>
+			<a href="#room">The Room</a>
+			<a href="#reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section class="speakeasy-cocktail__hero">
+		<p class="speakeasy-cocktail__eyebrow">Established 1929</p>
+		<h1>Behind the bookcase, a quieter hour begins.</h1>
+		<p class="speakeasy-cocktail__lede">
+			A Prohibition-style cocktail room demo for hidden bars, mixology dens, and hotel
+			cocktail programs â€” built around candlelight, brass, and conversation.
+		</p>
+		<div class="speakeasy-cocktail__hero-actions">
+			<a class="speakeasy-cocktail__button theme-focus" href="#reserve">Reserve The Bookcase</a>
+			<a class="speakeasy-cocktail__text-link theme-focus" href="#signature">View The Menu</a>
+		</div>
+	</section>
+
+	<section id="signature" class="speakeasy-cocktail__section">
+		<p class="speakeasy-cocktail__kicker">Signature Pours</p>
+		<h2>Cocktails the room is built around.</h2>
+		<div class="speakeasy-cocktail__grid">
+			@for (item of signatures; track item.title) {
+				<article class="speakeasy-cocktail__card">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<span class="speakeasy-cocktail__detail">{{ item.detail }}</span>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="room" class="speakeasy-cocktail__section">
+		<p class="speakeasy-cocktail__kicker">The Room</p>
+		<h2>A short walk past the bookcase. A different decade.</h2>
+		<ul class="speakeasy-cocktail__list">
+			@for (line of experiencePoints; track line) {
+				<li>{{ line }}</li>
+			}
+		</ul>
+	</section>
+
+	<section id="reserve" class="speakeasy-cocktail__reserve">
+		<p class="speakeasy-cocktail__kicker">Reserve</p>
+		<h2>By appointment, most evenings.</h2>
+		<p>123 Library Street Â· After dusk</p>
+		<p>Wed â€“ Sat, 7pm â€“ 1am</p>
+		<p>+1 (555) 010 1929</p>
+		<a class="speakeasy-cocktail__button theme-focus" href="/"
+			>Request a Booth</a
+		>
+	</section>
+
+	<footer class="speakeasy-cocktail__footer">
+		<p>Â© Demo Â· scaffolded preview</p>
+		<a class="speakeasy-cocktail__text-link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

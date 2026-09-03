@@ -1,0 +1,67 @@
+<article class="dark-roast-coffee">
+	<header class="dark-roast-coffee__header" aria-label="Dark Roast Coffee page header">
+		<a class="dark-roast-coffee__brand theme-focus" routerLink="/">
+			<span class="dark-roast-coffee__brand-mark" aria-hidden="true">D</span>
+			<span>Dark Roast Coffee</span>
+		</a>
+
+		<nav class="dark-roast-coffee__nav" aria-label="Dark Roast Coffee sections">
+			<a href="#signature">Today's Pour</a>
+			<a href="#roastery">Roastery</a>
+			<a href="#visit">Visit</a>
+		</nav>
+	</header>
+
+	<section class="dark-roast-coffee__hero">
+		<p class="dark-roast-coffee__eyebrow">Roasted weekly Â· open until 11pm</p>
+		<h1>Coffee, after dark, treated like wine.</h1>
+		<p class="dark-roast-coffee__lede">
+			An evening coffee bar demo for third-wave roasters, late-opening cafes, and dessert
+			programs â€” espresso, cocoa, copper, steamed cream. Origins are the menu.
+		</p>
+		<div class="dark-roast-coffee__hero-actions">
+			<a class="dark-roast-coffee__button theme-focus" href="#visit">Order Beans</a>
+			<a class="dark-roast-coffee__text-link theme-focus" href="#signature">Tonight's Pour</a>
+		</div>
+	</section>
+
+	<section id="signature" class="dark-roast-coffee__section">
+		<p class="dark-roast-coffee__kicker">Today's Pour</p>
+		<h2>Three origins on the brew bar.</h2>
+		<div class="dark-roast-coffee__grid">
+			@for (item of signatures; track item.title) {
+				<article class="dark-roast-coffee__card">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<span class="dark-roast-coffee__detail">{{ item.detail }}</span>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="roastery" class="dark-roast-coffee__section">
+		<p class="dark-roast-coffee__kicker">Roastery</p>
+		<h2>How the program works.</h2>
+		<ul class="dark-roast-coffee__list">
+			@for (line of experiencePoints; track line) {
+				<li>{{ line }}</li>
+			}
+		</ul>
+	</section>
+
+	<section id="visit" class="dark-roast-coffee__reserve">
+		<p class="dark-roast-coffee__kicker">Visit</p>
+		<h2>Open through the evening.</h2>
+		<p>212 Roast Row Â· Mill District</p>
+		<p>Tue â€“ Sun, 4pm â€“ 11pm</p>
+		<p>+1 (555) 010 0444</p>
+		<a class="dark-roast-coffee__button theme-focus" href="/"
+			>Visit The Bar</a
+		>
+	</section>
+
+	<footer class="dark-roast-coffee__footer">
+		<p>Â© Demo Â· scaffolded preview</p>
+		<a class="dark-roast-coffee__text-link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

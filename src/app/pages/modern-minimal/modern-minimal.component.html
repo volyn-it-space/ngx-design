@@ -1,0 +1,77 @@
+<article class="modern-minimal">
+	<header class="modern-minimal__header" aria-label="Modern minimal page header">
+		<a class="modern-minimal__brand theme-focus" routerLink="/">
+			<span class="modern-minimal__brand-icon" aria-hidden="true">âŠŸ</span>
+			<span>Modern Minimal</span>
+		</a>
+
+		<nav class="modern-minimal__nav" aria-label="Modern minimal sections">
+			<a href="#services">Services</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#book">Book</a>
+		</nav>
+	</header>
+
+	<section class="modern-minimal__hero">
+		<h1>Modern hospitality, completely clear.</h1>
+		<p>A space without clutter. Design without noise. Thoughtful service with absolute clarity.</p>
+	</section>
+
+	<section class="modern-minimal__intro" aria-labelledby="modern-minimal-intro">
+		<h2 id="modern-minimal-intro">Simple comfort, exceptional care.</h2>
+		<p>
+			We believe the best experiences require the least distraction. Clean lines, essential
+			details, and genuine attention create spaces where you feel completely at ease. Modern
+			design meets timeless hospitality.
+		</p>
+	</section>
+
+	<section
+		id="services"
+		class="modern-minimal__section"
+		aria-labelledby="modern-minimal-services"
+	>
+		<h2 id="modern-minimal-services">What we offer.</h2>
+
+		<div class="modern-minimal__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="modern-minimal__card">
+					<p class="modern-minimal__detail">{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="modern-minimal__gallery" aria-labelledby="modern-minimal-gallery">
+		<h2 id="modern-minimal-gallery">Spaces designed for clarity.</h2>
+
+		<div class="modern-minimal__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="modern-minimal__gallery-item">
+					<div class="modern-minimal__gallery-art" aria-hidden="true"></div>
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.label }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="book" class="modern-minimal__book" aria-labelledby="modern-minimal-book">
+		<h2 id="modern-minimal-book">Ready to experience clarity.</h2>
+		<p>Book your stay or event in spaces designed for simplicity and comfort.</p>
+		<a class="modern-minimal__button theme-focus" href="/">
+			Get In Touch
+		</a>
+	</section>
+
+	<footer class="modern-minimal__footer">
+		<a class="modern-minimal__brand theme-focus" routerLink="/">
+			<span class="modern-minimal__brand-icon" aria-hidden="true">âŠŸ</span>
+			<span>Modern Minimal</span>
+		</a>
+		<p>&copy; 2026 Modern Minimal. All rights reserved.</p>
+	</footer>
+</article>

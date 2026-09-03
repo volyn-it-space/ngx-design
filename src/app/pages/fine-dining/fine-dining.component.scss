@@ -1,0 +1,591 @@
+:host {
+	display: block;
+}
+
+.fine-dining {
+	--dining-charcoal: #2a2a2a;
+	--dining-deep-navy: #1a1a2e;
+	--dining-gold: #c9a961;
+	--dining-muted-gold: #a8945f;
+	--dining-ivory: #faf8f3;
+	--dining-cream: #f5ede3;
+	--dining-light-gray: #e5e5e5;
+	--dining-line: #d4d0c8;
+	--dining-text: #3a3a3a;
+
+	min-height: 100%;
+	overflow: hidden;
+	background: linear-gradient(180deg, var(--dining-ivory), var(--dining-cream) 100%);
+	color: var(--dining-text);
+	font-family: Georgia, 'Times New Roman', serif;
+	letter-spacing: 0;
+}
+
+.fine-dining__header,
+.fine-dining__hero,
+.fine-dining__intro,
+.fine-dining__section,
+.fine-dining__gallery,
+.fine-dining__reserve,
+.fine-dining__footer {
+	width: min(100% - 2rem, 1280px);
+	margin-inline: auto;
+}
+
+.fine-dining__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 2rem 0;
+	border-bottom: 1px solid var(--dining-line);
+}
+
+.fine-dining__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	color: var(--dining-deep-navy);
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 1rem;
+	font-weight: 700;
+	text-decoration: none;
+	letter-spacing: 0.05em;
+}
+
+.fine-dining__brand-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.6rem;
+	height: 2.6rem;
+	border: 1.5px solid var(--dining-gold);
+	background: var(--dining-cream);
+	color: var(--dining-deep-navy);
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.fine-dining__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 1rem 2rem;
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.15em;
+	text-transform: uppercase;
+}
+
+.fine-dining__nav a,
+.fine-dining__text-link {
+	color: var(--dining-text);
+	text-decoration: none;
+	transition: color 0.3s ease;
+	position: relative;
+}
+
+.fine-dining__nav a::after {
+	content: '';
+	position: absolute;
+	bottom: -4px;
+	left: 0;
+	width: 0;
+	height: 1px;
+	background: var(--dining-gold);
+	transition: width 0.3s ease;
+}
+
+.fine-dining__nav a:hover::after {
+	width: 100%;
+}
+
+.fine-dining__text-link:hover {
+	color: var(--dining-gold);
+}
+
+.fine-dining__hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.1fr) minmax(20rem, 0.9fr);
+	align-items: center;
+	gap: clamp(3.5rem, 8vw, 8rem);
+	padding: clamp(6rem, 10vw, 9rem) 0 clamp(5rem, 9vw, 8rem);
+}
+
+.fine-dining__hero-copy {
+	max-width: 48rem;
+}
+
+.fine-dining__eyebrow,
+.fine-dining__section-kicker {
+	margin: 0;
+	color: var(--dining-gold);
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.2em;
+	text-transform: uppercase;
+}
+
+.fine-dining h1,
+.fine-dining h2,
+.fine-dining h3,
+.fine-dining p {
+	margin: 0;
+}
+
+.fine-dining h1 {
+	margin-top: 1.5rem;
+	max-width: 52rem;
+	color: var(--dining-deep-navy);
+	font-size: clamp(2.8rem, 8vw, 6.8rem);
+	font-weight: 400;
+	line-height: 1.08;
+	letter-spacing: -0.015em;
+}
+
+.fine-dining__hero-copy > p:not(.fine-dining__eyebrow),
+.fine-dining__intro > p:last-child,
+.fine-dining__reserve > p {
+	max-width: 48rem;
+	margin-top: 1.75rem;
+	color: #5a5a5a;
+	font-family: var(--ff-base);
+	font-size: 1.05rem;
+	line-height: 1.85;
+}
+
+.fine-dining__hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.2rem 1.8rem;
+	margin-top: 2.8rem;
+}
+
+.fine-dining__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3.2rem;
+	padding: 0.95rem 1.8rem;
+	border: 1.5px solid var(--dining-deep-navy);
+	background: var(--dining-deep-navy);
+	color: var(--dining-ivory);
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition: all 0.4s ease;
+	cursor: pointer;
+}
+
+.fine-dining__button:hover {
+	background: transparent;
+	color: var(--dining-deep-navy);
+	border-color: var(--dining-gold);
+}
+
+.fine-dining__text-link {
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: var(--dining-text);
+}
+
+.fine-dining__hero-visual {
+	position: relative;
+	min-height: 40rem;
+	border: 1px solid var(--dining-line);
+	background: linear-gradient(
+		180deg,
+		rgb(250 248 243 / 0.95),
+		rgb(245 237 227 / 0.95)
+	);
+	padding: clamp(2rem, 3vw, 2.5rem);
+	box-shadow: 0 24px 64px rgb(26 26 46 / 0.08);
+}
+
+.fine-dining__hero-visual::before {
+	position: absolute;
+	inset: 2rem;
+	border: 1px solid rgb(201 169 97 / 0.2);
+	content: '';
+	pointer-events: none;
+}
+
+.fine-dining__scene {
+	position: relative;
+	display: grid;
+	min-height: 100%;
+	place-items: center;
+	overflow: hidden;
+	background: linear-gradient(135deg, #faf8f3, #f0e8d8);
+}
+
+.fine-dining__plate {
+	position: relative;
+	z-index: 2;
+	width: 14rem;
+	height: 14rem;
+	border: 2px solid var(--dining-gold);
+	border-radius: 50%;
+	background: radial-gradient(
+		circle at 35% 35%,
+		rgb(201 169 97 / 0.08),
+		transparent 50%
+	),
+	linear-gradient(180deg, #fdfbf8, #f5ede3);
+	box-shadow:
+		inset 0 2px 8px rgb(26 26 46 / 0.05),
+		0 12px 32px rgb(26 26 46 / 0.12);
+}
+
+.fine-dining__plate::before {
+	content: '';
+	position: absolute;
+	inset: 1.2rem;
+	border: 1px solid rgb(201 169 97 / 0.3);
+	border-radius: 50%;
+}
+
+.fine-dining__plate::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 3rem;
+	height: 3rem;
+	transform: translate(-50%, -50%);
+	border-radius: 50%;
+	background: radial-gradient(
+		circle at 35% 35%,
+		rgb(201 169 97 / 0.2),
+		transparent 70%
+	);
+}
+
+.fine-dining__utensils {
+	position: absolute;
+	bottom: 3.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	gap: 8rem;
+	z-index: 1;
+}
+
+.fine-dining__utensils span {
+	display: block;
+	width: 1.5px;
+	height: 4rem;
+	background: linear-gradient(180deg, var(--dining-gold), transparent);
+}
+
+.fine-dining__utensils span::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	width: 2.2rem;
+	height: 0.8rem;
+	border-top: 1.5px solid var(--dining-gold);
+	border-left: 1px solid var(--dining-gold);
+	border-right: 1px solid var(--dining-gold);
+}
+
+.fine-dining__utensils span::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	width: 2.2rem;
+	height: 0.8rem;
+	border-bottom: 1.5px solid var(--dining-gold);
+	border-left: 1px solid var(--dining-gold);
+	border-right: 1px solid var(--dining-gold);
+}
+
+.fine-dining__intro {
+	display: grid;
+	grid-template-columns: minmax(13rem, 0.48fr) minmax(0, 1fr);
+	gap: clamp(2rem, 5vw, 5.5rem);
+	padding: clamp(3.5rem, 8vw, 6.5rem) 0;
+	border-top: 1px solid var(--dining-line);
+	border-bottom: 1px solid var(--dining-line);
+}
+
+.fine-dining__intro h2,
+.fine-dining__section-heading h2,
+.fine-dining__reserve h2 {
+	margin-top: 1rem;
+	color: var(--dining-deep-navy);
+	font-size: clamp(2.1rem, 5vw, 4.2rem);
+	font-weight: 400;
+	line-height: 1.08;
+	letter-spacing: -0.01em;
+}
+
+.fine-dining__section,
+.fine-dining__gallery,
+.fine-dining__reserve {
+	padding: clamp(5rem, 9vw, 7.5rem) 0;
+}
+
+.fine-dining__section-heading {
+	max-width: 52rem;
+}
+
+.fine-dining__cards {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 2rem;
+	margin-top: 3.5rem;
+}
+
+.fine-dining__card {
+	min-height: 26rem;
+	padding: clamp(2rem, 4vw, 2.8rem);
+	border: 1px solid var(--dining-line);
+	background: rgb(250 248 243 / 0.6);
+	transition: all 0.4s ease;
+	position: relative;
+}
+
+.fine-dining__card::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--dining-gold), transparent);
+}
+
+.fine-dining__card:hover {
+	border-color: var(--dining-gold);
+	background: rgb(250 248 243 / 0.9);
+	box-shadow: 0 16px 48px rgb(26 26 46 / 0.08);
+}
+
+.fine-dining__card > p:first-child {
+	color: var(--dining-gold);
+	font-family: Georgia, 'Times New Roman', serif;
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	line-height: 1.8;
+	text-transform: uppercase;
+}
+
+.fine-dining__card h3 {
+	margin-top: 3rem;
+	font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+	font-weight: 400;
+	color: var(--dining-deep-navy);
+}
+
+.fine-dining__card span {
+	display: block;
+	width: 3.5rem;
+	height: 1px;
+	margin: 1.8rem 0;
+	background: linear-gradient(90deg, var(--dining-gold), transparent);
+}
+
+.fine-dining__card > p:last-child,
+.fine-dining__gallery-item p,
+.fine-dining__footer p {
+	color: #5a5a5a;
+	font-family: var(--ff-base);
+	font-size: 0.96rem;
+	line-height: 1.85;
+}
+
+.fine-dining__gallery {
+	border-top: 1px solid var(--dining-line);
+}
+
+.fine-dining__gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 2rem;
+	margin-top: 3.5rem;
+}
+
+.fine-dining__gallery-item {
+	border: 1px solid var(--dining-line);
+	background: var(--dining-cream);
+	transition: all 0.4s ease;
+	position: relative;
+	overflow: hidden;
+}
+
+.fine-dining__gallery-item::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--dining-gold), transparent);
+	z-index: 2;
+}
+
+.fine-dining__gallery-item:hover {
+	border-color: var(--dining-gold);
+	box-shadow: 0 12px 40px rgb(26 26 46 / 0.08);
+}
+
+.fine-dining__gallery-item > div:last-child {
+	padding: 1.8rem;
+}
+
+.fine-dining__gallery-item h3 {
+	font-size: 1.35rem;
+	font-weight: 400;
+	color: var(--dining-deep-navy);
+}
+
+.fine-dining__gallery-art {
+	aspect-ratio: 4 / 5;
+	border-bottom: 1px solid var(--dining-line);
+	background:
+		radial-gradient(circle at 50% 40%, rgb(201 169 97 / 0.1), transparent 28%),
+		linear-gradient(135deg, #fdfbf8, #f0e6d8);
+}
+
+.fine-dining__gallery-item:nth-child(2) .fine-dining__gallery-art {
+	background:
+		radial-gradient(ellipse at 65% 35%, rgb(26 26 46 / 0.08), transparent 25%),
+		linear-gradient(180deg, #faf8f3, #e8dcc8);
+}
+
+.fine-dining__gallery-item:nth-child(3) .fine-dining__gallery-art {
+	background:
+		radial-gradient(circle at 40% 45%, rgb(201 169 97 / 0.08), transparent 22%),
+		linear-gradient(225deg, #fcfaf7, #f0e5d8);
+}
+
+.fine-dining__gallery-item:nth-child(4) .fine-dining__gallery-art {
+	background:
+		radial-gradient(circle at 50% 50%, rgb(26 26 46 / 0.06), transparent 32%),
+		linear-gradient(180deg, #fdfbf8, #ede1d2);
+}
+
+.fine-dining__reserve {
+	display: grid;
+	justify-items: center;
+	border-top: 1px solid var(--dining-line);
+	border-bottom: 1px solid var(--dining-line);
+	background: linear-gradient(
+		180deg,
+		rgb(250 248 243 / 0.5),
+		rgb(245 237 227 / 0.45)
+	);
+	text-align: center;
+	padding: clamp(5rem, 9vw, 7.5rem) 2.5rem;
+	max-width: 920px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.fine-dining__reserve::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 20%;
+	right: 20%;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--dining-gold), transparent);
+}
+
+.fine-dining__reserve::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 20%;
+	right: 20%;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, var(--dining-gold), transparent);
+}
+
+.fine-dining__reserve .fine-dining__button {
+	margin-top: 2.8rem;
+}
+
+.fine-dining__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 3rem 0 2.5rem;
+	border-top: 1px solid var(--dining-line);
+}
+
+@media (max-width: 900px) {
+	.fine-dining__hero,
+	.fine-dining__intro {
+		grid-template-columns: 1fr;
+	}
+
+	.fine-dining__hero-visual {
+		min-height: 34rem;
+	}
+
+	.fine-dining__cards,
+	.fine-dining__gallery-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 640px) {
+	.fine-dining__header,
+	.fine-dining__footer {
+		align-items: flex-start;
+		flex-direction: column;
+		padding: 1.5rem 0;
+	}
+
+	.fine-dining__nav {
+		justify-content: flex-start;
+		gap: 0.8rem 1.2rem;
+	}
+
+	.fine-dining__hero {
+		padding-top: 3rem;
+	}
+
+	.fine-dining__hero-actions {
+		align-items: stretch;
+		flex-direction: column;
+		gap: 0.8rem;
+	}
+
+	.fine-dining__button,
+	.fine-dining__text-link {
+		width: 100%;
+		text-align: center;
+	}
+
+	.fine-dining__hero-visual {
+		min-height: 28rem;
+	}
+
+	.fine-dining__cards,
+	.fine-dining__gallery-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+	}
+
+	.fine-dining__card {
+		min-height: auto;
+	}
+
+	.fine-dining__reserve {
+		padding: 3.5rem 1.5rem;
+	}
+}

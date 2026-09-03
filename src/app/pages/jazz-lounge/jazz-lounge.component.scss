@@ -1,0 +1,233 @@
+:host {
+	display: block;
+}
+
+.jazz-lounge {
+	--bg: #0e1530;
+	--bg-2: #1a2240;
+	--text-strong: #f2ead3;
+	--text: #c4b898;
+	--text-muted: #7e7560;
+	--accent: #b89968;
+	--accent-2: #5a2a4a;
+	--border: #28304d;
+
+	min-height: 100%;
+	background: linear-gradient(180deg, var(--bg), #070b1c);
+	color: var(--text);
+	font-family: Georgia, 'Times New Roman', serif;
+}
+
+.jazz-lounge__header,
+.jazz-lounge__hero,
+.jazz-lounge__section,
+.jazz-lounge__reserve,
+.jazz-lounge__footer {
+	width: min(100% - 2rem, 1180px);
+	margin-inline: auto;
+}
+
+.jazz-lounge__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 2rem 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.jazz-lounge__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	color: var(--accent);
+	font-style: italic;
+	font-size: 1.05rem;
+	font-weight: 600;
+	text-decoration: none;
+	letter-spacing: 0.04em;
+}
+
+.jazz-lounge__brand-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.4rem;
+	height: 2.4rem;
+	border: 1px solid var(--accent);
+	background: rgba(184, 153, 104, 0.08);
+	color: var(--accent);
+	font-style: normal;
+	font-size: 1rem;
+}
+
+.jazz-lounge__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 1rem 2rem;
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+.jazz-lounge__nav a,
+.jazz-lounge__text-link {
+	color: var(--text-muted);
+	text-decoration: none;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: var(--accent);
+	}
+}
+
+.jazz-lounge__hero,
+.jazz-lounge__section,
+.jazz-lounge__reserve {
+	padding: 5rem 0 4rem;
+}
+
+.jazz-lounge__eyebrow,
+.jazz-lounge__kicker {
+	display: inline-block;
+	margin-bottom: 1rem;
+	color: var(--accent);
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+}
+
+.jazz-lounge__hero h1,
+.jazz-lounge__section h2,
+.jazz-lounge__reserve h2 {
+	margin: 0 0 1.25rem;
+	color: var(--text-strong);
+	font-style: italic;
+	font-size: clamp(2rem, 4vw, 3.2rem);
+	font-weight: 500;
+	line-height: 1.2;
+}
+
+.jazz-lounge__lede,
+.jazz-lounge__section p,
+.jazz-lounge__reserve p {
+	max-width: 60ch;
+	margin: 0 0 0.75rem;
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 1rem;
+	line-height: 1.7;
+	color: var(--text);
+}
+
+.jazz-lounge__hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 1.5rem;
+	margin-top: 2rem;
+}
+
+.jazz-lounge__button {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.85rem 1.6rem;
+	border: 1px solid var(--accent);
+	background: var(--accent);
+	color: var(--bg);
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition:
+		background 0.2s ease,
+		color 0.2s ease;
+
+	&:hover {
+		background: transparent;
+		color: var(--accent);
+	}
+}
+
+.jazz-lounge__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.jazz-lounge__card {
+	padding: 1.75rem 1.5rem;
+	background: var(--bg-2);
+	border: 1px solid var(--border);
+
+	h3 {
+		margin: 0 0 0.5rem;
+		color: var(--accent);
+		font-style: italic;
+		font-size: 1.2rem;
+		font-weight: 600;
+	}
+
+	p {
+		margin: 0 0 1rem;
+		font-family: 'Poppins', system-ui, sans-serif;
+		font-size: 0.95rem;
+		line-height: 1.65;
+		color: var(--text);
+	}
+}
+
+.jazz-lounge__detail {
+	display: inline-block;
+	color: var(--text-muted);
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.72rem;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+.jazz-lounge__list {
+	margin: 1.5rem 0 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		padding: 1rem 0;
+		border-bottom: 1px solid var(--border);
+		font-family: 'Poppins', system-ui, sans-serif;
+		font-size: 1rem;
+		line-height: 1.6;
+		color: var(--text);
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.jazz-lounge__reserve {
+	padding-bottom: 5rem;
+}
+
+.jazz-lounge__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 2rem 0 3rem;
+	border-top: 1px solid var(--border);
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.8rem;
+	color: var(--text-muted);
+
+	p {
+		margin: 0;
+	}
+}

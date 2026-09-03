@@ -1,0 +1,231 @@
+:host {
+	display: block;
+}
+
+.smokehouse-ember {
+	--bg: #1c1a18;
+	--bg-2: #2a2521;
+	--text-strong: #f4ebda;
+	--text: #c8b89e;
+	--text-muted: #847866;
+	--accent: #d9501e;
+	--accent-2: #8b5a2b;
+	--border: #3a332d;
+
+	min-height: 100%;
+	background: linear-gradient(180deg, var(--bg), #131211);
+	color: var(--text);
+	font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.smokehouse-ember__header,
+.smokehouse-ember__hero,
+.smokehouse-ember__section,
+.smokehouse-ember__reserve,
+.smokehouse-ember__footer {
+	width: min(100% - 2rem, 1180px);
+	margin-inline: auto;
+}
+
+.smokehouse-ember__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 2rem 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.smokehouse-ember__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	color: var(--accent);
+	font-family: 'Impact', 'Arial Narrow Bold', 'Helvetica Neue', sans-serif;
+	font-size: 1.1rem;
+	font-weight: 400;
+	text-decoration: none;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.smokehouse-ember__brand-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.4rem;
+	height: 2.4rem;
+	border: 1px solid var(--accent);
+	background: rgba(217, 80, 30, 0.08);
+	color: var(--accent);
+	font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+	font-size: 1.1rem;
+}
+
+.smokehouse-ember__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 1rem 2rem;
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+.smokehouse-ember__nav a,
+.smokehouse-ember__text-link {
+	color: var(--text-muted);
+	text-decoration: none;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: var(--accent);
+	}
+}
+
+.smokehouse-ember__hero,
+.smokehouse-ember__section,
+.smokehouse-ember__reserve {
+	padding: 5rem 0 4rem;
+}
+
+.smokehouse-ember__eyebrow,
+.smokehouse-ember__kicker {
+	display: inline-block;
+	margin-bottom: 1rem;
+	color: var(--accent);
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+}
+
+.smokehouse-ember__hero h1,
+.smokehouse-ember__section h2,
+.smokehouse-ember__reserve h2 {
+	margin: 0 0 1.25rem;
+	color: var(--text-strong);
+	font-family: 'Impact', 'Arial Narrow Bold', 'Helvetica Neue', sans-serif;
+	font-size: clamp(2.2rem, 4.8vw, 3.6rem);
+	font-weight: 400;
+	line-height: 1.05;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+}
+
+.smokehouse-ember__lede,
+.smokehouse-ember__section p,
+.smokehouse-ember__reserve p {
+	max-width: 60ch;
+	margin: 0 0 0.75rem;
+	font-size: 1rem;
+	line-height: 1.7;
+	color: var(--text);
+}
+
+.smokehouse-ember__hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 1.5rem;
+	margin-top: 2rem;
+}
+
+.smokehouse-ember__button {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.85rem 1.6rem;
+	border: 1px solid var(--accent);
+	background: var(--accent);
+	color: var(--bg);
+	font-size: 0.8rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition:
+		background 0.2s ease,
+		color 0.2s ease;
+
+	&:hover {
+		background: transparent;
+		color: var(--accent);
+	}
+}
+
+.smokehouse-ember__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.smokehouse-ember__card {
+	padding: 1.75rem 1.5rem;
+	background: var(--bg-2);
+	border: 1px solid var(--border);
+
+	h3 {
+		margin: 0 0 0.5rem;
+		color: var(--accent);
+		font-family: 'Impact', 'Arial Narrow Bold', sans-serif;
+		font-size: 1.4rem;
+		font-weight: 400;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	p {
+		margin: 0 0 1rem;
+		font-size: 0.95rem;
+		line-height: 1.65;
+		color: var(--text);
+	}
+}
+
+.smokehouse-ember__detail {
+	display: inline-block;
+	color: var(--text-muted);
+	font-family: ui-monospace, 'JetBrains Mono', Menlo, monospace;
+	font-size: 0.75rem;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.smokehouse-ember__list {
+	margin: 1.5rem 0 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		padding: 1rem 0;
+		border-bottom: 1px solid var(--border);
+		font-size: 1rem;
+		line-height: 1.6;
+		color: var(--text);
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.smokehouse-ember__reserve {
+	padding-bottom: 5rem;
+}
+
+.smokehouse-ember__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 2rem 0 3rem;
+	border-top: 1px solid var(--border);
+	font-size: 0.8rem;
+	color: var(--text-muted);
+
+	p {
+		margin: 0;
+	}
+}

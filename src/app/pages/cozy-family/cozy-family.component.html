@@ -1,0 +1,105 @@
+<article class="cozy-family">
+	<header class="cozy-family__header" aria-label="Cozy family page header">
+		<a class="cozy-family__brand theme-focus" routerLink="/">
+			<span class="cozy-family__brand-mark" aria-hidden="true">H</span>
+			<span>Cozy Family</span>
+		</a>
+
+		<nav class="cozy-family__nav" aria-label="Cozy family sections">
+			<a href="#experience">Experience</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#booking">Visit</a>
+		</nav>
+	</header>
+
+	<section class="cozy-family__hero">
+		<div class="cozy-family__hero-copy">
+			<p class="cozy-family__eyebrow">Cozy family hospitality</p>
+			<h1>A friendly place where every guest can feel at home.</h1>
+			<p>
+				A warm landing page direction for family restaurants, small cafÃ©s, guest houses,
+				local hotels, and casual dining places built around comfort and easy welcome.
+			</p>
+			<div class="cozy-family__hero-actions">
+				<a class="cozy-family__button theme-focus" href="#booking">Plan a visit</a>
+				<a class="cozy-family__text-link theme-focus" href="#experience">Explore the comfort</a>
+			</div>
+		</div>
+
+		<div class="cozy-family__hero-visual" aria-label="Cozy family dining preview">
+			<div class="cozy-family__sun" aria-hidden="true"></div>
+			<div class="cozy-family__table" aria-hidden="true">
+				<span></span>
+				<span></span>
+				<span></span>
+			</div>
+		</div>
+	</section>
+
+	<section class="cozy-family__intro" aria-labelledby="cozy-family-intro">
+		<p class="cozy-family__section-kicker">Simple and warm</p>
+		<h2 id="cozy-family-intro">Family meals, soft comfort, and service that remembers people.</h2>
+		<p>
+			This concept keeps the page clear and welcoming: warm colors, rounded sections,
+			gentle details, and practical messages for guests looking for familiar food,
+			restful rooms, and a place that feels safe for every age.
+		</p>
+	</section>
+
+	<section id="experience" class="cozy-family__section" aria-labelledby="cozy-family-experience">
+		<div class="cozy-family__section-heading">
+			<p class="cozy-family__section-kicker">Family experience</p>
+			<h2 id="cozy-family-experience">Everything needed for an easy family visit.</h2>
+		</div>
+
+		<div class="cozy-family__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="cozy-family__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="cozy-family__gallery" aria-labelledby="cozy-family-gallery">
+		<div class="cozy-family__section-heading">
+			<p class="cozy-family__section-kicker">Cozy gallery preview</p>
+			<h2 id="cozy-family-gallery">Warm little moments before the first visit.</h2>
+		</div>
+
+		<div class="cozy-family__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="cozy-family__gallery-item">
+					<div class="cozy-family__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="booking" class="cozy-family__booking" aria-labelledby="cozy-family-booking">
+		<p class="cozy-family__section-kicker">Visit and booking</p>
+		<h2 id="cozy-family-booking">Book a table, a room, or a relaxed family gathering.</h2>
+		<p>
+			Use this demo for a hospitality brand that should feel approachable, clean, and
+			genuinely comfortable from the first click.
+		</p>
+		<a class="cozy-family__button theme-focus" href="/">
+			Send a booking request
+		</a>
+	</section>
+
+	<footer class="cozy-family__footer">
+		<a class="cozy-family__brand theme-focus" routerLink="/">
+			<span class="cozy-family__brand-mark" aria-hidden="true">H</span>
+			<span>Cozy Family</span>
+		</a>
+		<p>Cozy family website direction for warm everyday hospitality.</p>
+	</footer>
+</article>

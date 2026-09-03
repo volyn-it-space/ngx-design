@@ -1,0 +1,176 @@
+<article class="landing">
+	<section class="landing__designs">
+		<div class="landing__designs-intro">
+			<h2>Design Directions</h2>
+			<p>Choose a category, open a visual demo, or copy an AI implementation prompt.</p>
+			<button
+				class="landing__selector-button"
+				type="button"
+				(click)="copySelectorBrief()"
+				[attr.aria-label]="'Copy AI selector brief URL'"
+			>
+				{{ isCopied('index') ? 'Copied' : 'Copy AI Selector Brief' }}
+			</button>
+		</div>
+
+		<nav class="landing__categories" aria-label="Catalog categories">
+			@for (category of categories; track category.id) {
+				<button
+					class="landing__category"
+					type="button"
+					[class.landing__category--active]="activeCategory() === category.id"
+					(click)="selectCategory(category.id)"
+					[attr.aria-pressed]="activeCategory() === category.id"
+				>
+					{{ category.label }}
+				</button>
+			}
+		</nav>
+
+		@if (activeCategory() === 'landing-pages') {
+		<div class="landing__category-intro">
+			<p>{{ categories[0].description }}</p>
+		</div>
+
+		<div class="landing__theme-section">
+			<div class="landing__theme-heading">
+				<h3>Light Theme Designs</h3>
+				<p>Bright, calm, and editorial directions for daytime hospitality, hotels, events, and family venues.</p>
+			</div>
+
+			<div class="landing__grid">
+				@for (design of lightDesigns; track design.path) {
+					<div class="landing__card">
+						<div class="landing__card-content">
+							<h3>
+								<span class="landing__card-icon" aria-hidden="true">
+									<span class="material-symbols-outlined">{{ design.icon }}</span>
+								</span>
+								<span>{{ design.label }}</span>
+							</h3>
+							<p>{{ design.description }}</p>
+							<p class="landing__card-fit">Best for {{ design.bestFor }}.</p>
+						</div>
+
+						<div class="landing__card-actions">
+							<a class="landing__button landing__button--primary" [routerLink]="design.path">
+								View Design
+							</a>
+							<button
+								class="landing__button landing__button--cart"
+								type="button"
+								(click)="addToCart(design.slug)"
+								[attr.aria-label]="'Add ' + design.label + ' to AI prompt cart'"
+							>
+								<span class="material-symbols-outlined" aria-hidden="true">
+									{{ isInCart(design.slug) ? 'check' : 'add_shopping_cart' }}
+								</span>
+								{{ isInCart(design.slug) ? 'Added' : 'Add' }}
+							</button>
+							<button
+								class="landing__button landing__button--secondary"
+								(click)="copyToClipboard(design.slug)"
+								[attr.aria-label]="'Copy AI implementation prompt for ' + design.label"
+							>
+								{{ isCopied(design.slug) ? 'Copied' : 'Copy AI Brief' }}
+							</button>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+
+		<div class="landing__theme-section">
+			<div class="landing__theme-heading">
+				<h3>Dark Theme Designs</h3>
+				<p>Moody, high-contrast directions for nightlife, premium dining, lounges, bars, and evening venues.</p>
+			</div>
+
+			<div class="landing__grid">
+				@for (design of darkDesigns; track design.path) {
+					<div class="landing__card">
+						<div class="landing__card-content">
+							<h3>
+								<span class="landing__card-icon" aria-hidden="true">
+									<span class="material-symbols-outlined">{{ design.icon }}</span>
+								</span>
+								<span>{{ design.label }}</span>
+							</h3>
+							<p>{{ design.description }}</p>
+							<p class="landing__card-fit">Best for {{ design.bestFor }}.</p>
+						</div>
+
+						<div class="landing__card-actions">
+							<a class="landing__button landing__button--primary" [routerLink]="design.path">
+								View Design
+							</a>
+							<button
+								class="landing__button landing__button--cart"
+								type="button"
+								(click)="addToCart(design.slug)"
+								[attr.aria-label]="'Add ' + design.label + ' to AI prompt cart'"
+							>
+								<span class="material-symbols-outlined" aria-hidden="true">
+									{{ isInCart(design.slug) ? 'check' : 'add_shopping_cart' }}
+								</span>
+								{{ isInCart(design.slug) ? 'Added' : 'Add' }}
+							</button>
+							<button
+								class="landing__button landing__button--secondary"
+								(click)="copyToClipboard(design.slug)"
+								[attr.aria-label]="'Copy AI implementation prompt for ' + design.label"
+							>
+								{{ isCopied(design.slug) ? 'Copied' : 'Copy AI Brief' }}
+							</button>
+						</div>
+					</div>
+				}
+			</div>
+		</div>
+		} @else if (activeCategory() === 'waw-ui') {
+			<div class="landing__category-intro">
+				<p>{{ categories[1].description }}</p>
+			</div>
+
+			<div class="landing__grid">
+				@for (design of wawUiDesigns; track design.path) {
+					<div class="landing__card">
+						<div class="landing__card-content">
+							<h3>
+								<span class="landing__card-icon" aria-hidden="true">
+									<span class="material-symbols-outlined">{{ design.icon }}</span>
+								</span>
+								<span>{{ design.label }}</span>
+							</h3>
+							<p>{{ design.description }}</p>
+							<p class="landing__card-fit">Best for {{ design.bestFor }}.</p>
+						</div>
+
+						<div class="landing__card-actions">
+							<a class="landing__button landing__button--primary" [routerLink]="design.path">
+								View Design System
+							</a>
+							<button
+								class="landing__button landing__button--secondary"
+								(click)="copyToClipboard(design.slug)"
+								[attr.aria-label]="'Copy AI implementation prompt for ' + design.label"
+							>
+								{{ isCopied(design.slug) ? 'Copied' : 'Copy AI Brief' }}
+							</button>
+						</div>
+					</div>
+				}
+			</div>
+		} @else {
+			<div class="landing__category-intro">
+				<p>{{ categories[2].description }}</p>
+			</div>
+
+			<div class="landing__empty-state">
+				<span class="material-symbols-outlined" aria-hidden="true">palette</span>
+				<h3>Theme options are coming next.</h3>
+				<p>WAW Prime will collect its reusable application themes and design variants here.</p>
+			</div>
+		}
+	</section>
+</article>
