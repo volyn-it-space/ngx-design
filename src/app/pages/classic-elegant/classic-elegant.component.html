@@ -1,0 +1,111 @@
+<article class="classic-elegant">
+	<header class="classic-elegant__header" aria-label="Classic elegant page header">
+		<a class="classic-elegant__brand theme-focus" routerLink="/">
+			<span class="classic-elegant__brand-mark" aria-hidden="true">H</span>
+			<span>Classic Elegant</span>
+		</a>
+
+		<nav class="classic-elegant__nav" aria-label="Classic elegant sections">
+			<a href="#experience">Experience</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#booking">Reservations</a>
+		</nav>
+	</header>
+
+	<section class="classic-elegant__hero">
+		<div class="classic-elegant__hero-copy">
+			<p class="classic-elegant__eyebrow">Classic hospitality concept</p>
+			<h1>Timeless hospitality, composed with quiet elegance.</h1>
+			<p>
+				A refined landing page direction for traditional restaurants, boutique hotels,
+				and private venues where every detail should feel calm, deliberate, and enduring.
+			</p>
+			<div class="classic-elegant__hero-actions">
+				<a class="classic-elegant__button theme-focus" href="#booking">Request a reservation</a>
+				<a class="classic-elegant__text-link theme-focus" href="#experience">Explore the house</a>
+			</div>
+		</div>
+
+		<div class="classic-elegant__hero-visual" aria-label="Elegant restaurant interior preview">
+			<div class="classic-elegant__arch">
+				<div class="classic-elegant__arch-window" aria-hidden="true"></div>
+				<div class="classic-elegant__table" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="classic-elegant__intro" aria-labelledby="classic-elegant-intro">
+		<p class="classic-elegant__section-kicker">Atmosphere</p>
+		<h2 id="classic-elegant-intro">A place made for lingering.</h2>
+		<p>
+			Soft ivory rooms, dark timber notes, fine linen, and a measured rhythm of service
+			create a hospitality experience that feels premium without being loud. The design
+			language is traditional, warm, and composed for guests who value comfort with ceremony.
+		</p>
+	</section>
+
+	<section
+		id="experience"
+		class="classic-elegant__section"
+		aria-labelledby="classic-elegant-experience"
+	>
+		<div class="classic-elegant__section-heading">
+			<p class="classic-elegant__section-kicker">Signature experience</p>
+			<h2 id="classic-elegant-experience">Three ways to welcome guests beautifully.</h2>
+		</div>
+
+		<div class="classic-elegant__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="classic-elegant__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="classic-elegant__gallery" aria-labelledby="classic-elegant-gallery">
+		<div class="classic-elegant__section-heading">
+			<p class="classic-elegant__section-kicker">Gallery preview</p>
+			<h2 id="classic-elegant-gallery">Elegant moments before the first visit.</h2>
+		</div>
+
+		<div class="classic-elegant__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="classic-elegant__gallery-item">
+					<div class="classic-elegant__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="booking" class="classic-elegant__booking" aria-labelledby="classic-elegant-booking">
+		<p class="classic-elegant__section-kicker">Reservations</p>
+		<h2 id="classic-elegant-booking">Prepare the table, suite, or private room.</h2>
+		<p>
+			Invite guests into a polished journey from the first impression to the final farewell.
+			This demo is ready for a premium restaurant, boutique hotel, or event venue brand.
+		</p>
+		<a class="classic-elegant__button theme-focus" href="/">
+			Begin a booking request
+		</a>
+	</section>
+
+	<footer class="classic-elegant__footer">
+		<a class="classic-elegant__brand theme-focus" routerLink="/">
+			<span class="classic-elegant__brand-mark" aria-hidden="true">H</span>
+			<span>Classic Elegant</span>
+		</a>
+		<p>Classic elegant website direction for timeless hospitality brands.</p>
+	</footer>
+</article>

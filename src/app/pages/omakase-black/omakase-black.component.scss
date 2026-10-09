@@ -1,0 +1,232 @@
+:host {
+	display: block;
+}
+
+.omakase-black {
+	--bg: #101010;
+	--bg-2: #1a1a1a;
+	--text-strong: #f5f1e8;
+	--text: #c9c2b0;
+	--text-muted: #7a7568;
+	--accent: #8e1f1f;
+	--accent-2: #3a5a3a;
+	--border: #262626;
+
+	min-height: 100%;
+	background: var(--bg);
+	color: var(--text);
+	font-family: Georgia, 'Times New Roman', serif;
+}
+
+.omakase-black__header,
+.omakase-black__hero,
+.omakase-black__section,
+.omakase-black__reserve,
+.omakase-black__footer {
+	width: min(100% - 2rem, 1100px);
+	margin-inline: auto;
+}
+
+.omakase-black__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 2rem 0;
+	border-bottom: 1px solid var(--border);
+}
+
+.omakase-black__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	color: var(--text-strong);
+	font-size: 1.05rem;
+	font-weight: 500;
+	text-decoration: none;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}
+
+.omakase-black__brand-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.4rem;
+	height: 2.4rem;
+	border: 1px solid var(--accent);
+	background: transparent;
+	color: var(--accent);
+	font-size: 1rem;
+}
+
+.omakase-black__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 1rem 2rem;
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+}
+
+.omakase-black__nav a,
+.omakase-black__text-link {
+	color: var(--text-muted);
+	text-decoration: none;
+	transition: color 0.2s ease;
+
+	&:hover {
+		color: var(--accent);
+	}
+}
+
+.omakase-black__hero,
+.omakase-black__section,
+.omakase-black__reserve {
+	padding: 5rem 0 4rem;
+}
+
+.omakase-black__eyebrow,
+.omakase-black__kicker {
+	display: inline-block;
+	margin-bottom: 1rem;
+	color: var(--accent);
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.75rem;
+	font-weight: 500;
+	letter-spacing: 0.26em;
+	text-transform: uppercase;
+}
+
+.omakase-black__hero h1,
+.omakase-black__section h2,
+.omakase-black__reserve h2 {
+	margin: 0 0 1.25rem;
+	color: var(--text-strong);
+	font-size: clamp(1.9rem, 3.8vw, 3rem);
+	font-weight: 400;
+	line-height: 1.25;
+	letter-spacing: 0.01em;
+}
+
+.omakase-black__lede,
+.omakase-black__section p,
+.omakase-black__reserve p {
+	max-width: 60ch;
+	margin: 0 0 0.75rem;
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 1rem;
+	line-height: 1.75;
+	color: var(--text);
+}
+
+.omakase-black__hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 1.5rem;
+	margin-top: 2rem;
+}
+
+.omakase-black__button {
+	display: inline-flex;
+	align-items: center;
+	padding: 0.85rem 1.6rem;
+	border: 1px solid var(--accent);
+	background: transparent;
+	color: var(--accent);
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition:
+		background 0.2s ease,
+		color 0.2s ease;
+
+	&:hover {
+		background: var(--accent);
+		color: var(--text-strong);
+	}
+}
+
+.omakase-black__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+	gap: 1.5rem;
+	margin-top: 2rem;
+}
+
+.omakase-black__card {
+	padding: 1.75rem 1.5rem;
+	background: var(--bg-2);
+	border: 1px solid var(--border);
+
+	h3 {
+		margin: 0 0 0.5rem;
+		color: var(--accent);
+		font-size: 1.2rem;
+		font-weight: 500;
+		letter-spacing: 0.02em;
+	}
+
+	p {
+		margin: 0 0 1rem;
+		font-family: 'Poppins', system-ui, sans-serif;
+		font-size: 0.95rem;
+		line-height: 1.7;
+		color: var(--text);
+	}
+}
+
+.omakase-black__detail {
+	display: inline-block;
+	color: var(--text-muted);
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.72rem;
+	letter-spacing: 0.22em;
+	text-transform: uppercase;
+}
+
+.omakase-black__list {
+	margin: 1.5rem 0 0;
+	padding: 0;
+	list-style: none;
+
+	li {
+		padding: 1rem 0;
+		border-bottom: 1px solid var(--border);
+		font-family: 'Poppins', system-ui, sans-serif;
+		font-size: 1rem;
+		line-height: 1.7;
+		color: var(--text);
+
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+}
+
+.omakase-black__reserve {
+	padding-bottom: 5rem;
+}
+
+.omakase-black__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 2rem 0 3rem;
+	border-top: 1px solid var(--border);
+	font-family: 'Poppins', system-ui, sans-serif;
+	font-size: 0.8rem;
+	color: var(--text-muted);
+
+	p {
+		margin: 0;
+	}
+}

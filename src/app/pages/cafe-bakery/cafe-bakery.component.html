@@ -1,0 +1,114 @@
+<article class="cafe-bakery">
+	<header class="cafe-bakery__header" aria-label="Cafe bakery page header">
+		<a class="cafe-bakery__brand theme-focus" routerLink="/">
+			<span class="cafe-bakery__brand-mark" aria-hidden="true">H</span>
+			<span>Cafe Bakery</span>
+		</a>
+
+		<nav class="cafe-bakery__nav" aria-label="Cafe bakery sections">
+			<a href="#menu">Menu</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#visit">Visit Us</a>
+		</nav>
+	</header>
+
+	<section class="cafe-bakery__hero">
+		<div class="cafe-bakery__hero-copy">
+			<p class="cafe-bakery__eyebrow">Warm & Welcoming</p>
+			<h1>Fresh coffee and warm pastries, made with care every morning.</h1>
+			<p>
+				A friendly landing page concept for cafÃ©s, bakeries, and pastry shops where the
+				aroma of fresh bread, specialty coffee, and genuine hospitality create the perfect
+				gathering space for your day.
+			</p>
+			<div class="cafe-bakery__hero-actions">
+				<a class="cafe-bakery__button theme-focus" href="#visit">Order Online</a>
+				<a class="cafe-bakery__text-link theme-focus" href="#menu">See Our Menu</a>
+			</div>
+		</div>
+
+		<div class="cafe-bakery__hero-visual" aria-label="Cozy cafe bakery preview">
+			<div class="cafe-bakery__scene">
+				<div class="cafe-bakery__coffee-cup" aria-hidden="true"></div>
+				<div class="cafe-bakery__pastry" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="cafe-bakery__intro" aria-labelledby="cafe-bakery-intro">
+		<p class="cafe-bakery__section-kicker">Our Story</p>
+		<h2 id="cafe-bakery-intro">Where every morning begins with something special.</h2>
+		<p>
+			We believe in the simple joy of fresh pastries, a perfectly pulled espresso, and
+			good conversation. Our cafÃ© is a warm, welcoming space where locals gather, friends
+			meet, and every visitor feels at home. From sunrise to sunset, we craft quality
+			moments, one cup and one pastry at a time.
+		</p>
+	</section>
+
+	<section
+		id="menu"
+		class="cafe-bakery__section"
+		aria-labelledby="cafe-bakery-menu"
+	>
+		<div class="cafe-bakery__section-heading">
+			<p class="cafe-bakery__section-kicker">What We Offer</p>
+			<h2 id="cafe-bakery-menu">Three reasons to visit us daily.</h2>
+		</div>
+
+		<div class="cafe-bakery__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="cafe-bakery__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="cafe-bakery__gallery" aria-labelledby="cafe-bakery-gallery">
+		<div class="cafe-bakery__section-heading">
+			<p class="cafe-bakery__section-kicker">Gallery</p>
+			<h2 id="cafe-bakery-gallery">Come taste the warmth.</h2>
+		</div>
+
+		<div class="cafe-bakery__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="cafe-bakery__gallery-item">
+					<div class="cafe-bakery__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="visit" class="cafe-bakery__visit" aria-labelledby="cafe-bakery-visit">
+		<p class="cafe-bakery__section-kicker">Join Us</p>
+		<h2 id="cafe-bakery-visit">We're waiting with fresh pastries and warm smiles.</h2>
+		<p>
+			Stop by any morning for fresh coffee and handmade pastries. Order ahead for your
+			favorite treats, or simply drop in for a moment of cozy warmth and genuine
+			hospitality.
+		</p>
+		<a class="cafe-bakery__button theme-focus" href="/">
+			Get In Touch
+		</a>
+	</section>
+
+	<footer class="cafe-bakery__footer">
+		<a class="cafe-bakery__brand theme-focus" routerLink="/">
+			<span class="cafe-bakery__brand-mark" aria-hidden="true">H</span>
+			<span>Cafe Bakery</span>
+		</a>
+		<p>Cozy and welcoming cafÃ© and bakery website direction for friendly hospitality.</p>
+	</footer>
+</article>

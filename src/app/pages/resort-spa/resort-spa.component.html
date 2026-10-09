@@ -1,0 +1,115 @@
+<article class="resort-spa">
+	<header class="resort-spa__header" aria-label="Resort spa page header">
+		<a class="resort-spa__brand theme-focus" routerLink="/">
+			<span class="resort-spa__brand-mark" aria-hidden="true">H</span>
+			<span>Resort Spa</span>
+		</a>
+
+		<nav class="resort-spa__nav" aria-label="Resort spa sections">
+			<a href="#experience">Experiences</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#retreat">Book Retreat</a>
+		</nav>
+	</header>
+
+	<section class="resort-spa__hero">
+		<div class="resort-spa__hero-copy">
+			<p class="resort-spa__eyebrow">Wellness & Nature</p>
+			<h1>Find peace in spaces where time slows down and nature heals.</h1>
+			<p>
+				A serene landing page concept for wellness resorts, spa sanctuaries, and nature
+				retreats where calm rhythms, restorative rituals, and natural beauty blend into
+				an oasis of complete renewal.
+			</p>
+			<div class="resort-spa__hero-actions">
+				<a class="resort-spa__button theme-focus" href="#retreat">Begin Your Retreat</a>
+				<a class="resort-spa__text-link theme-focus" href="#experience">Explore Our Sanctuary</a>
+			</div>
+		</div>
+
+		<div class="resort-spa__hero-visual" aria-label="Peaceful resort spa preview">
+			<div class="resort-spa__scene">
+				<div class="resort-spa__mountain" aria-hidden="true"></div>
+				<div class="resort-spa__water" aria-hidden="true"></div>
+				<div class="resort-spa__leaves" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="resort-spa__intro" aria-labelledby="resort-spa-intro">
+		<p class="resort-spa__section-kicker">Your Sanctuary</p>
+		<h2 id="resort-spa-intro">Slow down, breathe, and reconnect with yourself.</h2>
+		<p>
+			Escape into natural surroundings where every moment invites pause. Wellness rituals,
+			nature immersion, and authentic hospitality create space for deep rest and gentle
+			renewal. Whether seeking healing or simply a slower rhythm, our sanctuaries offer
+			the perfect haven for your personal journey.
+		</p>
+	</section>
+
+	<section
+		id="experience"
+		class="resort-spa__section"
+		aria-labelledby="resort-spa-experience"
+	>
+		<div class="resort-spa__section-heading">
+			<p class="resort-spa__section-kicker">Wellness Experiences</p>
+			<h2 id="resort-spa-experience">Three pathways to renewal.</h2>
+		</div>
+
+		<div class="resort-spa__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="resort-spa__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="resort-spa__gallery" aria-labelledby="resort-spa-gallery">
+		<div class="resort-spa__section-heading">
+			<p class="resort-spa__section-kicker">Gallery Preview</p>
+			<h2 id="resort-spa-gallery">Where nature and wellness meet.</h2>
+		</div>
+
+		<div class="resort-spa__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="resort-spa__gallery-item">
+					<div class="resort-spa__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="retreat" class="resort-spa__retreat" aria-labelledby="resort-spa-retreat">
+		<p class="resort-spa__section-kicker">Wellness Booking</p>
+		<h2 id="resort-spa-retreat">Begin your journey of peaceful renewal.</h2>
+		<p>
+			From single-day spa visits to immersive week-long wellness retreats, our sanctuary
+			is designed for your complete restoration. Let our wellness experts craft a personal
+			journey that honors your needs and aspirations.
+		</p>
+		<a class="resort-spa__button theme-focus" href="/">
+			Reserve Your Retreat
+		</a>
+	</section>
+
+	<footer class="resort-spa__footer">
+		<a class="resort-spa__brand theme-focus" routerLink="/">
+			<span class="resort-spa__brand-mark" aria-hidden="true">H</span>
+			<span>Resort Spa</span>
+		</a>
+		<p>Serene wellness and spa resort website direction for peaceful hospitality experiences.</p>
+	</footer>
+</article>

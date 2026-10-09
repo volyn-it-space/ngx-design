@@ -1,0 +1,113 @@
+<article class="fine-dining">
+	<header class="fine-dining__header" aria-label="Fine dining page header">
+		<a class="fine-dining__brand theme-focus" routerLink="/">
+			<span class="fine-dining__brand-mark" aria-hidden="true">H</span>
+			<span>Fine Dining</span>
+		</a>
+
+		<nav class="fine-dining__nav" aria-label="Fine dining sections">
+			<a href="#experience">Experience</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section class="fine-dining__hero">
+		<div class="fine-dining__hero-copy">
+			<p class="fine-dining__eyebrow">Culinary Excellence</p>
+			<h1>Where refined taste meets culinary mastery.</h1>
+			<p>
+				A sophisticated landing page concept for fine dining establishments, chef-led
+				tasting venues, and private dining experiences where every elementâ€”from ingredient
+				selection to platingâ€”reflects an uncompromising commitment to excellence.
+			</p>
+			<div class="fine-dining__hero-actions">
+				<a class="fine-dining__button theme-focus" href="#reserve">Make a Reservation</a>
+				<a class="fine-dining__text-link theme-focus" href="#experience">Discover the Menu</a>
+			</div>
+		</div>
+
+		<div class="fine-dining__hero-visual" aria-label="Fine dining culinary preview">
+			<div class="fine-dining__scene">
+				<div class="fine-dining__plate" aria-hidden="true"></div>
+				<div class="fine-dining__utensils" aria-hidden="true">
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="fine-dining__intro" aria-labelledby="fine-dining-intro">
+		<p class="fine-dining__section-kicker">Our Philosophy</p>
+		<h2 id="fine-dining-intro">Exceptional cuisine, thoughtful service, refined moments.</h2>
+		<p>
+			Our chef brings decades of experience and an unrelenting passion for precision. Every
+			dish begins with the finest seasonal ingredients, sourced from trusted suppliers who
+			share our commitment to quality. Each course is crafted with artistic intention, paired
+			with carefully selected wines, and served with the attentive care of our experienced team.
+		</p>
+	</section>
+
+	<section
+		id="experience"
+		class="fine-dining__section"
+		aria-labelledby="fine-dining-experience"
+	>
+		<div class="fine-dining__section-heading">
+			<p class="fine-dining__section-kicker">Dining Experiences</p>
+			<h2 id="fine-dining-experience">Three ways to dine with intention.</h2>
+		</div>
+
+		<div class="fine-dining__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="fine-dining__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="fine-dining__gallery" aria-labelledby="fine-dining-gallery">
+		<div class="fine-dining__section-heading">
+			<p class="fine-dining__section-kicker">Gallery</p>
+			<h2 id="fine-dining-gallery">Culinary artistry at every course.</h2>
+		</div>
+
+		<div class="fine-dining__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="fine-dining__gallery-item">
+					<div class="fine-dining__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="reserve" class="fine-dining__reserve" aria-labelledby="fine-dining-reserve">
+		<p class="fine-dining__section-kicker">Reservations</p>
+		<h2 id="fine-dining-reserve">Join us for an unforgettable evening.</h2>
+		<p>
+			Seating is limited and reserved for guests seeking an exceptional culinary experience.
+			Our team looks forward to curating a memorable evening tailored to your preferences.
+			Please contact us to arrange your visit.
+		</p>
+		<a class="fine-dining__button theme-focus" href="/">
+			Request a Reservation
+		</a>
+	</section>
+
+	<footer class="fine-dining__footer">
+		<a class="fine-dining__brand theme-focus" routerLink="/">
+			<span class="fine-dining__brand-mark" aria-hidden="true">H</span>
+			<span>Fine Dining</span>
+		</a>
+		<p>Refined and exclusive fine dining website direction for culinary excellence.</p>
+	</footer>
+</article>

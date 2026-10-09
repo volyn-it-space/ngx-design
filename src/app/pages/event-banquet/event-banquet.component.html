@@ -1,0 +1,114 @@
+<article class="event-banquet">
+	<header class="event-banquet__header" aria-label="Event banquet page header">
+		<a class="event-banquet__brand theme-focus" routerLink="/">
+			<span class="event-banquet__brand-mark" aria-hidden="true">H</span>
+			<span>Event Banquet</span>
+		</a>
+
+		<nav class="event-banquet__nav" aria-label="Event banquet sections">
+			<a href="#experience">Experiences</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#booking">Book Event</a>
+		</nav>
+	</header>
+
+	<section class="event-banquet__hero">
+		<div class="event-banquet__hero-copy">
+			<p class="event-banquet__eyebrow">Celebration & Events</p>
+			<h1>Create unforgettable moments in spaces designed for celebration.</h1>
+			<p>
+				An elegant landing page concept for wedding venues, banquet halls, and event spaces
+				where sophisticated atmosphere meets warm hospitality and every celebration becomes
+				a cherished memory.
+			</p>
+			<div class="event-banquet__hero-actions">
+				<a class="event-banquet__button theme-focus" href="#booking">Book Your Event</a>
+				<a class="event-banquet__text-link theme-focus" href="#experience">View Our Spaces</a>
+			</div>
+		</div>
+
+		<div class="event-banquet__hero-visual" aria-label="Elegant event venue preview">
+			<div class="event-banquet__scene">
+				<div class="event-banquet__chandelier" aria-hidden="true"></div>
+				<div class="event-banquet__chairs" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="event-banquet__intro" aria-labelledby="event-banquet-intro">
+		<p class="event-banquet__section-kicker">Your Celebration</p>
+		<h2 id="event-banquet-intro">Elegance meets unforgettable celebration.</h2>
+		<p>
+			Sophisticated venues with champagne-soft ambiance, refined service, and flexible spaces
+			for your vision. Whether an intimate wedding, grand gala, or corporate milestone, our
+			event spaces inspire joy and create the perfect backdrop for your most treasured moments.
+		</p>
+	</section>
+
+	<section
+		id="experience"
+		class="event-banquet__section"
+		aria-labelledby="event-banquet-experience"
+	>
+		<div class="event-banquet__section-heading">
+			<p class="event-banquet__section-kicker">Event Experiences</p>
+			<h2 id="event-banquet-experience">Three ways to celebrate beautifully.</h2>
+		</div>
+
+		<div class="event-banquet__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="event-banquet__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="event-banquet__gallery" aria-labelledby="event-banquet-gallery">
+		<div class="event-banquet__section-heading">
+			<p class="event-banquet__section-kicker">Gallery Preview</p>
+			<h2 id="event-banquet-gallery">Elegant moments that inspire celebration.</h2>
+		</div>
+
+		<div class="event-banquet__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="event-banquet__gallery-item">
+					<div class="event-banquet__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="booking" class="event-banquet__booking" aria-labelledby="event-banquet-booking">
+		<p class="event-banquet__section-kicker">Event Booking</p>
+		<h2 id="event-banquet-booking">Let's plan your perfect event together.</h2>
+		<p>
+			From wedding ceremonies to corporate celebrations, our team is dedicated to bringing
+			your vision to life with refined elegance and impeccable service. Schedule a consultation
+			with our event specialists today.
+		</p>
+		<a class="event-banquet__button theme-focus" href="/">
+			Request Event Information
+		</a>
+	</section>
+
+	<footer class="event-banquet__footer">
+		<a class="event-banquet__brand theme-focus" routerLink="/">
+			<span class="event-banquet__brand-mark" aria-hidden="true">H</span>
+			<span>Event Banquet</span>
+		</a>
+		<p>Elegant event venue website direction for celebrations and memorable gatherings.</p>
+	</footer>
+</article>

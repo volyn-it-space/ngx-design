@@ -1,0 +1,106 @@
+<article class="traditional-local">
+	<header class="traditional-local__header" aria-label="Traditional local page header">
+		<a class="traditional-local__brand theme-focus" routerLink="/">
+			<span class="traditional-local__brand-mark" aria-hidden="true">H</span>
+			<span>Traditional Local</span>
+		</a>
+
+		<nav class="traditional-local__nav" aria-label="Traditional local sections">
+			<a href="#experience">Experience</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#booking">Visit</a>
+		</nav>
+	</header>
+
+	<section class="traditional-local__hero">
+		<div class="traditional-local__hero-copy">
+			<p class="traditional-local__eyebrow">Traditional local hospitality</p>
+			<h1>Local taste, old recipes, and a welcome that feels close to home.</h1>
+			<p>
+				A warm landing page direction for national cuisine restaurants, family inns,
+				ethnic cafÃ©s, and countryside hospitality places rooted in regional character.
+			</p>
+			<div class="traditional-local__hero-actions">
+				<a class="traditional-local__button theme-focus" href="#booking">Plan a visit</a>
+				<a class="traditional-local__text-link theme-focus" href="#experience">See the traditions</a>
+			</div>
+		</div>
+
+		<div class="traditional-local__hero-visual" aria-label="Traditional dining room preview">
+			<div class="traditional-local__pattern-band" aria-hidden="true"></div>
+			<div class="traditional-local__plate" aria-hidden="true"></div>
+			<div class="traditional-local__woven-runner" aria-hidden="true"></div>
+		</div>
+	</section>
+
+	<section class="traditional-local__intro" aria-labelledby="traditional-local-intro">
+		<p class="traditional-local__section-kicker">Culture and care</p>
+		<h2 id="traditional-local-intro">Hospitality carried through recipes, rooms, and family memory.</h2>
+		<p>
+			This concept brings together cultural pattern, warm service, and a sense of place:
+			recipes passed from one generation to the next, rooms dressed with regional craft,
+			and generous tables made for unhurried conversation.
+		</p>
+	</section>
+
+	<section
+		id="experience"
+		class="traditional-local__section"
+		aria-labelledby="traditional-local-experience"
+	>
+		<div class="traditional-local__section-heading">
+			<p class="traditional-local__section-kicker">Traditional experience</p>
+			<h2 id="traditional-local-experience">Three ways the house keeps local spirit alive.</h2>
+		</div>
+
+		<div class="traditional-local__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="traditional-local__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="traditional-local__gallery" aria-labelledby="traditional-local-gallery">
+		<div class="traditional-local__section-heading">
+			<p class="traditional-local__section-kicker">Gallery preview</p>
+			<h2 id="traditional-local-gallery">A glimpse of regional flavor before guests arrive.</h2>
+		</div>
+
+		<div class="traditional-local__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="traditional-local__gallery-item">
+					<div class="traditional-local__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="booking" class="traditional-local__booking" aria-labelledby="traditional-local-booking">
+		<p class="traditional-local__section-kicker">Visit and booking</p>
+		<h2 id="traditional-local-booking">Reserve a table, a room, or a family celebration.</h2>
+		<p>
+			Use this demo for a hospitality brand that wants to feel rooted, generous, and
+			memorable from the first page view to the first welcome at the door.
+		</p>
+		<a class="traditional-local__button theme-focus" href="/">
+			Send a booking request
+		</a>
+	</section>
+
+	<footer class="traditional-local__footer">
+		<a class="traditional-local__brand theme-focus" routerLink="/">
+			<span class="traditional-local__brand-mark" aria-hidden="true">H</span>
+			<span>Traditional Local</span>
+		</a>
+		<p>Traditional local website direction for regional hospitality brands.</p>
+	</footer>
+</article>

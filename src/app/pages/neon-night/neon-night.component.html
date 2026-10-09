@@ -1,0 +1,65 @@
+<article class="neon-night">
+	<header class="neon-night__header" aria-label="Neon Night page header">
+		<a class="neon-night__brand theme-focus" routerLink="/">
+			<span class="neon-night__brand-mark" aria-hidden="true">N</span>
+			<span>Neon Night</span>
+		</a>
+
+		<nav class="neon-night__nav" aria-label="Neon Night sections">
+			<a href="#signature">menu</a>
+			<a href="#tonight">tonight</a>
+			<a href="#visit">visit</a>
+		</nav>
+	</header>
+
+	<section class="neon-night__hero">
+		<p class="neon-night__eyebrow">OPEN UNTIL 3AM</p>
+		<h1>ramen + highballs + neon.</h1>
+		<p class="neon-night__lede">
+			A late-night izakaya demo for ramen bars, modern Asian fusion, and club-adjacent
+			kitchens — jet black, hot magenta, electric cyan, no apology.
+		</p>
+		<div class="neon-night__hero-actions">
+			<a class="neon-night__button theme-focus" href="#visit">Walk In Tonight</a>
+			<a class="neon-night__text-link theme-focus" href="#signature">Tonight's Menu</a>
+		</div>
+	</section>
+
+	<section id="signature" class="neon-night__section">
+		<p class="neon-night__kicker">menu</p>
+		<h2>tonight's hot list.</h2>
+		<div class="neon-night__grid">
+			@for (item of signatures; track item.title) {
+				<article class="neon-night__card">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<span class="neon-night__detail">{{ item.detail }}</span>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="tonight" class="neon-night__section">
+		<p class="neon-night__kicker">tonight</p>
+		<h2>here's how it works.</h2>
+		<ul class="neon-night__list">
+			@for (line of experiencePoints; track line) {
+				<li>{{ line }}</li>
+			}
+		</ul>
+	</section>
+
+	<section id="visit" class="neon-night__reserve">
+		<p class="neon-night__kicker">visit</p>
+		<h2>find us when the city quiets.</h2>
+		<p>08 ramen alley · downtown</p>
+		<p>tue – sun, 7pm – 3am</p>
+		<p>+1 (555) 010 0303</p>
+		<a class="neon-night__button theme-focus" href="#">Find Us</a>
+	</section>
+
+	<footer class="neon-night__footer">
+		<p>© demo · scaffolded preview</p>
+		<a class="neon-night__text-link theme-focus" routerLink="/">back to catalog</a>
+	</footer>
+</article>

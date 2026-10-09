@@ -1,0 +1,543 @@
+:host {
+	display: block;
+}
+
+.rustic-farmhouse {
+	--farm-brown: #6b4423;
+	--farm-clay: #b8733c;
+	--farm-olive: #7a8a5a;
+	--farm-warm-beige: #e8dcc8;
+	--farm-cream: #f5ede3;
+	--farm-ivory: #faf8f5;
+	--farm-tan: #d4c4b4;
+	--farm-line: #c9baa5;
+	--farm-text: #5a4a3a;
+
+	min-height: 100%;
+	overflow: hidden;
+	background: linear-gradient(180deg, var(--farm-ivory), var(--farm-cream) 100%);
+	color: var(--farm-text);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	letter-spacing: 0;
+}
+
+.rustic-farmhouse__header,
+.rustic-farmhouse__hero,
+.rustic-farmhouse__intro,
+.rustic-farmhouse__section,
+.rustic-farmhouse__gallery,
+.rustic-farmhouse__visit,
+.rustic-farmhouse__footer {
+	width: min(100% - 2rem, 1280px);
+	margin-inline: auto;
+}
+
+.rustic-farmhouse__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 2rem 0;
+	border-bottom: 2px solid var(--farm-line);
+}
+
+.rustic-farmhouse__brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.75rem;
+	color: var(--farm-brown);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 1rem;
+	font-weight: 700;
+	text-decoration: none;
+	letter-spacing: 0.02em;
+}
+
+.rustic-farmhouse__brand-mark {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.6rem;
+	height: 2.6rem;
+	border: 2px solid var(--farm-clay);
+	background: linear-gradient(135deg, var(--farm-warm-beige), var(--farm-tan));
+	color: var(--farm-brown);
+	font-size: 1.25rem;
+	font-weight: 700;
+	border-radius: 0.4rem;
+}
+
+.rustic-farmhouse__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end;
+	gap: 1.2rem 2rem;
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.8rem;
+	font-weight: 600;
+	letter-spacing: 0.14em;
+	text-transform: uppercase;
+}
+
+.rustic-farmhouse__nav a,
+.rustic-farmhouse__text-link {
+	color: #8b7a6a;
+	text-decoration: none;
+	transition: all 0.3s ease;
+}
+
+.rustic-farmhouse__nav a:hover,
+.rustic-farmhouse__text-link:hover {
+	color: var(--farm-brown);
+}
+
+.rustic-farmhouse__hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.05fr) minmax(20rem, 0.95fr);
+	align-items: center;
+	gap: clamp(3rem, 7vw, 7rem);
+	padding: clamp(5rem, 10vw, 8.5rem) 0 clamp(4.5rem, 9vw, 7.5rem);
+}
+
+.rustic-farmhouse__hero-copy {
+	max-width: 48rem;
+}
+
+.rustic-farmhouse__eyebrow,
+.rustic-farmhouse__section-kicker {
+	margin: 0;
+	color: var(--farm-clay);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+}
+
+.rustic-farmhouse h1,
+.rustic-farmhouse h2,
+.rustic-farmhouse h3,
+.rustic-farmhouse p {
+	margin: 0;
+}
+
+.rustic-farmhouse h1 {
+	margin-top: 1.2rem;
+	max-width: 50rem;
+	color: var(--farm-brown);
+	font-size: clamp(2.8rem, 8vw, 6.8rem);
+	font-weight: 500;
+	line-height: 1.1;
+	letter-spacing: -0.01em;
+}
+
+.rustic-farmhouse__hero-copy > p:not(.rustic-farmhouse__eyebrow),
+.rustic-farmhouse__intro > p:last-child,
+.rustic-farmhouse__visit > p {
+	max-width: 48rem;
+	margin-top: 1.5rem;
+	color: #8b7a6a;
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 1.05rem;
+	line-height: 1.8;
+}
+
+.rustic-farmhouse__hero-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1rem 1.5rem;
+	margin-top: 2.5rem;
+}
+
+.rustic-farmhouse__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3.1rem;
+	padding: 0.9rem 1.6rem;
+	border: 2px solid var(--farm-brown);
+	background: var(--farm-brown);
+	color: white;
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-decoration: none;
+	text-transform: uppercase;
+	border-radius: 0.3rem;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.rustic-farmhouse__button:hover {
+	background: var(--farm-clay);
+	border-color: var(--farm-clay);
+	box-shadow: 0 6px 20px rgb(107 68 35 / 0.15);
+}
+
+.rustic-farmhouse__text-link {
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.82rem;
+	font-weight: 700;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #8b7a6a;
+}
+
+.rustic-farmhouse__hero-visual {
+	position: relative;
+	min-height: 38rem;
+	border: 2px solid var(--farm-line);
+	background: linear-gradient(
+		180deg,
+		rgb(245 243 240 / 0.9),
+		rgb(232 220 200 / 0.9)
+	);
+	padding: clamp(1.5rem, 2.5vw, 2rem);
+	box-shadow: 0 12px 40px rgb(107 68 35 / 0.08);
+	border-radius: 0.5rem;
+	overflow: hidden;
+}
+
+.rustic-farmhouse__hero-visual::before {
+	position: absolute;
+	inset: 1.5rem;
+	border: 2px solid rgb(184 115 60 / 0.15);
+	content: '';
+	pointer-events: none;
+	border-radius: 0.4rem;
+}
+
+.rustic-farmhouse__scene {
+	position: relative;
+	display: grid;
+	min-height: 100%;
+	place-items: end center;
+	overflow: hidden;
+	background: linear-gradient(180deg, #f5f0e8, #e5d4c0);
+}
+
+.rustic-farmhouse__barn {
+	position: absolute;
+	top: 15%;
+	right: 18%;
+	width: 10rem;
+	height: 8rem;
+	background: linear-gradient(135deg, var(--farm-brown), #5a3c26);
+	border-radius: 0.5rem 0.5rem 0 0;
+	box-shadow: inset -2px -2px 4px rgb(0 0 0 / 0.15);
+}
+
+.rustic-farmhouse__barn::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 50%;
+	width: 0;
+	height: 0;
+	border-left: 5rem solid transparent;
+	border-right: 5rem solid transparent;
+	border-bottom: 2.5rem solid #4a2e1a;
+	transform: translateX(-50%);
+}
+
+.rustic-farmhouse__barn::after {
+	content: '';
+	position: absolute;
+	top: 3rem;
+	left: 50%;
+	width: 2rem;
+	height: 3rem;
+	background: #3a2015;
+	border-radius: 0.2rem;
+	transform: translateX(-50%);
+}
+
+.rustic-farmhouse__crops {
+	position: relative;
+	z-index: 2;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	gap: 1rem;
+	width: min(76%, 26rem);
+	height: 11rem;
+	margin-bottom: 3.5rem;
+}
+
+.rustic-farmhouse__crops span {
+	display: block;
+	width: 1.8rem;
+	background: linear-gradient(180deg, var(--farm-olive), #6a7a4a);
+	border-radius: 50% 50% 0 0;
+}
+
+.rustic-farmhouse__crops span:nth-child(1) {
+	height: 6rem;
+}
+
+.rustic-farmhouse__crops span:nth-child(2) {
+	height: 7.5rem;
+}
+
+.rustic-farmhouse__crops span:nth-child(3) {
+	height: 6.8rem;
+}
+
+.rustic-farmhouse__crops span:nth-child(4) {
+	height: 7.2rem;
+}
+
+.rustic-farmhouse__crops span:nth-child(5) {
+	height: 6.5rem;
+}
+
+.rustic-farmhouse__intro {
+	display: grid;
+	grid-template-columns: minmax(13rem, 0.45fr) minmax(0, 1fr);
+	gap: clamp(1.5rem, 5vw, 5rem);
+	padding: clamp(3.5rem, 8vw, 6rem) 0;
+	border-top: 2px solid var(--farm-line);
+	border-bottom: 2px solid var(--farm-line);
+}
+
+.rustic-farmhouse__intro h2,
+.rustic-farmhouse__section-heading h2,
+.rustic-farmhouse__visit h2 {
+	margin-top: 0.8rem;
+	color: var(--farm-brown);
+	font-size: clamp(2.1rem, 4.5vw, 4rem);
+	font-weight: 500;
+	line-height: 1.08;
+	letter-spacing: -0.01em;
+}
+
+.rustic-farmhouse__section,
+.rustic-farmhouse__gallery,
+.rustic-farmhouse__visit {
+	padding: clamp(4.5rem, 8vw, 7rem) 0;
+}
+
+.rustic-farmhouse__section-heading {
+	max-width: 50rem;
+}
+
+.rustic-farmhouse__cards {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin-top: 3rem;
+}
+
+.rustic-farmhouse__card {
+	min-height: 24rem;
+	padding: clamp(1.8rem, 3.5vw, 2.4rem);
+	border: 2px solid var(--farm-line);
+	background: linear-gradient(
+		135deg,
+		rgb(245 243 240 / 0.75),
+		rgb(232 220 200 / 0.55)
+	);
+	border-radius: 0.5rem;
+	backdrop-filter: blur(8px);
+	transition: all 0.3s ease;
+}
+
+.rustic-farmhouse__card:hover {
+	border-color: var(--farm-clay);
+	background: linear-gradient(
+		135deg,
+		rgb(245 243 240 / 0.95),
+		rgb(232 220 200 / 0.7)
+	);
+	box-shadow: 0 10px 32px rgb(107 68 35 / 0.1);
+	transform: translateY(-2px);
+}
+
+.rustic-farmhouse__card > p:first-child {
+	color: var(--farm-clay);
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.14em;
+	line-height: 1.8;
+	text-transform: uppercase;
+}
+
+.rustic-farmhouse__card h3 {
+	margin-top: 2.4rem;
+	font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+	font-weight: 500;
+	color: var(--farm-brown);
+}
+
+.rustic-farmhouse__card span {
+	display: block;
+	width: 3.2rem;
+	height: 2px;
+	margin: 1.4rem 0;
+	background: linear-gradient(90deg, var(--farm-clay), transparent);
+	border-radius: 1px;
+}
+
+.rustic-farmhouse__card > p:last-child,
+.rustic-farmhouse__gallery-item p,
+.rustic-farmhouse__footer p {
+	color: #8b7a6a;
+	font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 0.97rem;
+	line-height: 1.8;
+}
+
+.rustic-farmhouse__gallery {
+	border-top: 2px solid var(--farm-line);
+}
+
+.rustic-farmhouse__gallery-grid {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1.5rem;
+	margin-top: 3rem;
+}
+
+.rustic-farmhouse__gallery-item {
+	border: 2px solid var(--farm-line);
+	background: var(--farm-warm-beige);
+	border-radius: 0.5rem;
+	overflow: hidden;
+	transition: all 0.3s ease;
+}
+
+.rustic-farmhouse__gallery-item:hover {
+	border-color: var(--farm-clay);
+	box-shadow: 0 8px 28px rgb(107 68 35 / 0.1);
+	transform: translateY(-2px);
+}
+
+.rustic-farmhouse__gallery-item > div:last-child {
+	padding: 1.4rem;
+}
+
+.rustic-farmhouse__gallery-item h3 {
+	font-size: 1.35rem;
+	font-weight: 500;
+	color: var(--farm-brown);
+}
+
+.rustic-farmhouse__gallery-art {
+	aspect-ratio: 4 / 5;
+	border-bottom: 2px solid var(--farm-line);
+	background:
+		radial-gradient(circle at 50% 40%, rgb(184 115 60 / 0.1), transparent 26%),
+		linear-gradient(180deg, #faf7f3, #e8d8c8);
+}
+
+.rustic-farmhouse__gallery-item:nth-child(2) .rustic-farmhouse__gallery-art {
+	background:
+		radial-gradient(ellipse at 65% 35%, rgb(122 138 90 / 0.08), transparent 24%),
+		linear-gradient(135deg, #fbf8f4, #e5d4c4);
+}
+
+.rustic-farmhouse__gallery-item:nth-child(3) .rustic-farmhouse__gallery-art {
+	background:
+		radial-gradient(circle at 40% 45%, rgb(184 115 60 / 0.08), transparent 20%),
+		linear-gradient(180deg, #faf8f5, #f0e0cc);
+}
+
+.rustic-farmhouse__gallery-item:nth-child(4) .rustic-farmhouse__gallery-art {
+	background:
+		radial-gradient(circle at 50% 50%, rgb(107 68 35 / 0.06), transparent 30%),
+		linear-gradient(225deg, #f9f6f2, #e8d8c4);
+}
+
+.rustic-farmhouse__visit {
+	display: grid;
+	justify-items: center;
+	border-top: 2px solid var(--farm-line);
+	border-bottom: 2px solid var(--farm-line);
+	background: linear-gradient(
+		180deg,
+		rgb(245 243 240 / 0.5),
+		rgb(232 220 200 / 0.4)
+	);
+	text-align: center;
+	border-radius: 0.5rem;
+	padding: clamp(4.5rem, 8vw, 7rem) 2rem;
+	margin: 0 auto;
+	max-width: 900px;
+}
+
+.rustic-farmhouse__visit .rustic-farmhouse__button {
+	margin-top: 2.5rem;
+}
+
+.rustic-farmhouse__footer {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 2.5rem 0;
+	border-top: 2px solid var(--farm-line);
+}
+
+@media (max-width: 900px) {
+	.rustic-farmhouse__hero,
+	.rustic-farmhouse__intro {
+		grid-template-columns: 1fr;
+	}
+
+	.rustic-farmhouse__hero-visual {
+		min-height: 32rem;
+	}
+
+	.rustic-farmhouse__cards,
+	.rustic-farmhouse__gallery-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 640px) {
+	.rustic-farmhouse__header,
+	.rustic-farmhouse__footer {
+		align-items: flex-start;
+		flex-direction: column;
+	}
+
+	.rustic-farmhouse__nav {
+		justify-content: flex-start;
+		gap: 0.8rem 1.2rem;
+	}
+
+	.rustic-farmhouse__hero {
+		padding-top: 3rem;
+	}
+
+	.rustic-farmhouse__hero-actions {
+		align-items: stretch;
+		flex-direction: column;
+	}
+
+	.rustic-farmhouse__button,
+	.rustic-farmhouse__text-link {
+		width: 100%;
+		text-align: center;
+	}
+
+	.rustic-farmhouse__hero-visual {
+		min-height: 26rem;
+	}
+
+	.rustic-farmhouse__cards,
+	.rustic-farmhouse__gallery-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.rustic-farmhouse__card {
+		min-height: auto;
+	}
+
+	.rustic-farmhouse__visit {
+		border-radius: 0.4rem;
+	}
+}

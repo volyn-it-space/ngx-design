@@ -1,0 +1,146 @@
+:host {
+	display: block;
+}
+
+.ngx-ui-design {
+	--c-primary: #2563eb;
+	--c-primary-hover: #1d4ed8;
+	--c-secondary: #0f766e;
+	--c-secondary-hover: #115e59;
+	--c-bg-primary: #f8fafc;
+	--c-bg-secondary: #ffffff;
+	--c-bg-tertiary: #f1f5f9;
+	--c-text: #475569;
+	--c-text-secondary: #0f172a;
+	--c-border: #dbe4ee;
+	--ff-base: Inter, ui-sans-serif, system-ui, sans-serif;
+	--radius-btn: 0.625rem;
+	--sp-2: 0.5rem;
+	--sp-3: 0.75rem;
+	--sp-6: 1.25rem;
+	--motion: 160ms;
+	--motion-fast: 120ms;
+	--easing: ease;
+	--focus-ring: 0 0 0 3px rgb(37 99 235 / 25%);
+
+	min-height: 100%;
+	background: var(--c-bg-primary);
+	color: var(--c-text-secondary);
+	font-family: var(--ff-base);
+}
+
+.ngx-ui-design__header,
+.ngx-ui-design main {
+	width: min(100% - 2rem, 70rem);
+	margin-inline: auto;
+}
+
+.ngx-ui-design__header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1.25rem 0;
+	border-bottom: 1px solid var(--c-border);
+	color: var(--c-text);
+	font-size: 0.875rem;
+}
+
+.ngx-ui-design__brand {
+	color: var(--c-text-secondary);
+	font-weight: 800;
+	letter-spacing: -0.04em;
+	text-decoration: none;
+}
+
+.ngx-ui-design__hero {
+	max-width: 44rem;
+	padding: clamp(4rem, 10vw, 7rem) 0;
+}
+
+.ngx-ui-design__eyebrow,
+.ngx-ui-design__card-label {
+	margin: 0;
+	color: var(--c-primary);
+	font-size: 0.75rem;
+	font-weight: 700;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+}
+
+.ngx-ui-design h1,
+.ngx-ui-design h2,
+.ngx-ui-design p {
+	margin-top: 0;
+}
+
+.ngx-ui-design h1 {
+	margin: 0.75rem 0 1.25rem;
+	font-size: clamp(2.5rem, 7vw, 5rem);
+	line-height: 1;
+	letter-spacing: -0.06em;
+}
+
+.ngx-ui-design__hero > p:not(.ngx-ui-design__eyebrow),
+.ngx-ui-design__card > p:last-child {
+	max-width: 38rem;
+	color: var(--c-text);
+	font-size: 1.0625rem;
+	line-height: 1.7;
+}
+
+.ngx-ui-design__actions,
+.ngx-ui-design__button-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-top: 2rem;
+}
+
+.ngx-ui-design__grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+	padding-bottom: 4rem;
+}
+
+.ngx-ui-design__card {
+	min-height: 16rem;
+	padding: 1.5rem;
+	border: 1px solid var(--c-border);
+	border-radius: 1rem;
+	background: var(--c-bg-secondary);
+	box-shadow: 0 1px 2px rgb(15 23 42 / 4%);
+}
+
+.ngx-ui-design__card h2 {
+	margin: 0.625rem 0;
+	font-size: 1.25rem;
+	letter-spacing: -0.03em;
+}
+
+.ngx-ui-design__card > wbutton,
+.ngx-ui-design__button-row {
+	margin-top: 1.25rem;
+}
+
+.ngx-ui-design__card--metric strong {
+	display: block;
+	margin: 1rem 0 0.25rem;
+	font-size: 3.5rem;
+	letter-spacing: -0.08em;
+}
+
+.ngx-ui-design__card--metric span {
+	color: var(--c-text);
+	font-size: 0.875rem;
+}
+
+@media (max-width: 760px) {
+	.ngx-ui-design__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.ngx-ui-design__header {
+		gap: 1rem;
+	}
+}

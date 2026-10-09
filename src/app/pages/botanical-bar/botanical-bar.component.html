@@ -1,0 +1,67 @@
+<article class="botanical-bar">
+	<header class="botanical-bar__header" aria-label="Botanical Bar page header">
+		<a class="botanical-bar__brand theme-focus" routerLink="/">
+			<span class="botanical-bar__brand-mark" aria-hidden="true">B</span>
+			<span>Botanical Bar</span>
+		</a>
+
+		<nav class="botanical-bar__nav" aria-label="Botanical Bar sections">
+			<a href="#signature">Garden Menu</a>
+			<a href="#greenhouse">Greenhouse</a>
+			<a href="#reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section class="botanical-bar__hero">
+		<p class="botanical-bar__eyebrow">Botanical cocktail room</p>
+		<h1>A greenhouse after dark, and a glass of what grew here.</h1>
+		<p class="botanical-bar__lede">
+			A botanical-bar demo for plant-forward bars, garden cocktail rooms, and night-time
+			conservatory programs â€” deep forest, brass, terracotta, linen cream.
+		</p>
+		<div class="botanical-bar__hero-actions">
+			<a class="botanical-bar__button theme-focus" href="#reserve">Reserve a Table</a>
+			<a class="botanical-bar__text-link theme-focus" href="#signature">Tonight's Menu</a>
+		</div>
+	</section>
+
+	<section id="signature" class="botanical-bar__section">
+		<p class="botanical-bar__kicker">Garden Menu</p>
+		<h2>Cocktails grown in the back room.</h2>
+		<div class="botanical-bar__grid">
+			@for (item of signatures; track item.title) {
+				<article class="botanical-bar__card">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<span class="botanical-bar__detail">{{ item.detail }}</span>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="greenhouse" class="botanical-bar__section">
+		<p class="botanical-bar__kicker">Greenhouse</p>
+		<h2>How the program is grown.</h2>
+		<ul class="botanical-bar__list">
+			@for (line of experiencePoints; track line) {
+				<li>{{ line }}</li>
+			}
+		</ul>
+	</section>
+
+	<section id="reserve" class="botanical-bar__reserve">
+		<p class="botanical-bar__kicker">Reserve</p>
+		<h2>Evenings, by reservation.</h2>
+		<p>31 Conservatory Way Â· Garden Quarter</p>
+		<p>Tue â€“ Sun, 5pm â€“ midnight</p>
+		<p>+1 (555) 010 0731</p>
+		<a class="botanical-bar__button theme-focus" href="/"
+			>Book The Greenhouse</a
+		>
+	</section>
+
+	<footer class="botanical-bar__footer">
+		<p>Â© Demo Â· scaffolded preview</p>
+		<a class="botanical-bar__text-link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

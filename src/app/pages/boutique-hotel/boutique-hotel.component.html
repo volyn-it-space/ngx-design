@@ -1,0 +1,113 @@
+<article class="boutique-hotel">
+	<header class="boutique-hotel__header" aria-label="Boutique hotel page header">
+		<a class="boutique-hotel__brand theme-focus" routerLink="/">
+			<span class="boutique-hotel__brand-mark" aria-hidden="true">H</span>
+			<span>Boutique Hotel</span>
+		</a>
+
+		<nav class="boutique-hotel__nav" aria-label="Boutique hotel sections">
+			<a href="#rooms">Rooms</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#book">Book Stay</a>
+		</nav>
+	</header>
+
+	<section class="boutique-hotel__hero">
+		<div class="boutique-hotel__hero-copy">
+			<p class="boutique-hotel__eyebrow">Intimate Hospitality</p>
+			<h1>A carefully curated stay, designed with intention.</h1>
+			<p>
+				A sophisticated landing page concept for boutique hotels, design-focused guesthouses,
+				and intimate city stays where every detail reflects personal curation, atmospheric
+				design, and a commitment to creating memorable moments.
+			</p>
+			<div class="boutique-hotel__hero-actions">
+				<a class="boutique-hotel__button theme-focus" href="#book">Book Your Stay</a>
+				<a class="boutique-hotel__text-link theme-focus" href="#rooms">Explore Rooms</a>
+			</div>
+		</div>
+
+		<div class="boutique-hotel__hero-visual" aria-label="Stylish boutique hotel preview">
+			<div class="boutique-hotel__scene">
+				<div class="boutique-hotel__window" aria-hidden="true"></div>
+				<div class="boutique-hotel__furniture" aria-hidden="true">
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="boutique-hotel__intro" aria-labelledby="boutique-hotel-intro">
+		<p class="boutique-hotel__section-kicker">Our Approach</p>
+		<h2 id="boutique-hotel-intro">Small hotel, thoughtful details, genuine connection.</h2>
+		<p>
+			We believe hospitality is personal. Our intimate property is designed to feel like a
+			curated friend's homeâ€”each room is unique, each guest is known, and every moment is
+			crafted with care. From the morning coffee to evening recommendations, we're here to
+			make your stay genuinely memorable.
+		</p>
+	</section>
+
+	<section
+		id="rooms"
+		class="boutique-hotel__section"
+		aria-labelledby="boutique-hotel-rooms"
+	>
+		<div class="boutique-hotel__section-heading">
+			<p class="boutique-hotel__section-kicker">Experiences</p>
+			<h2 id="boutique-hotel-rooms">Three reasons to stay with us.</h2>
+		</div>
+
+		<div class="boutique-hotel__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="boutique-hotel__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="boutique-hotel__gallery" aria-labelledby="boutique-hotel-gallery">
+		<div class="boutique-hotel__section-heading">
+			<p class="boutique-hotel__section-kicker">Gallery</p>
+			<h2 id="boutique-hotel-gallery">Curated spaces for your comfort.</h2>
+		</div>
+
+		<div class="boutique-hotel__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="boutique-hotel__gallery-item">
+					<div class="boutique-hotel__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="book" class="boutique-hotel__book" aria-labelledby="boutique-hotel-book">
+		<p class="boutique-hotel__section-kicker">Reservations</p>
+		<h2 id="boutique-hotel-book">Find your perfect room with us.</h2>
+		<p>
+			Our small hotel is designed for guests seeking something truly different. Each stay
+			is an opportunity to experience personal hospitality, thoughtful design, and the
+			warmth of genuine connection. We look forward to welcoming you.
+		</p>
+		<a class="boutique-hotel__button theme-focus" href="/">
+			Check Availability
+		</a>
+	</section>
+
+	<footer class="boutique-hotel__footer">
+		<a class="boutique-hotel__brand theme-focus" routerLink="/">
+			<span class="boutique-hotel__brand-mark" aria-hidden="true">H</span>
+			<span>Boutique Hotel</span>
+		</a>
+		<p>Stylish and intimate boutique hotel website direction for curated hospitality.</p>
+	</footer>
+</article>

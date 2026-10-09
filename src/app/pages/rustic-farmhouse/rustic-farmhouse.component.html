@@ -1,0 +1,116 @@
+<article class="rustic-farmhouse">
+	<header class="rustic-farmhouse__header" aria-label="Rustic farmhouse page header">
+		<a class="rustic-farmhouse__brand theme-focus" routerLink="/">
+			<span class="rustic-farmhouse__brand-mark" aria-hidden="true">H</span>
+			<span>Rustic Farmhouse</span>
+		</a>
+
+		<nav class="rustic-farmhouse__nav" aria-label="Rustic farmhouse sections">
+			<a href="#experience">Menu</a>
+			<a href="#gallery">Gallery</a>
+			<a href="#visit">Visit Us</a>
+		</nav>
+	</header>
+
+	<section class="rustic-farmhouse__hero">
+		<div class="rustic-farmhouse__hero-copy">
+			<p class="rustic-farmhouse__eyebrow">Farm to Table</p>
+			<h1>Honest food, warm stays, real connections.</h1>
+			<p>
+				A welcoming landing page concept for countryside restaurants, farmhouse inns, and
+				rural hospitality where local ingredients, natural beauty, and genuine warmth create
+				a place that feels like home.
+			</p>
+			<div class="rustic-farmhouse__hero-actions">
+				<a class="rustic-farmhouse__button theme-focus" href="#visit">Make a Reservation</a>
+				<a class="rustic-farmhouse__text-link theme-focus" href="#experience">See What We Offer</a>
+			</div>
+		</div>
+
+		<div class="rustic-farmhouse__hero-visual" aria-label="Rustic farmhouse preview">
+			<div class="rustic-farmhouse__scene">
+				<div class="rustic-farmhouse__barn" aria-hidden="true"></div>
+				<div class="rustic-farmhouse__crops" aria-hidden="true">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="rustic-farmhouse__intro" aria-labelledby="rustic-farmhouse-intro">
+		<p class="rustic-farmhouse__section-kicker">Our Roots</p>
+		<h2 id="rustic-farmhouse-intro">Where land, kitchen, and heartfelt hospitality meet.</h2>
+		<p>
+			We are farmers and cooks first. Every meal begins in our fields and ends at your table.
+			Our guest rooms carry the warmth and character of the countryside. This is a place where
+			time moves slower, where neighbors become friends, and where simple, honest living feels
+			like the greatest luxury.
+		</p>
+	</section>
+
+	<section
+		id="experience"
+		class="rustic-farmhouse__section"
+		aria-labelledby="rustic-farmhouse-experience"
+	>
+		<div class="rustic-farmhouse__section-heading">
+			<p class="rustic-farmhouse__section-kicker">What We Offer</p>
+			<h2 id="rustic-farmhouse-experience">Three reasons to visit our farmhouse.</h2>
+		</div>
+
+		<div class="rustic-farmhouse__cards">
+			@for (experience of experiences; track experience.title) {
+				<article class="rustic-farmhouse__card">
+					<p>{{ experience.detail }}</p>
+					<h3>{{ experience.title }}</h3>
+					<span aria-hidden="true"></span>
+					<p>{{ experience.description }}</p>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="gallery" class="rustic-farmhouse__gallery" aria-labelledby="rustic-farmhouse-gallery">
+		<div class="rustic-farmhouse__section-heading">
+			<p class="rustic-farmhouse__section-kicker">Gallery</p>
+			<h2 id="rustic-farmhouse-gallery">Life on the farm.</h2>
+		</div>
+
+		<div class="rustic-farmhouse__gallery-grid">
+			@for (item of galleryItems; track item.title) {
+				<article class="rustic-farmhouse__gallery-item">
+					<div class="rustic-farmhouse__gallery-art" aria-hidden="true"></div>
+					<div>
+						<h3>{{ item.title }}</h3>
+						<p>{{ item.label }}</p>
+					</div>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="visit" class="rustic-farmhouse__visit" aria-labelledby="rustic-farmhouse-visit">
+		<p class="rustic-farmhouse__section-kicker">Come Visit</p>
+		<h2 id="rustic-farmhouse-visit">Find your way home to our table.</h2>
+		<p>
+			Whether for a single meal or a weekend away, we welcome you to experience the rhythm
+			of countryside living. Come hungry, stay warm, leave as friends. Our doors are open
+			to anyone seeking authentic hospitality and honest, delicious food.
+		</p>
+		<a class="rustic-farmhouse__button theme-focus" href="/">
+			Get In Touch
+		</a>
+	</section>
+
+	<footer class="rustic-farmhouse__footer">
+		<a class="rustic-farmhouse__brand theme-focus" routerLink="/">
+			<span class="rustic-farmhouse__brand-mark" aria-hidden="true">H</span>
+			<span>Rustic Farmhouse</span>
+		</a>
+		<p>Warm and welcoming rustic farmhouse website direction for countryside hospitality.</p>
+	</footer>
+</article>

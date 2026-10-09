@@ -1,0 +1,67 @@
+<article class="smokehouse-ember">
+	<header class="smokehouse-ember__header" aria-label="Smokehouse Ember page header">
+		<a class="smokehouse-ember__brand theme-focus" routerLink="/">
+			<span class="smokehouse-ember__brand-mark" aria-hidden="true">S</span>
+			<span>Smokehouse Ember</span>
+		</a>
+
+		<nav class="smokehouse-ember__nav" aria-label="Smokehouse sections">
+			<a href="#signature">The Cuts</a>
+			<a href="#smoke">Smoke + Fire</a>
+			<a href="#reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section class="smokehouse-ember__hero">
+		<p class="smokehouse-ember__eyebrow">Smoked in-house Â· 14 hours</p>
+		<h1>FIRE, IRON, AND ONE GOOD CUT.</h1>
+		<p class="smokehouse-ember__lede">
+			A steakhouse and BBQ demo for grill rooms, smokehouses, and meat-forward gastropubs â€”
+			charcoal, ember, leather, and bronze. No apology.
+		</p>
+		<div class="smokehouse-ember__hero-actions">
+			<a class="smokehouse-ember__button theme-focus" href="#reserve">Book a Table</a>
+			<a class="smokehouse-ember__text-link theme-focus" href="#signature">See The Cuts</a>
+		</div>
+	</section>
+
+	<section id="signature" class="smokehouse-ember__section">
+		<p class="smokehouse-ember__kicker">The Cuts</p>
+		<h2>WHAT THE PIT IS BUILT FOR.</h2>
+		<div class="smokehouse-ember__grid">
+			@for (item of signatures; track item.title) {
+				<article class="smokehouse-ember__card">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<span class="smokehouse-ember__detail">{{ item.detail }}</span>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="smoke" class="smokehouse-ember__section">
+		<p class="smokehouse-ember__kicker">Smoke + Fire</p>
+		<h2>HOW THE WORK GETS DONE.</h2>
+		<ul class="smokehouse-ember__list">
+			@for (line of experiencePoints; track line) {
+				<li>{{ line }}</li>
+			}
+		</ul>
+	</section>
+
+	<section id="reserve" class="smokehouse-ember__reserve">
+		<p class="smokehouse-ember__kicker">Reserve</p>
+		<h2>OPEN FOR DINNER.</h2>
+		<p>412 Iron Street Â· The Yards</p>
+		<p>Tue â€“ Sun, 5pm â€“ 11pm</p>
+		<p>+1 (555) 010 1411</p>
+		<a class="smokehouse-ember__button theme-focus" href="/"
+			>Reserve The Pit Table</a
+		>
+	</section>
+
+	<footer class="smokehouse-ember__footer">
+		<p>Â© Demo Â· scaffolded preview</p>
+		<a class="smokehouse-ember__text-link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

@@ -1,0 +1,65 @@
+<article class="wine-cellar">
+	<header class="wine-cellar__header" aria-label="Wine Cellar page header">
+		<a class="wine-cellar__brand theme-focus" routerLink="/">
+			<span class="wine-cellar__brand-mark" aria-hidden="true">V</span>
+			<span>Wine Cellar</span>
+		</a>
+
+		<nav class="wine-cellar__nav" aria-label="Wine Cellar sections">
+			<a href="#signature">The List</a>
+			<a href="#cellar">The Cellar</a>
+			<a href="#reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section class="wine-cellar__hero">
+		<p class="wine-cellar__eyebrow">Cellar since 1974</p>
+		<h1>An hour with a bottle, in a vaulted room.</h1>
+		<p class="wine-cellar__lede">
+			A wine-bar demo for enotecas, sommelier-led restaurants, and hotel cellars â€” burgundy
+			walls, parchment menus, candlelight gold, reverence for the list.
+		</p>
+		<div class="wine-cellar__hero-actions">
+			<a class="wine-cellar__button theme-focus" href="#reserve">Reserve a Table</a>
+			<a class="wine-cellar__text-link theme-focus" href="#signature">View The List</a>
+		</div>
+	</section>
+
+	<section id="signature" class="wine-cellar__section">
+		<p class="wine-cellar__kicker">The List</p>
+		<h2>Bottles the cellar is built around.</h2>
+		<div class="wine-cellar__grid">
+			@for (item of signatures; track item.title) {
+				<article class="wine-cellar__card">
+					<h3>{{ item.title }}</h3>
+					<p>{{ item.description }}</p>
+					<span class="wine-cellar__detail">{{ item.detail }}</span>
+				</article>
+			}
+		</div>
+	</section>
+
+	<section id="cellar" class="wine-cellar__section">
+		<p class="wine-cellar__kicker">The Cellar</p>
+		<h2>How an evening with the list usually goes.</h2>
+		<ul class="wine-cellar__list">
+			@for (line of experiencePoints; track line) {
+				<li>{{ line }}</li>
+			}
+		</ul>
+	</section>
+
+	<section id="reserve" class="wine-cellar__reserve">
+		<p class="wine-cellar__kicker">Reserve</p>
+		<h2>Evenings, by reservation.</h2>
+		<p>47 Cellar Lane Â· Old Quarter</p>
+		<p>Tue â€“ Sat, 5pm â€“ 11pm</p>
+		<p>+1 (555) 010 1974</p>
+		<a class="wine-cellar__button theme-focus" href="/">Book a Table</a>
+	</section>
+
+	<footer class="wine-cellar__footer">
+		<p>Â© Demo Â· scaffolded preview</p>
+		<a class="wine-cellar__text-link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>
