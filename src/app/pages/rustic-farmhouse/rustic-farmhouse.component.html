@@ -1,0 +1,112 @@
+<article class="farm">
+	<header class="farm__header">
+		<a class="farm__brand theme-focus" routerLink="." fragment="top">Hollin Farm Kitchen</a>
+		<nav class="farm__nav" aria-label="Farm sections">
+			<a class="theme-focus" routerLink="." fragment="seasons">What is growing</a>
+			<a class="theme-focus" routerLink="." fragment="neighbours">Our neighbours</a>
+			<a class="theme-focus" routerLink="." fragment="table">The table</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="farm__hero">
+		<div class="farm__hero-copy">
+			<h1>Lunch from the field next door.</h1>
+			<p class="farm__lede">
+				A farm kitchen serving what grows within walking distance. The menu is written each
+				morning, after we have been round the beds.
+			</p>
+			<div class="farm__actions">
+				<a class="farm__button theme-focus" routerLink="." fragment="visit">Find the farm</a>
+				<a class="farm__link theme-focus" routerLink="." fragment="seasons">What is in season</a>
+			</div>
+		</div>
+		<div class="farm__collage">
+			@for (photo of collage; track photo.src; let i = $index) {
+				<figure [class]="'farm__snap farm__snap--' + (i + 1)">
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+						[priority]="i === 0"
+					/>
+				</figure>
+			}
+		</div>
+	</section>
+
+	<section id="seasons" class="farm__seasons">
+		<div class="farm__head">
+			<h2>What is growing</h2>
+			<p>The menu follows the calendar. We are in autumn now.</p>
+		</div>
+		<ul class="farm__calendar">
+			@for (season of seasons; track season.name) {
+				<li [class.farm__season--current]="season.current">
+					<h3>{{ season.name }}</h3>
+					<p class="farm__months">{{ season.months }}</p>
+					<p>{{ season.grows }}</p>
+					<p class="farm__dish">{{ season.dish }}</p>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="neighbours" class="farm__neighbours">
+		<div class="farm__head">
+			<h2>Our neighbours</h2>
+			<p>Everything else comes from people we know. Distance is by road from the kitchen door.</p>
+		</div>
+		<ul class="farm__suppliers">
+			@for (supplier of suppliers; track supplier.name) {
+				<li>
+					<span class="farm__supplier-name">
+						<strong>{{ supplier.name }}</strong>
+						<span>{{ supplier.gives }}</span>
+					</span>
+					<span class="farm__km">{{ supplier.km }}</span>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="table" class="farm__blocks">
+		@for (block of blocks; track block.title) {
+			<article>
+				<figure>
+					<img
+						[ngSrc]="block.photo.src"
+						[width]="block.photo.width"
+						[height]="block.photo.height"
+						[alt]="block.photo.alt"
+					/>
+				</figure>
+				<h3>{{ block.title }}</h3>
+				<p>{{ block.text }}</p>
+			</article>
+		}
+	</section>
+
+	<section id="visit" class="farm__visit">
+		<div class="farm__visit-copy">
+			<h2>Come out to the farm</h2>
+			<p>Lunch is walk-in. Groups of eight or more should ring ahead.</p>
+			<a class="farm__button theme-focus" href="tel:+15550107272">Call +1 (555) 010 7272</a>
+		</div>
+		<dl class="farm__details">
+			@for (line of visit; track line.label) {
+				<div>
+					<dt>{{ line.label }}</dt>
+					<dd>{{ line.value }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<footer class="farm__footer">
+		<p class="farm__footer-brand">Hollin Farm Kitchen</p>
+		<p>Rustic Farmhouse design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="farm__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

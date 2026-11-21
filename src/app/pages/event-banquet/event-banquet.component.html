@@ -1,0 +1,151 @@
+<article class="events">
+	<header class="events__header">
+		<a class="events__brand theme-focus" routerLink="." fragment="top">Harcourt Halls</a>
+		<nav class="events__nav" aria-label="Venue sections">
+			<a class="theme-focus" routerLink="." fragment="halls">Halls</a>
+			<a class="theme-focus" routerLink="." fragment="packages">Packages</a>
+			<a class="theme-focus" routerLink="." fragment="plan">How it works</a>
+			<a class="theme-focus" routerLink="." fragment="enquire">Enquire</a>
+		</nav>
+	</header>
+
+	<section id="top" class="events__hero">
+		<figure class="events__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+		<div class="events__hero-copy">
+			<h1>Weddings, galas and dinners for up to 320 guests.</h1>
+			<p class="events__lede">
+				Three halls, one kitchen and a planner who stays with you from the first visit to the
+				last dance.
+			</p>
+			<div class="events__actions">
+				<a class="events__button theme-focus" routerLink="." fragment="enquire">Plan your event</a>
+				<a class="events__link theme-focus" routerLink="." fragment="halls">Compare the halls</a>
+			</div>
+		</div>
+		<dl class="events__capacity">
+			@for (fact of capacity; track fact.label) {
+				<div>
+					<dt>{{ fact.label }}</dt>
+					<dd>{{ fact.value }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<section id="halls" class="events__halls">
+		<div class="events__head">
+			<h2>Choose a hall</h2>
+			<p>Hire prices are for six hours, with set-up and clearing included.</p>
+		</div>
+		<table class="events__table">
+			<thead>
+				<tr>
+					<th scope="col">Hall</th>
+					<th scope="col">Seated</th>
+					<th scope="col">Standing</th>
+					<th scope="col">Size</th>
+					<th scope="col">Hire from</th>
+				</tr>
+			</thead>
+			<tbody>
+				@for (hall of halls; track hall.name) {
+					<tr>
+						<th scope="row">
+							<img
+								[ngSrc]="hall.photo.src"
+								[width]="hall.photo.width"
+								[height]="hall.photo.height"
+								[alt]="hall.photo.alt"
+							/>
+							<span>{{ hall.name }}</span>
+						</th>
+						<td data-label="Seated">{{ hall.seated }}</td>
+						<td data-label="Standing">{{ hall.standing }}</td>
+						<td data-label="Size">{{ hall.size }}</td>
+						<td data-label="Hire from" class="events__price">{{ hall.from }}</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</section>
+
+	<section id="packages" class="events__packages">
+		<div class="events__head">
+			<h2>Three ways to feed everyone</h2>
+			<p>Prices are per guest, from. Dietary needs are always covered.</p>
+		</div>
+		<ul class="events__tiers">
+			@for (pack of packages; track pack.name) {
+				<li>
+					<h3>{{ pack.name }}</h3>
+					<p class="events__from">
+						from <strong>{{ pack.from }}</strong>
+					</p>
+					<ul>
+						@for (item of pack.includes; track item) {
+							<li>{{ item }}</li>
+						}
+					</ul>
+				</li>
+			}
+		</ul>
+		<ul class="events__table-photos">
+			@for (photo of tablePhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="plan" class="events__plan">
+		<div class="events__head">
+			<h2>From first call to last dance</h2>
+		</div>
+		<ol class="events__steps">
+			@for (step of steps; track step.title; let i = $index) {
+				<li>
+					<span class="events__step-no" aria-hidden="true">{{ i + 1 }}</span>
+					<h3>{{ step.title }}</h3>
+					<p>{{ step.text }}</p>
+				</li>
+			}
+		</ol>
+	</section>
+
+	<section id="enquire" class="events__enquire">
+		<div class="events__enquire-copy">
+			<h2>Tell us the date</h2>
+			<p>
+				We reply within one working day with availability and a first quote. Site visits are
+				free, any day except Sunday.
+			</p>
+		</div>
+		<div class="events__enquire-actions">
+			<a class="events__button theme-focus" href="tel:+15550104040">Call +1 (555) 010 4040</a>
+			<a class="events__link events__link--light theme-focus" href="mailto:events@example.com">
+				events&#64;example.com
+			</a>
+			<p>14 Harcourt Drive. Open Monday to Saturday, 9am to 6pm.</p>
+		</div>
+	</section>
+
+	<footer class="events__footer">
+		<p class="events__footer-brand">Harcourt Halls</p>
+		<p>Event Banquet design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="events__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

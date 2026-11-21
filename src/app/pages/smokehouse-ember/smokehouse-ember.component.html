@@ -1,0 +1,158 @@
+<article class="pit">
+	<header class="pit__header">
+		<a class="pit__brand theme-focus" routerLink="." fragment="top">
+			<span class="pit__brand-name">Cinder Yard</span>
+			<span class="pit__brand-note">Smokehouse and grill</span>
+		</a>
+
+		<nav class="pit__nav" aria-label="Smokehouse sections">
+			<a class="theme-focus" routerLink="." fragment="board">The board</a>
+			<a class="theme-focus" routerLink="." fragment="smoke">How we smoke</a>
+			<a class="theme-focus" routerLink="." fragment="sides">Sides</a>
+			<a class="theme-focus" routerLink="." fragment="book">Book</a>
+		</nav>
+	</header>
+
+	<section id="top" class="pit__hero">
+		<figure class="pit__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+
+		<h1>Oak fire. Fourteen hours.</h1>
+
+		<div class="pit__hero-side">
+			<p class="pit__lede">
+				Brisket, ribs and sausage smoked over post oak in a brick pit, sold by the half
+				pound until the board is empty.
+			</p>
+			<div class="pit__actions">
+				<a class="pit__button theme-focus" routerLink="." fragment="book">Book a table</a>
+				<a class="pit__link theme-focus" routerLink="." fragment="board">See the board</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="board" class="pit__board">
+		<div class="pit__board-head">
+			<h2>The board</h2>
+			<p>Price per half pound. When a cut is gone, it is wiped off until tomorrow.</p>
+		</div>
+
+		<ul class="pit__cuts">
+			@for (cut of cuts; track cut.name) {
+				<li class="pit__cut">
+					<h3>{{ cut.name }}</h3>
+					<span class="pit__cut-price">{{ cut.price }}</span>
+					<p>{{ cut.wood }}, {{ cut.hours }}</p>
+				</li>
+			}
+		</ul>
+
+		<p class="pit__board-note">
+			A half pound feeds one. Two cuts and two sides feed a hungry pair. Most nights the
+			brisket runs out by 9pm.
+		</p>
+	</section>
+
+	<section id="smoke" class="pit__smoke">
+		<div class="pit__head">
+			<h2>How we smoke a brisket</h2>
+			<p>Four steps, about sixteen hours. The pit is lit at 6am for dinner service.</p>
+		</div>
+
+		<ol class="pit__steps">
+			@for (step of steps; track step.title; let i = $index) {
+				<li class="pit__step">
+					<img
+						[ngSrc]="step.photo.src"
+						[width]="step.photo.width"
+						[height]="step.photo.height"
+						[alt]="step.photo.alt"
+					/>
+					<div class="pit__step-text">
+						<span class="pit__step-number" aria-hidden="true">{{ i + 1 }}</span>
+						<h3>{{ step.title }}</h3>
+						<p class="pit__step-time">{{ step.time }}</p>
+						<p>{{ step.text }}</p>
+					</div>
+				</li>
+			}
+		</ol>
+	</section>
+
+	<section id="sides" class="pit__sides">
+		<div class="pit__sides-lists">
+			<h2>Sides and sauces</h2>
+
+			<ul class="pit__lines">
+				@for (side of sides; track side.name) {
+					<li>
+						<span class="pit__line-name">{{ side.name }}</span>
+						<span class="pit__line-note">{{ side.note }}</span>
+						<span class="pit__line-price">{{ side.price }}</span>
+					</li>
+				}
+			</ul>
+
+			<h3>Four sauces on every table, no charge</h3>
+			<ul class="pit__sauces">
+				@for (sauce of sauces; track sauce.name) {
+					<li>
+						<span class="pit__line-name">{{ sauce.name }}</span>
+						<span class="pit__line-note">{{ sauce.note }}</span>
+					</li>
+				}
+			</ul>
+		</div>
+
+		<figure class="pit__sides-photo">
+			<img
+				[ngSrc]="sidesPhoto.src"
+				[width]="sidesPhoto.width"
+				[height]="sidesPhoto.height"
+				[alt]="sidesPhoto.alt"
+			/>
+		</figure>
+	</section>
+
+	<section id="book" class="pit__book">
+		<figure class="pit__book-photo">
+			<img
+				[ngSrc]="roomPhoto.src"
+				[width]="roomPhoto.width"
+				[height]="roomPhoto.height"
+				[alt]="roomPhoto.alt"
+			/>
+		</figure>
+
+		<div class="pit__book-copy">
+			<h2>Book a table</h2>
+			<p>
+				We take bookings by phone for parties of two to ten. The counter is walk-in only.
+				Tell us if you want a whole brisket held for your table.
+			</p>
+			<a class="pit__button theme-focus" href="tel:+15550101411">Call +1 (555) 010 1411</a>
+
+			<dl class="pit__hours">
+				@for (line of visit; track line.label) {
+					<div>
+						<dt>{{ line.label }}</dt>
+						<dd>{{ line.value }}</dd>
+					</div>
+				}
+			</dl>
+		</div>
+	</section>
+
+	<footer class="pit__footer">
+		<p class="pit__footer-brand">Cinder Yard</p>
+		<p>Smokehouse Ember design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="pit__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

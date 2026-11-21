@@ -1,0 +1,399 @@
+:host {
+	display: block;
+}
+
+.tasting {
+	--bg: #faf8f3;
+	--bg-2: #ffffff;
+	--bg-3: #f2eee3;
+	--text-strong: #1a1a2e;
+	--text: #2e2e38;
+	--text-muted: #5c5c66;
+	--gold: #c9a961;
+	--navy: #1a1a2e;
+	--border: #e2dccb;
+	--display: 'Playfair Display', Georgia, 'Times New Roman', serif;
+	--body: 'Lora', Georgia, 'Times New Roman', serif;
+	--gutter: clamp(1rem, 4vw, 3rem);
+	--gap: clamp(4.5rem, 10vw, 8rem);
+
+	display: grid;
+	gap: var(--gap);
+	padding-bottom: 3rem;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--body);
+	font-size: 1rem;
+	line-height: 1.7;
+
+	h1,
+	h2,
+	h3 {
+		margin: 0;
+		color: var(--text-strong);
+		font-family: var(--display);
+		font-weight: 500;
+		text-wrap: balance;
+	}
+
+	h1 {
+		font-size: clamp(2.125rem, 4.4vw, 3.5rem);
+		line-height: 1.12;
+	}
+
+	h2 {
+		font-size: clamp(1.75rem, 3vw, 2.375rem);
+		line-height: 1.2;
+	}
+
+	h3 {
+		font-size: 1.375rem;
+	}
+
+	p,
+	ul,
+	ol,
+	dl,
+	dd,
+	figure {
+		margin: 0;
+	}
+
+	ul,
+	ol {
+		padding: 0;
+		list-style: none;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.tasting__header,
+.tasting__hero,
+.tasting__menu,
+.tasting__chef,
+.tasting__wine,
+.tasting__reserve,
+.tasting__footer {
+	width: min(100% - 2 * var(--gutter), 66rem);
+	margin-inline: auto;
+}
+
+.tasting__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.25rem 2rem;
+	padding-block: 1.25rem;
+	border-bottom: 1px solid var(--border);
+	margin-bottom: calc(var(--gap) * -0.5);
+}
+
+.tasting__brand {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--navy);
+	font-family: var(--display);
+	font-size: 1.5rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.tasting__nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 1.5rem;
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		color: var(--text);
+		font-size: 0.9375rem;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--navy);
+			text-decoration: underline;
+			text-decoration-color: var(--gold);
+			text-underline-offset: 0.3em;
+		}
+	}
+}
+
+/* Hero: wide plate photo, headline panel below it */
+
+.tasting__hero {
+	display: grid;
+}
+
+.tasting__hero-photo {
+	aspect-ratio: 15 / 7;
+}
+
+.tasting__panel {
+	display: grid;
+	gap: 1.25rem;
+	justify-items: center;
+	width: min(100%, 46rem);
+	margin: -3.5rem auto 0;
+	padding: clamp(1.5rem, 4vw, 2.75rem);
+	border-top: 3px solid var(--gold);
+	background: var(--bg-2);
+	box-shadow: 0 6px 24px rgba(26, 26, 46, 0.1);
+	text-align: center;
+}
+
+.tasting__lede {
+	max-width: 32rem;
+}
+
+.tasting__actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25rem 1.75rem;
+}
+
+.tasting__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0.5rem 1.75rem;
+	background: var(--navy);
+	color: #faf8f3;
+	font-weight: 500;
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background: #2c2c4a;
+	}
+}
+
+.tasting__link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--navy);
+	font-weight: 500;
+	text-decoration: underline;
+	text-decoration-color: var(--gold);
+	text-underline-offset: 0.3em;
+}
+
+/* Menu: one narrow centered column */
+
+.tasting__menu {
+	display: grid;
+	gap: 2rem;
+	width: min(100% - 2 * var(--gutter), 38rem);
+	text-align: center;
+}
+
+.tasting__courses {
+	display: grid;
+	counter-reset: course;
+
+	li {
+		display: grid;
+		gap: 0.125rem;
+		padding-block: 1.25rem;
+		border-top: 1px solid var(--border);
+		counter-increment: course;
+	}
+
+	li::before {
+		color: var(--text-muted);
+		content: '0' counter(course);
+		font-family: var(--display);
+		font-size: 0.9375rem;
+		letter-spacing: 0.1em;
+	}
+
+	p {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+		font-style: italic;
+	}
+}
+
+.tasting__price {
+	padding-top: 1.25rem;
+	border-top: 3px double var(--gold);
+	color: var(--text-strong);
+	font-family: var(--display);
+	font-size: 1.375rem;
+}
+
+/* Chef */
+
+.tasting__chef {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+	align-items: center;
+}
+
+.tasting__chef-photo {
+	aspect-ratio: 4 / 5;
+}
+
+.tasting__chef-copy {
+	display: grid;
+	gap: 1.25rem;
+}
+
+.tasting__plates {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1rem;
+	margin-top: 0.5rem;
+
+	li {
+		aspect-ratio: 7 / 5;
+	}
+}
+
+/* Wine */
+
+.tasting__wine {
+	display: grid;
+	gap: 1.5rem;
+	width: min(100% - 2 * var(--gutter), 46rem);
+}
+
+.tasting__table {
+	width: 100%;
+	border-collapse: collapse;
+
+	th,
+	td {
+		padding: 0.875rem 0.75rem 0.875rem 0;
+		border-bottom: 1px solid var(--border);
+		text-align: left;
+	}
+
+	thead th {
+		border-bottom-color: var(--gold);
+		color: var(--text-muted);
+		font-size: 0.8125rem;
+		font-weight: 500;
+		letter-spacing: 0.08em;
+		text-transform: uppercase;
+	}
+
+	tbody th {
+		color: var(--text-strong);
+		font-weight: 500;
+	}
+}
+
+/* Reserve */
+
+.tasting__reserve {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+	padding: clamp(1.5rem, 5vw, 3.5rem);
+	border: 1px solid var(--border);
+	border-top: 3px solid var(--gold);
+	background: var(--bg-2);
+}
+
+.tasting__reserve-copy {
+	display: grid;
+	gap: 1.25rem;
+	align-content: start;
+	justify-items: start;
+}
+
+.tasting__details {
+	display: grid;
+
+	div {
+		display: grid;
+		grid-template-columns: 6.5rem minmax(0, 1fr);
+		gap: 1rem;
+		padding-block: 0.75rem;
+		border-top: 1px solid var(--border);
+	}
+
+	dt {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+	}
+
+	dd {
+		color: var(--text-strong);
+	}
+}
+
+.tasting__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--border);
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+}
+
+.tasting__footer-brand {
+	color: var(--navy);
+	font-family: var(--display);
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+@media (max-width: 60rem) {
+	.tasting__chef,
+	.tasting__reserve {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.tasting__chef-photo {
+		aspect-ratio: 3 / 2;
+	}
+}
+
+@media (max-width: 40rem) {
+	.tasting__hero-photo {
+		aspect-ratio: 4 / 3;
+	}
+
+	.tasting__panel {
+		margin-top: -2rem;
+	}
+
+	.tasting__table {
+		font-size: 0.9375rem;
+
+		th,
+		td {
+			padding-right: 0.5rem;
+		}
+	}
+
+	.tasting__details div {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0.125rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.tasting * {
+		transition: none;
+	}
+}

@@ -1,0 +1,455 @@
+:host {
+	display: block;
+}
+
+.carte {
+	--bg: #fbf7ef;
+	--bg-2: #ffffff;
+	--bg-3: #f4eddb;
+	--text-strong: #4a2f21;
+	--text: #3a2a1e;
+	--text-muted: #6c6054;
+	--brown: #5a3c2c;
+	--gold: #b89652;
+	--border: #ddd1b5;
+	--display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+	--body: 'Lora', Georgia, 'Times New Roman', serif;
+	--gutter: clamp(1rem, 4vw, 3rem);
+	--gap: clamp(4rem, 9vw, 7rem);
+
+	display: grid;
+	gap: var(--gap);
+	padding-bottom: 3rem;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--body);
+	font-size: 1rem;
+	line-height: 1.7;
+
+	h1,
+	h2,
+	h3 {
+		margin: 0;
+		color: var(--text-strong);
+		font-family: var(--display);
+		font-weight: 600;
+		text-wrap: balance;
+	}
+
+	h1 {
+		max-width: 20ch;
+		font-size: clamp(2.5rem, 5.4vw, 4.25rem);
+		line-height: 1.05;
+	}
+
+	h2 {
+		font-size: clamp(2rem, 3.8vw, 3rem);
+		line-height: 1.1;
+	}
+
+	h3 {
+		font-size: 1.625rem;
+		font-style: italic;
+		font-weight: 500;
+	}
+
+	p,
+	ul,
+	dl,
+	dd,
+	figure {
+		margin: 0;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.carte__header,
+.carte__hero,
+.carte__menu,
+.carte__private,
+.carte__history,
+.carte__reserve,
+.carte__footer {
+	width: min(100% - 2 * var(--gutter), 66rem);
+	margin-inline: auto;
+}
+
+/* A short double rule with a centered gold lozenge. */
+.carte__rule {
+	position: relative;
+	width: 7rem;
+	height: 5px;
+	border-block: 1px solid var(--gold);
+
+	&::after {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 7px;
+		height: 7px;
+		background: var(--gold);
+		content: '';
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+}
+
+.carte__header {
+	display: grid;
+	justify-items: center;
+	gap: 0;
+	padding-block: 1.25rem 0;
+	margin-bottom: calc(var(--gap) * -0.5);
+}
+
+.carte__brand {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--brown);
+	font-family: var(--display);
+	font-size: 1.875rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.carte__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0 1.75rem;
+	width: 100%;
+	padding-bottom: 0.5rem;
+	border-bottom: 1px solid var(--border);
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		color: var(--text);
+		font-size: 0.9375rem;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--brown);
+			text-decoration: underline;
+			text-decoration-color: var(--gold);
+			text-underline-offset: 0.3em;
+		}
+	}
+}
+
+/* Hero: centered, symmetrical, framed landscape photo */
+
+.carte__hero {
+	display: grid;
+	justify-items: center;
+	gap: 1.25rem;
+	text-align: center;
+}
+
+.carte__lede {
+	max-width: 36rem;
+	font-size: 1.125rem;
+}
+
+.carte__actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.25rem 1.75rem;
+}
+
+.carte__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0.5rem 2rem;
+	background: var(--brown);
+	color: #fbf7ef;
+	font-weight: 500;
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background: #432c20;
+	}
+}
+
+.carte__link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--brown);
+	font-weight: 500;
+	text-decoration: underline;
+	text-decoration-color: var(--gold);
+	text-underline-offset: 0.3em;
+}
+
+.carte__frame {
+	width: 100%;
+	margin-top: 1rem;
+	padding: 0.75rem;
+	border: 1px solid var(--gold);
+	background: var(--bg-2);
+
+	img {
+		aspect-ratio: 1100 / 620;
+		height: auto;
+	}
+}
+
+/* Carte */
+
+.carte__menu {
+	display: grid;
+	justify-items: center;
+	gap: 1.25rem;
+	text-align: center;
+}
+
+.carte__columns {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 2.5rem clamp(2rem, 7vw, 6rem);
+	width: 100%;
+	margin-top: 1rem;
+	text-align: left;
+}
+
+.carte__section {
+	display: grid;
+	gap: 0.5rem;
+	align-content: start;
+
+	h3 {
+		text-align: center;
+	}
+
+	li {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1.5rem;
+		padding-block: 0.875rem;
+		border-bottom: 1px solid var(--border);
+	}
+}
+
+.carte__dish {
+	display: grid;
+
+	strong {
+		color: var(--text-strong);
+		font-weight: 500;
+	}
+
+	span {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+		font-style: italic;
+	}
+}
+
+.carte__price {
+	color: var(--brown);
+	font-variant-numeric: lining-nums;
+	font-weight: 500;
+}
+
+.carte__note {
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+/* Private dining */
+
+.carte__private {
+	display: grid;
+	grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+	align-items: center;
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+	padding: clamp(1.5rem, 4vw, 3rem);
+	background: var(--bg-3);
+}
+
+.carte__private-copy {
+	display: grid;
+	gap: 1.25rem;
+	justify-items: start;
+}
+
+.carte__facts {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+	width: 100%;
+	padding-top: 1.25rem;
+	border-top: 1px solid var(--gold);
+
+	div {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: flex-end;
+		gap: 0.125rem;
+	}
+
+	dt {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+		line-height: 1.4;
+	}
+
+	dd {
+		color: var(--brown);
+		font-family: var(--display);
+		font-size: 2.5rem;
+		font-weight: 600;
+		line-height: 1.1;
+	}
+}
+
+.carte__private-photos {
+	display: grid;
+	grid-template-columns: 1.4fr 1fr;
+	gap: 1rem;
+	align-items: end;
+
+	li:first-child {
+		aspect-ratio: 3 / 2;
+	}
+
+	li:last-child {
+		aspect-ratio: 3 / 4;
+	}
+}
+
+/* History */
+
+.carte__history {
+	display: grid;
+	grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+	align-items: center;
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+}
+
+.carte__history-photo {
+	aspect-ratio: 3 / 4;
+	padding: 0.5rem;
+	border: 1px solid var(--gold);
+
+	img {
+		height: 100%;
+	}
+}
+
+.carte__history-copy {
+	display: grid;
+	gap: 1.25rem;
+	justify-items: start;
+	font-size: 1.0625rem;
+}
+
+/* Reserve */
+
+.carte__reserve {
+	display: grid;
+	justify-items: center;
+	gap: 1.25rem;
+	text-align: center;
+}
+
+.carte__details {
+	display: grid;
+	width: min(100%, 40rem);
+	margin-top: 1rem;
+	text-align: left;
+
+	div {
+		display: grid;
+		grid-template-columns: 6rem minmax(0, 1fr);
+		gap: 1rem;
+		padding-block: 0.875rem;
+		border-top: 1px solid var(--border);
+	}
+
+	dt {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+	}
+
+	dd {
+		color: var(--text-strong);
+	}
+}
+
+.carte__footer {
+	display: grid;
+	justify-items: center;
+	gap: 0.25rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--border);
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+	text-align: center;
+}
+
+.carte__footer-brand {
+	color: var(--brown);
+	font-family: var(--display);
+	font-size: 1.5rem;
+	font-weight: 600;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+}
+
+@media (max-width: 60rem) {
+	.carte__private,
+	.carte__history {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.carte__history-photo {
+		width: min(100%, 20rem);
+	}
+}
+
+@media (max-width: 40rem) {
+	.carte__columns {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.carte__private-photos {
+		grid-template-columns: minmax(0, 1fr);
+
+		li:last-child {
+			display: none;
+		}
+	}
+
+	.carte__details div {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0.125rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.carte * {
+		transition: none;
+	}
+}

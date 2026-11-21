@@ -1,0 +1,102 @@
+<article class="index">
+	<header class="index__header">
+		<a class="index__brand theme-focus" routerLink="." fragment="top">Plain Table</a>
+		<nav class="index__nav" aria-label="Restaurant sections">
+			<a class="theme-focus" routerLink="." fragment="menu">Menu</a>
+			<a class="theme-focus" routerLink="." fragment="space">Space</a>
+			<a class="theme-focus" routerLink="." fragment="approach">Approach</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="index__hero">
+		<h1>Less on the plate. More on the table.</h1>
+		<p class="index__lede">
+			A small restaurant serving nine dishes, all day. Quiet room, plain food, good coffee.
+		</p>
+		<a class="index__button theme-focus" routerLink="." fragment="visit">Visit us</a>
+		<figure class="index__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="menu" class="index__section">
+		<span class="index__num" aria-hidden="true">01</span>
+		<h2 class="index__title">Menu</h2>
+		<div class="index__menu">
+			@for (group of menu; track group.title) {
+				<div class="index__group">
+					<h3>{{ group.title }}</h3>
+					<ul>
+						@for (line of group.lines; track line.name) {
+							<li>
+								<span>{{ line.name }}</span>
+								<span class="index__price">{{ line.price }}</span>
+							</li>
+						}
+					</ul>
+				</div>
+			}
+		</div>
+	</section>
+
+	<section id="space" class="index__section">
+		<span class="index__num" aria-hidden="true">02</span>
+		<h2 class="index__title">Space</h2>
+		<p class="index__text">
+			Eighteen seats, one long counter, and a window onto the quay. Oak, lime plaster and
+			nothing hung on the walls.
+		</p>
+		<ul class="index__photos">
+			@for (photo of spacePhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="approach" class="index__section">
+		<span class="index__num" aria-hidden="true">03</span>
+		<h2 class="index__title">Approach</h2>
+		<ul class="index__principles">
+			@for (principle of principles; track principle.title) {
+				<li>
+					<h3>{{ principle.title }}</h3>
+					<p>{{ principle.text }}</p>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="visit" class="index__section">
+		<span class="index__num" aria-hidden="true">04</span>
+		<h2 class="index__title">Visit</h2>
+		<dl class="index__info">
+			@for (row of info; track row.label) {
+				<div>
+					<dt>{{ row.label }}</dt>
+					<dd>{{ row.value }}</dd>
+				</div>
+			}
+		</dl>
+		<a class="index__button theme-focus" href="tel:+15550101212">Call +1 (555) 010 1212</a>
+	</section>
+
+	<footer class="index__footer">
+		<p class="index__footer-brand">Plain Table</p>
+		<p>Modern Minimal design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="index__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

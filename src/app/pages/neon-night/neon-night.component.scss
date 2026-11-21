@@ -1,0 +1,490 @@
+:host {
+	display: block;
+}
+
+.neon {
+	--bg: #0a0a0f;
+	--bg-2: #14141c;
+	--bg-3: #1e1e2a;
+	--text-strong: #f2effb;
+	--text: #c8c5d8;
+	--text-muted: #9a98b8;
+	--pink: #ff2d92;
+	--cyan: #36e3ff;
+	--border: #2a2a3a;
+	--display: 'Bebas Neue', Impact, 'Arial Narrow', sans-serif;
+	--body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', Consolas, monospace;
+	--gutter: clamp(1rem, 4vw, 3rem);
+	--section-gap: clamp(4rem, 8vw, 6.5rem);
+
+	display: grid;
+	gap: var(--section-gap);
+	padding-bottom: 3rem;
+	background:
+		radial-gradient(40rem 30rem at 0% 0%, rgba(255, 45, 146, 0.1), transparent 60%),
+		radial-gradient(40rem 30rem at 100% 40%, rgba(54, 227, 255, 0.07), transparent 60%), var(--bg);
+	color: var(--text);
+	font-family: var(--body);
+	font-size: 1rem;
+	line-height: 1.6;
+
+	h1,
+	h2,
+	h3 {
+		margin: 0;
+		color: var(--text-strong);
+		font-family: var(--display);
+		font-weight: 400;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+		text-wrap: balance;
+	}
+
+	h2 {
+		font-size: clamp(2.25rem, 4.6vw, 3.5rem);
+		line-height: 1;
+	}
+
+	p,
+	ul,
+	dl,
+	dd,
+	figure {
+		margin: 0;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.neon__header,
+.neon__hero,
+.neon__menu,
+.neon__hours,
+.neon__counter,
+.neon__find,
+.neon__footer {
+	width: min(100% - 2 * var(--gutter), 74rem);
+	margin-inline: auto;
+}
+
+.neon__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.25rem 2rem;
+	padding-block: 1.25rem;
+	border-bottom: 1px solid var(--border);
+	margin-bottom: calc(var(--section-gap) * -0.5);
+}
+
+.neon__brand {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--pink);
+	font-family: var(--display);
+	font-size: 1.75rem;
+	letter-spacing: 0.06em;
+	text-decoration: none;
+	text-shadow: 0 0 14px rgba(255, 45, 146, 0.6);
+	text-transform: uppercase;
+}
+
+.neon__nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 1.5rem;
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		color: var(--text);
+		font-size: 0.9375rem;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		text-decoration: none;
+		text-transform: uppercase;
+
+		&:hover {
+			color: var(--cyan);
+		}
+	}
+}
+
+/* Hero */
+
+.neon__hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr);
+	align-items: center;
+	gap: 2rem clamp(2rem, 5vw, 4rem);
+
+	h1 {
+		font-size: clamp(3.25rem, 9vw, 7rem);
+		line-height: 0.92;
+		text-shadow: 0 0 24px rgba(255, 45, 146, 0.35);
+
+		span {
+			display: block;
+			color: var(--pink);
+			text-shadow:
+				0 0 10px rgba(255, 45, 146, 0.8),
+				0 0 36px rgba(255, 45, 146, 0.5);
+		}
+	}
+}
+
+.neon__hero-copy {
+	display: grid;
+	gap: 1.5rem;
+	justify-items: start;
+}
+
+.neon__lede {
+	max-width: 34rem;
+	font-size: 1.125rem;
+}
+
+.neon__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 1rem;
+}
+
+.neon__button,
+.neon__ghost {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0.5rem 1.75rem;
+	border: 1px solid var(--pink);
+	font-weight: 600;
+	letter-spacing: 0.04em;
+	text-decoration: none;
+	text-transform: uppercase;
+	transition:
+		background-color 0.15s ease,
+		box-shadow 0.15s ease;
+}
+
+.neon__button {
+	background: var(--pink);
+	color: #0a0a0f;
+
+	&:hover {
+		box-shadow: 0 0 22px rgba(255, 45, 146, 0.6);
+	}
+}
+
+.neon__ghost {
+	border-color: var(--cyan);
+	color: var(--cyan);
+
+	&:hover {
+		box-shadow: 0 0 18px rgba(54, 227, 255, 0.4);
+	}
+}
+
+.neon__sign {
+	aspect-ratio: 8 / 9;
+	border: 1px solid var(--pink);
+	box-shadow:
+		0 0 0 4px var(--bg),
+		0 0 0 5px rgba(255, 45, 146, 0.5),
+		0 0 40px rgba(255, 45, 146, 0.25);
+}
+
+/* Menu: ticket machine tiles */
+
+.neon__menu {
+	display: grid;
+	gap: 2rem;
+}
+
+.neon__head {
+	display: grid;
+	gap: 0.75rem;
+	max-width: 42rem;
+
+	p {
+		font-size: 1.0625rem;
+	}
+}
+
+.neon__tickets {
+	display: grid;
+	grid-template-columns: repeat(4, minmax(0, 1fr));
+	gap: 1rem;
+}
+
+.neon__ticket {
+	display: grid;
+	grid-template-rows: auto auto 1fr auto;
+	gap: 0.5rem;
+	padding: 1rem 1.125rem 1.125rem;
+	border: 1px solid var(--border);
+	border-top: 3px solid var(--cyan);
+	background: var(--bg-2);
+
+	h3 {
+		font-size: 1.75rem;
+		line-height: 1.05;
+	}
+
+	p {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+	}
+}
+
+.neon__ticket--hot {
+	border-top-color: var(--pink);
+}
+
+.neon__ticket-top {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem;
+	font-family: var(--mono);
+	font-size: 0.8125rem;
+}
+
+.neon__ticket-no {
+	color: var(--cyan);
+	font-weight: 700;
+}
+
+.neon__ticket-tag {
+	color: var(--text-muted);
+	text-transform: uppercase;
+}
+
+.neon__ticket-price {
+	color: var(--pink);
+	font-family: var(--mono);
+	font-size: 1.25rem;
+	font-weight: 700;
+}
+
+.neon__menu-note {
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+}
+
+/* Hours: seven day blocks */
+
+.neon__hours {
+	display: grid;
+	grid-template-columns: minmax(0, 1.4fr) minmax(0, 0.6fr);
+	gap: 2rem clamp(2rem, 5vw, 4rem);
+	align-items: center;
+}
+
+.neon__hours-copy {
+	display: grid;
+	gap: 1rem;
+	font-size: 1.0625rem;
+}
+
+.neon__hours-photo {
+	grid-row: span 2;
+	aspect-ratio: 3 / 4;
+	border: 1px solid var(--border);
+}
+
+.neon__week {
+	display: grid;
+	grid-template-columns: repeat(7, minmax(0, 1fr));
+	gap: 0.5rem;
+}
+
+.neon__day {
+	display: grid;
+	gap: 0.125rem;
+	justify-items: center;
+	padding: 0.875rem 0.25rem;
+	border: 1px solid var(--border);
+	background: var(--bg-2);
+	text-align: center;
+}
+
+.neon__day--late {
+	border-color: var(--pink);
+	box-shadow: 0 0 18px rgba(255, 45, 146, 0.2);
+}
+
+.neon__day-name {
+	color: var(--text-muted);
+	font-family: var(--mono);
+	font-size: 0.8125rem;
+	text-transform: uppercase;
+}
+
+.neon__day-close {
+	color: var(--text-strong);
+	font-family: var(--display);
+	font-size: 1.75rem;
+	line-height: 1.1;
+}
+
+.neon__day-note {
+	color: var(--text-muted);
+	font-size: 0.8125rem;
+}
+
+/* Counter strip */
+
+.neon__counter {
+	display: grid;
+	gap: 2rem;
+}
+
+.neon__strip {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+
+	li {
+		aspect-ratio: 4 / 3;
+		border: 1px solid var(--border);
+	}
+}
+
+/* Find us */
+
+.neon__find {
+	display: grid;
+	grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+	align-items: center;
+}
+
+.neon__find-photo {
+	aspect-ratio: 3 / 2;
+	border: 1px solid var(--border);
+}
+
+.neon__find-copy {
+	display: grid;
+	gap: 1.5rem;
+	justify-items: start;
+}
+
+.neon__facts {
+	display: grid;
+	width: 100%;
+
+	div {
+		display: grid;
+		grid-template-columns: 8.5rem minmax(0, 1fr);
+		gap: 1rem;
+		padding-block: 0.875rem;
+		border-top: 1px solid var(--border);
+	}
+
+	dt {
+		color: var(--cyan);
+		font-family: var(--mono);
+		font-size: 0.875rem;
+		text-transform: uppercase;
+	}
+
+	dd {
+		color: var(--text-strong);
+	}
+}
+
+.neon__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--border);
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+}
+
+.neon__footer-brand {
+	color: var(--pink);
+	font-family: var(--display);
+	font-size: 1.5rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.neon__back {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--cyan);
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+}
+
+@media (max-width: 60rem) {
+	.neon__hero,
+	.neon__hours,
+	.neon__find {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.neon__sign {
+		width: min(100%, 24rem);
+	}
+
+	.neon__hours-photo {
+		grid-row: auto;
+		aspect-ratio: 3 / 2;
+	}
+
+	.neon__tickets {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 40rem) {
+	.neon__week {
+		grid-template-columns: repeat(4, minmax(0, 1fr));
+	}
+
+	.neon__strip {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		li:last-child {
+			display: none;
+		}
+	}
+
+	.neon__tickets {
+		gap: 0.625rem;
+	}
+
+	.neon__facts div {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0.125rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.neon * {
+		transition: none;
+	}
+}

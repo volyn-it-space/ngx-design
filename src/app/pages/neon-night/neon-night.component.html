@@ -1,0 +1,150 @@
+<article class="neon">
+	<header class="neon__header">
+		<a class="neon__brand theme-focus" routerLink="." fragment="top">Last Train Ramen</a>
+
+		<nav class="neon__nav" aria-label="Last Train Ramen sections">
+			<a class="theme-focus" routerLink="." fragment="menu">Menu</a>
+			<a class="theme-focus" routerLink="." fragment="hours">Late hours</a>
+			<a class="theme-focus" routerLink="." fragment="counter">Counter</a>
+			<a class="theme-focus" routerLink="." fragment="find">Find us</a>
+		</nav>
+	</header>
+
+	<section id="top" class="neon__hero">
+		<div class="neon__hero-copy">
+			<h1>Ramen after the <span>last train</span></h1>
+			<p class="neon__lede">
+				A 14-stool ramen bar under Canal Street. Buy a ticket at the machine, sit down, eat.
+				Open until 4am on Friday and Saturday.
+			</p>
+			<div class="neon__actions">
+				<a class="neon__button theme-focus" routerLink="." fragment="find">Find us</a>
+				<a class="neon__ghost theme-focus" routerLink="." fragment="menu">See the menu</a>
+			</div>
+		</div>
+
+		<figure class="neon__sign">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="menu" class="neon__menu">
+		<div class="neon__head">
+			<h2>Twelve buttons, one machine</h2>
+			<p>
+				The machine is by the door. Press a button, pay, and hand your ticket over the
+				counter. Bowls arrive in about six minutes.
+			</p>
+		</div>
+
+		<ul class="neon__tickets">
+			@for (ticket of tickets; track ticket.no) {
+				<li class="neon__ticket" [class.neon__ticket--hot]="ticket.hot">
+					<div class="neon__ticket-top">
+						<span class="neon__ticket-no">{{ ticket.no }}</span>
+						<span class="neon__ticket-tag">{{ ticket.tag }}</span>
+					</div>
+					<h3>{{ ticket.name }}</h3>
+					<p>{{ ticket.note }}</p>
+					<span class="neon__ticket-price">{{ ticket.price }}</span>
+				</li>
+			}
+		</ul>
+
+		<p class="neon__menu-note">The machine takes cards and cash. Prices include tax.</p>
+	</section>
+
+	<section id="hours" class="neon__hours">
+		<div class="neon__hours-copy">
+			<h2>Open when the trains stop</h2>
+			<p>
+				The kitchen takes its last ticket 30 minutes before closing. On Monday we close to
+				cook the broth for the week.
+			</p>
+		</div>
+
+		<figure class="neon__hours-photo">
+			<img
+				[ngSrc]="signPhoto.src"
+				[width]="signPhoto.width"
+				[height]="signPhoto.height"
+				[alt]="signPhoto.alt"
+			/>
+		</figure>
+
+		<ul class="neon__week">
+			@for (block of week; track block.day) {
+				<li class="neon__day" [class.neon__day--late]="block.late">
+					<span class="neon__day-name">{{ block.day }}</span>
+					<span class="neon__day-close">{{ block.close }}</span>
+					<span class="neon__day-note">{{ block.note }}</span>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="counter" class="neon__counter">
+		<div class="neon__head">
+			<h2>Fourteen stools, one long counter</h2>
+			<p>
+				No tables and no bookings. The pork broth simmers for 18 hours and the noodles are
+				made each afternoon. When a stool opens, it is yours.
+			</p>
+		</div>
+
+		<ul class="neon__strip">
+			@for (photo of counterStrip; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="find" class="neon__find">
+		<figure class="neon__find-photo">
+			<img
+				[ngSrc]="streetPhoto.src"
+				[width]="streetPhoto.width"
+				[height]="streetPhoto.height"
+				[alt]="streetPhoto.alt"
+			/>
+		</figure>
+
+		<div class="neon__find-copy">
+			<h2>Down the stairs, under the pink sign</h2>
+			<dl class="neon__facts">
+				<div>
+					<dt>Address</dt>
+					<dd>88 Canal Street, basement level</dd>
+				</div>
+				<div>
+					<dt>Nearest station</dt>
+					<dd>Canal Street, exit 3. Two minutes on foot.</dd>
+				</div>
+				<div>
+					<dt>Seating</dt>
+					<dd>Walk in only. Groups of up to four.</dd>
+				</div>
+			</dl>
+			<a class="neon__button theme-focus" href="tel:+15550100404">Call +1 (555) 010 0404</a>
+		</div>
+	</section>
+
+	<footer class="neon__footer">
+		<p class="neon__footer-brand">Last Train Ramen</p>
+		<p>Neon Night design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="neon__back theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

@@ -1,0 +1,427 @@
+:host {
+	display: block;
+}
+
+.bakery {
+	--bg: #faf8f5;
+	--bg-2: #f5ede3;
+	--bg-3: #e8dcCF;
+	--text-strong: #4a3b2d;
+	--text: #5f4a3c;
+	--text-muted: #7a5f3c;
+	--accent: #7a5f3c;
+	--pink: #d4a5a5;
+	--pink-deep: #8f4f4f;
+	--border: #d9c9bc;
+	--display: 'Fraunces', Georgia, 'Times New Roman', serif;
+	--body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--gutter: clamp(1rem, 4vw, 3rem);
+	--section-gap: clamp(3.5rem, 8vw, 6.5rem);
+
+	display: grid;
+	gap: var(--section-gap);
+	padding-bottom: 3rem;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--body);
+	font-size: 1rem;
+	line-height: 1.6;
+
+	h1,
+	h2,
+	h3 {
+		margin: 0;
+		color: var(--text-strong);
+		font-family: var(--display);
+		text-wrap: balance;
+	}
+
+	h2 {
+		font-size: clamp(1.75rem, 3.4vw, 2.5rem);
+		font-weight: 600;
+		line-height: 1.15;
+	}
+
+	p,
+	ul,
+	ol,
+	figure {
+		margin: 0;
+	}
+
+	ul,
+	ol {
+		padding: 0;
+		list-style: none;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+
+.bakery__header,
+.bakery__hero,
+.bakery__oven,
+.bakery__menu,
+.bakery__counter,
+.bakery__visit,
+.bakery__footer {
+	width: min(100% - 2 * var(--gutter), 70rem);
+	margin-inline: auto;
+}
+
+.bakery__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.25rem 2rem;
+	padding-block: 1.25rem;
+	border-bottom: 1px solid var(--border);
+	margin-bottom: calc(var(--section-gap) * -0.5);
+}
+
+.bakery__brand {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--text-strong);
+	font-family: var(--display);
+	font-size: 1.375rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.bakery__nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 1.5rem;
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		color: var(--text);
+		font-size: 0.9375rem;
+		font-weight: 500;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--pink-deep);
+		}
+	}
+}
+
+/* Hero: centered text above one wide counter photo with a rounded top. */
+
+.bakery__hero {
+	display: grid;
+	justify-items: center;
+	gap: 1.25rem;
+	text-align: center;
+
+	h1 {
+		max-width: 18ch;
+		font-size: clamp(2.25rem, 5vw, 4rem);
+		font-weight: 600;
+		line-height: 1.08;
+	}
+}
+
+.bakery__lede {
+	max-width: 36rem;
+	font-size: 1.125rem;
+}
+
+.bakery__actions {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem 1.5rem;
+}
+
+.bakery__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0.5rem 1.75rem;
+	border-radius: 999px;
+	background: var(--accent);
+	color: #fffaf3;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background: #5f4a2c;
+	}
+}
+
+.bakery__link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--pink-deep);
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+}
+
+.bakery__hero-photo {
+	width: 100%;
+	margin-top: 1rem;
+	aspect-ratio: 2 / 1;
+	overflow: hidden;
+	border-radius: 999px 999px 1.5rem 1.5rem;
+	box-shadow: 0 6px 18px rgba(107, 83, 68, 0.12);
+}
+
+/* Timetable */
+
+.bakery__oven {
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+	align-items: start;
+	padding: clamp(1.5rem, 5vw, 3.5rem);
+	border-radius: 1.5rem;
+	background: var(--bg-2);
+}
+
+.bakery__section-head {
+	display: grid;
+	gap: 0.75rem;
+	max-width: 36rem;
+
+	p {
+		font-size: 1.0625rem;
+	}
+}
+
+.bakery__timetable li {
+	display: grid;
+	grid-template-columns: 5rem minmax(0, 1fr);
+	gap: 1rem;
+	padding-block: 1.1rem;
+	border-top: 1px solid var(--border);
+
+	&:last-child {
+		border-bottom: 1px solid var(--border);
+	}
+
+	h3 {
+		font-size: 1.25rem;
+		font-weight: 600;
+		line-height: 1.3;
+	}
+}
+
+.bakery__time {
+	color: var(--pink-deep);
+	font-family: var(--display);
+	font-size: 1.75rem;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	line-height: 1.2;
+}
+
+/* Menu */
+
+.bakery__menu {
+	display: grid;
+	gap: 2.5rem;
+}
+
+.bakery__columns {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+}
+
+.bakery__column {
+	display: grid;
+	gap: 0.75rem;
+	align-content: start;
+
+	h3 {
+		padding-bottom: 0.5rem;
+		border-bottom: 2px solid var(--pink);
+		font-size: 1.5rem;
+	}
+
+	li {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		padding-block: 0.6rem;
+		border-bottom: 1px solid var(--border);
+	}
+}
+
+.bakery__item {
+	display: grid;
+
+	strong {
+		color: var(--text-strong);
+		font-weight: 600;
+	}
+
+	span {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+	}
+}
+
+.bakery__price {
+	color: var(--text-strong);
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+}
+
+/* Counter mosaic */
+
+.bakery__counter {
+	display: grid;
+	gap: 2rem;
+}
+
+.bakery__mosaic {
+	display: grid;
+	grid-template-columns: repeat(5, minmax(0, 1fr));
+	grid-auto-rows: clamp(9rem, 18vw, 15rem);
+	gap: 1rem;
+
+	li {
+		grid-column: span 2;
+		overflow: hidden;
+		border-radius: 1rem;
+	}
+
+	.bakery__mosaic-wide {
+		grid-column: span 3;
+	}
+
+	li:last-child {
+		grid-column: 1 / -1;
+	}
+}
+
+/* Visit */
+
+.bakery__visit {
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+	gap: 2rem clamp(2rem, 6vw, 4rem);
+	align-items: center;
+}
+
+.bakery__visit-photo {
+	aspect-ratio: 3 / 4;
+	overflow: hidden;
+	border-radius: 999px 999px 1.5rem 1.5rem;
+}
+
+.bakery__visit-copy {
+	display: grid;
+	gap: 1.25rem;
+	justify-items: start;
+}
+
+.bakery__hours {
+	width: 100%;
+	max-width: 26rem;
+	border-collapse: collapse;
+
+	caption {
+		padding-bottom: 0.5rem;
+		color: var(--text-strong);
+		font-weight: 600;
+		text-align: left;
+	}
+
+	th,
+	td {
+		padding: 0.6rem 0;
+		border-top: 1px solid var(--border);
+		text-align: left;
+		font-weight: 400;
+	}
+
+	td {
+		color: var(--text-strong);
+		font-weight: 600;
+		text-align: right;
+	}
+}
+
+.bakery__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--border);
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+}
+
+.bakery__footer-brand {
+	color: var(--text-strong);
+	font-family: var(--display);
+	font-size: 1.25rem;
+	font-weight: 600;
+}
+
+@media (max-width: 60rem) {
+	.bakery__oven,
+	.bakery__visit {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.bakery__visit-photo {
+		width: min(100%, 22rem);
+	}
+}
+
+@media (max-width: 40rem) {
+	.bakery__columns {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.bakery__timetable li {
+		grid-template-columns: 4rem minmax(0, 1fr);
+	}
+
+	.bakery__mosaic {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		grid-auto-rows: 10rem;
+
+		li,
+		.bakery__mosaic-wide {
+			grid-column: span 1;
+		}
+
+		li:first-child,
+		li:last-child {
+			grid-column: 1 / -1;
+		}
+	}
+
+	.bakery__hero-photo {
+		aspect-ratio: 4 / 3;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.bakery * {
+		transition: none;
+	}
+}

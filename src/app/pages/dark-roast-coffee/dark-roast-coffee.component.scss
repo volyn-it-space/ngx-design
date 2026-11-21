@@ -1,0 +1,511 @@
+:host {
+	display: block;
+}
+
+.roast {
+	--bg: #1f140e;
+	--bg-2: #2d1f16;
+	--bg-3: #3a2a1f;
+	--text-strong: #f0e2cc;
+	--text: #d0bfa4;
+	--text-muted: #ad9c84;
+	--copper: #d08e55;
+	--cocoa: #6b4a30;
+	--border: #43311f;
+	--display: 'Fraunces', Georgia, 'Times New Roman', serif;
+	--body: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+	--gutter: clamp(1rem, 4vw, 3rem);
+	--gap: clamp(4rem, 8vw, 6.5rem);
+
+	display: grid;
+	gap: var(--gap);
+	padding-bottom: 3rem;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--body);
+	font-size: 1rem;
+	line-height: 1.65;
+
+	h1,
+	h2,
+	h3 {
+		margin: 0;
+		color: var(--text-strong);
+		font-family: var(--display);
+		font-weight: 600;
+		text-wrap: balance;
+	}
+
+	h1 {
+		font-size: clamp(2.5rem, 5.4vw, 4.25rem);
+		line-height: 1.05;
+	}
+
+	h2 {
+		font-size: clamp(1.75rem, 3.4vw, 2.625rem);
+		line-height: 1.12;
+	}
+
+	h3 {
+		font-size: 1.375rem;
+		line-height: 1.2;
+	}
+
+	p,
+	ul,
+	dl,
+	dd,
+	figure {
+		margin: 0;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: saturate(0.9) brightness(0.92);
+	}
+}
+
+.roast__header,
+.roast__hero,
+.roast__beans,
+.roast__bar,
+.roast__cups,
+.roast__visit,
+.roast__footer {
+	width: min(100% - 2 * var(--gutter), 72rem);
+	margin-inline: auto;
+}
+
+.roast__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.25rem 2rem;
+	padding-block: 1.25rem;
+	border-bottom: 1px solid var(--border);
+	margin-bottom: calc(var(--gap) * -0.5);
+}
+
+.roast__brand {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--copper);
+	font-family: var(--display);
+	font-size: 1.5rem;
+	font-style: italic;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.roast__nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 1.5rem;
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		color: var(--text);
+		font-size: 0.9375rem;
+		font-weight: 500;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--copper);
+		}
+	}
+}
+
+/* Hero: headline left, circular top-down cup right */
+
+.roast__hero {
+	display: grid;
+	grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+	align-items: center;
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+}
+
+.roast__hero-copy {
+	display: grid;
+	gap: 1.5rem;
+	justify-items: start;
+}
+
+.roast__lede {
+	max-width: 34rem;
+	font-size: 1.125rem;
+}
+
+.roast__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 1.5rem;
+}
+
+.roast__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0.5rem 1.75rem;
+	border-radius: 999px;
+	background: var(--copper);
+	color: #1f140e;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background: #e0a06a;
+	}
+}
+
+.roast__link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--copper);
+	font-weight: 600;
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+}
+
+.roast__hero-photo {
+	aspect-ratio: 1;
+	overflow: hidden;
+	border: 6px solid var(--bg-3);
+	border-radius: 50%;
+}
+
+.roast__head {
+	display: grid;
+	gap: 0.5rem;
+	max-width: 36rem;
+
+	p {
+		font-size: 1.0625rem;
+	}
+}
+
+.roast__price {
+	color: var(--copper);
+	font-family: var(--display);
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+/* Bean cards */
+
+.roast__beans {
+	display: grid;
+	gap: 2.25rem;
+}
+
+.roast__bean-list {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.25rem;
+
+	li {
+		display: grid;
+		gap: 0.875rem;
+		align-content: start;
+		padding: 1.5rem;
+		border-top: 3px solid var(--copper);
+		background: var(--bg-2);
+	}
+
+	dl {
+		display: grid;
+		gap: 0.25rem;
+		font-size: 0.9375rem;
+	}
+
+	dl div {
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+		padding-bottom: 0.25rem;
+		border-bottom: 1px solid var(--border);
+	}
+
+	dt {
+		color: var(--text-muted);
+	}
+
+	dd {
+		color: var(--text-strong);
+		text-align: right;
+	}
+}
+
+/* Brew bar */
+
+.roast__bar {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+	gap: 2rem clamp(2rem, 6vw, 4rem);
+	align-items: start;
+}
+
+.roast__bar-copy {
+	display: grid;
+	gap: 2rem;
+}
+
+.roast__table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.9375rem;
+
+	th,
+	td {
+		padding: 0.75rem 0.5rem 0.75rem 0;
+		border-bottom: 1px solid var(--border);
+		text-align: left;
+	}
+
+	thead th {
+		color: var(--text-muted);
+		font-size: 0.8125rem;
+		font-weight: 500;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+
+	tbody th {
+		color: var(--text-strong);
+		font-weight: 600;
+	}
+
+	.roast__num {
+		padding-right: 0;
+		color: var(--copper);
+		font-weight: 600;
+		text-align: right;
+	}
+}
+
+.roast__days {
+	display: grid;
+	gap: 0.75rem;
+
+	ul {
+		display: grid;
+		grid-template-columns: repeat(5, minmax(0, 1fr));
+		gap: 0.5rem;
+	}
+
+	li {
+		display: grid;
+		gap: 0.125rem;
+		padding: 0.75rem 0.625rem;
+		border: 1px solid var(--border);
+		font-size: 0.9375rem;
+		line-height: 1.3;
+	}
+}
+
+.roast__day {
+	color: var(--copper);
+	font-size: 0.8125rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+.roast__bar-photos {
+	display: grid;
+	gap: 1rem;
+
+	li:first-child {
+		aspect-ratio: 3 / 2;
+	}
+
+	li:last-child {
+		aspect-ratio: 3 / 4;
+		width: 65%;
+		justify-self: end;
+	}
+}
+
+/* Cups */
+
+.roast__cups {
+	display: grid;
+	gap: 2.25rem;
+}
+
+.roast__cup-list {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1.25rem;
+
+	li {
+		display: grid;
+		grid-template-rows: auto 1fr;
+	}
+
+	img {
+		aspect-ratio: 1;
+		height: auto;
+		border-radius: 1rem 1rem 0 0;
+	}
+}
+
+.roast__cup-text {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) auto;
+	align-items: baseline;
+	gap: 0.375rem 1rem;
+	padding: 1.25rem;
+	border-radius: 0 0 1rem 1rem;
+	background: var(--bg-2);
+
+	p {
+		grid-column: 1 / -1;
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+	}
+}
+
+/* Visit */
+
+.roast__visit {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+	padding: clamp(1.5rem, 5vw, 3.5rem);
+	border-radius: 1.5rem;
+	background: linear-gradient(160deg, var(--bg-3), var(--bg-2) 70%);
+}
+
+.roast__visit-copy {
+	display: grid;
+	gap: 1.25rem;
+	align-content: start;
+	justify-items: start;
+}
+
+.roast__details {
+	display: grid;
+
+	div {
+		display: grid;
+		grid-template-columns: 6rem minmax(0, 1fr);
+		gap: 1rem;
+		padding-block: 0.75rem;
+		border-top: 1px solid var(--cocoa);
+	}
+
+	dt {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+	}
+
+	dd {
+		color: var(--text-strong);
+	}
+}
+
+.roast__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--border);
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+}
+
+.roast__footer-brand {
+	color: var(--copper);
+	font-family: var(--display);
+	font-size: 1.375rem;
+	font-style: italic;
+	font-weight: 600;
+}
+
+@media (max-width: 60rem) {
+	.roast__hero,
+	.roast__bar,
+	.roast__visit {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.roast__hero-photo {
+		width: min(100%, 22rem);
+		justify-self: center;
+	}
+
+	.roast__bean-list,
+	.roast__cup-list {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.roast__cup-list li {
+		grid-template-columns: 9rem minmax(0, 1fr);
+		grid-template-rows: auto;
+	}
+
+	.roast__cup-list img {
+		height: 100%;
+		border-radius: 1rem 0 0 1rem;
+	}
+
+	.roast__cup-text {
+		border-radius: 0 1rem 1rem 0;
+	}
+
+	.roast__bar-photos {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+
+		li:last-child {
+			width: 100%;
+		}
+	}
+}
+
+@media (max-width: 40rem) {
+	.roast__days ul {
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+	}
+
+	.roast__table {
+		font-size: 0.875rem;
+
+		th,
+		td {
+			padding-right: 0.375rem;
+		}
+	}
+
+	.roast__cup-list li {
+		grid-template-columns: 6.5rem minmax(0, 1fr);
+	}
+
+	.roast__details div {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0.125rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.roast * {
+		transition: none;
+	}
+}

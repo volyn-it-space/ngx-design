@@ -1,0 +1,15 @@
+@if (currentDesign()) {
+	<div class="design-cart-action">
+		<button
+			class="design-cart-action__button theme-interactive theme-focus inline-flex items-center justify-center gap-2 rounded-full bg-[var(--c-primary)] px-5 py-3 text-sm font-semibold shadow-[var(--shadow-md)] hover:opacity-90"
+			type="button"
+			(click)="onAction()"
+			[attr.aria-label]="ariaLabel()"
+		>
+			<span class="material-symbols-outlined text-[20px]" aria-hidden="true">
+				{{ icon() }}
+			</span>
+			{{ buttonLabel() }}
+		</button>
+	</div>
+}

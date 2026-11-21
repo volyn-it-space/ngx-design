@@ -1,0 +1,443 @@
+:host {
+	display: block;
+}
+
+.lux {
+	--bg: #0f0f0f;
+	--text-strong: #f5f1eb;
+	--text: #d6d0c2;
+	--text-muted: #a39d7f;
+	--gold: #d4af37;
+	--champagne: #f4d4a8;
+	--border: #2d2d2d;
+	--gold-line: rgba(212, 175, 55, 0.45);
+	--display: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+	--body: 'Lora', Georgia, 'Times New Roman', serif;
+	--gutter: clamp(1rem, 4vw, 3rem);
+	--section-gap: clamp(5rem, 11vw, 9rem);
+
+	display: grid;
+	gap: var(--section-gap);
+	padding-bottom: 3rem;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--body);
+	font-size: 1rem;
+	line-height: 1.7;
+	letter-spacing: 0;
+
+	h1,
+	h2,
+	h3 {
+		margin: 0;
+		color: var(--text-strong);
+		font-family: var(--display);
+		font-weight: 500;
+		text-wrap: balance;
+	}
+
+	h2 {
+		font-size: clamp(2rem, 4vw, 3.25rem);
+		line-height: 1.1;
+	}
+
+	h3 {
+		font-size: 1.625rem;
+		font-weight: 600;
+		line-height: 1.2;
+	}
+
+	p,
+	ul,
+	dl,
+	dd,
+	figure {
+		margin: 0;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: saturate(0.85) brightness(0.9);
+	}
+}
+
+.lux__header,
+.lux__hero,
+.lux__rooms,
+.lux__menu,
+.lux__concierge,
+.lux__reserve,
+.lux__footer {
+	width: min(100% - 2 * var(--gutter), 72rem);
+	margin-inline: auto;
+}
+
+/* Header: centered wordmark, links under it */
+
+.lux__header {
+	display: grid;
+	justify-items: center;
+	gap: 0.25rem;
+	padding-top: 1.5rem;
+	margin-bottom: calc(var(--section-gap) * -1 + 1.5rem);
+}
+
+.lux__brand {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--gold);
+	font-family: var(--display);
+	font-size: 1.625rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+	text-decoration: none;
+}
+
+.lux__nav {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 0 2rem;
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		color: var(--text);
+		font-size: 0.9375rem;
+		text-decoration: none;
+		transition: color 0.15s ease;
+
+		&:hover {
+			color: var(--champagne);
+		}
+	}
+}
+
+/* Hero: inset gold frame, cinematic photo below */
+
+.lux__hero {
+	display: grid;
+	gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.lux__frame {
+	display: grid;
+	justify-items: center;
+	gap: 1.25rem;
+	padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 5vw, 4rem);
+	border: 1px solid var(--gold-line);
+	outline: 1px solid var(--border);
+	outline-offset: -0.625rem;
+	text-align: center;
+
+	h1 {
+		font-size: clamp(2.75rem, 6.4vw, 4.75rem);
+		line-height: 1;
+	}
+}
+
+.lux__lede {
+	max-width: 36rem;
+	font-size: 1.125rem;
+}
+
+.lux__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem 2rem;
+}
+
+.lux__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0.5rem 2rem;
+	border: 1px solid var(--gold);
+	background: var(--gold);
+	color: #0f0f0f;
+	font-size: 1rem;
+	font-weight: 600;
+	text-align: center;
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background: var(--champagne);
+	}
+}
+
+.lux__link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--gold);
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.35em;
+	overflow-wrap: anywhere;
+
+	&:hover {
+		color: var(--champagne);
+	}
+}
+
+.lux__cinema {
+	aspect-ratio: 1200 / 514;
+}
+
+/* Shared section head */
+
+.lux__head {
+	display: grid;
+	justify-items: center;
+	gap: 0.75rem;
+	max-width: 40rem;
+	margin-inline: auto;
+	text-align: center;
+
+	&::after {
+		width: 4rem;
+		height: 1px;
+		margin-top: 0.75rem;
+		background: var(--gold);
+		content: '';
+	}
+}
+
+/* Private rooms: alternating wide rows */
+
+.lux__rooms,
+.lux__menu,
+.lux__concierge {
+	display: grid;
+	gap: clamp(2.5rem, 5vw, 4rem);
+}
+
+.lux__room-list {
+	display: grid;
+	gap: clamp(2.5rem, 6vw, 5rem);
+}
+
+.lux__room {
+	display: grid;
+	grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+	align-items: center;
+	gap: 1.5rem clamp(2rem, 6vw, 5rem);
+
+	figure {
+		aspect-ratio: 3 / 2;
+	}
+
+	&:nth-child(even) {
+		grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr);
+
+		figure {
+			order: 2;
+		}
+	}
+}
+
+.lux__room-text {
+	display: grid;
+	gap: 0.75rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--gold-line);
+
+	h3 {
+		font-size: clamp(1.75rem, 3vw, 2.25rem);
+		font-weight: 500;
+	}
+}
+
+.lux__seats {
+	color: var(--champagne);
+	font-style: italic;
+}
+
+.lux__terms {
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+}
+
+/* Menu: one centered column */
+
+.lux__dish {
+	width: min(100%, 44rem);
+	margin-inline: auto;
+	aspect-ratio: 16 / 9;
+}
+
+.lux__menu-list {
+	display: grid;
+	width: min(100%, 32rem);
+	margin-inline: auto;
+	text-align: center;
+
+	li {
+		display: grid;
+		gap: 0.125rem;
+		padding-block: 1.5rem;
+		border-bottom: 1px solid var(--border);
+
+		&:first-child {
+			border-top: 1px solid var(--border);
+		}
+	}
+}
+
+.lux__price {
+	color: var(--gold);
+	font-family: var(--display);
+	font-size: 1.375rem;
+	font-weight: 600;
+	font-variant-numeric: lining-nums;
+}
+
+.lux__menu-note {
+	max-width: 32rem;
+	margin-inline: auto;
+	color: var(--text-muted);
+	text-align: center;
+}
+
+/* Concierge: plain two-column list */
+
+.lux__services {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0 clamp(2rem, 8vw, 7rem);
+
+	li {
+		display: grid;
+		gap: 0.375rem;
+		align-content: start;
+		padding-block: 1.5rem;
+		border-top: 1px solid var(--border);
+	}
+}
+
+/* Reservations */
+
+.lux__reserve {
+	display: grid;
+	grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+	align-items: center;
+	gap: 2rem clamp(2rem, 7vw, 6rem);
+}
+
+.lux__bar {
+	aspect-ratio: 4 / 5;
+}
+
+.lux__reserve-copy {
+	display: grid;
+	gap: 1.25rem;
+	justify-items: start;
+
+	.lux__actions {
+		justify-content: flex-start;
+	}
+}
+
+.lux__details {
+	display: grid;
+	width: 100%;
+	margin-top: 1rem;
+
+	div {
+		display: grid;
+		grid-template-columns: 6.5rem minmax(0, 1fr);
+		gap: 1rem;
+		padding-block: 0.875rem;
+		border-top: 1px solid var(--border);
+	}
+
+	dt {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+	}
+
+	dd {
+		color: var(--text-strong);
+	}
+}
+
+/* Footer */
+
+.lux__footer {
+	display: grid;
+	justify-items: center;
+	gap: 0.25rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--border);
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+	text-align: center;
+}
+
+.lux__footer-brand {
+	color: var(--gold);
+	font-family: var(--display);
+	font-size: 1.375rem;
+	font-weight: 600;
+	letter-spacing: 0.08em;
+}
+
+@media (max-width: 60rem) {
+	.lux__room,
+	.lux__room:nth-child(even),
+	.lux__reserve {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.lux__room:nth-child(even) figure {
+		order: 0;
+	}
+
+	.lux__room-text {
+		padding-top: 0;
+		border-top: 0;
+	}
+
+	.lux__bar {
+		aspect-ratio: 3 / 2;
+	}
+}
+
+@media (max-width: 40rem) {
+	.lux__nav {
+		gap: 0 1.25rem;
+	}
+
+	.lux__frame {
+		outline-offset: -0.375rem;
+	}
+
+	.lux__services {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.lux__details div {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0.125rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.lux * {
+		transition: none;
+	}
+}

@@ -1,0 +1,179 @@
+<article class="speakeasy">
+	<header class="speakeasy__header">
+		<a class="speakeasy__brand theme-focus" routerLink="." fragment="top">
+			<span class="speakeasy__brand-name">The Bookcase</span>
+			<span class="speakeasy__brand-note">Cocktail room, est. 1929</span>
+		</a>
+
+		<nav class="speakeasy__nav" aria-label="Speakeasy sections">
+			<a class="theme-focus" routerLink="." fragment="menu">Menu</a>
+			<a class="theme-focus" routerLink="." fragment="room">The room</a>
+			<a class="theme-focus" routerLink="." fragment="rules">House rules</a>
+			<a class="theme-focus" routerLink="." fragment="reserve">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="speakeasy__hero">
+		<div class="speakeasy__hero-copy">
+			<h1>Behind the bookcase, a quieter hour.</h1>
+			<p class="speakeasy__lede">
+				A 24-seat cocktail room behind a bookshop. Drinks made one at a time, by
+				candlelight.
+			</p>
+			<div class="speakeasy__actions">
+				<a class="speakeasy__button theme-focus" routerLink="." fragment="reserve">
+					Reserve a table
+				</a>
+				<a class="speakeasy__link theme-focus" routerLink="." fragment="menu">
+					See the menu
+				</a>
+			</div>
+			<p class="speakeasy__hours">Wed to Sat, 7pm to 1am. 123 Library Street.</p>
+		</div>
+
+		<figure class="speakeasy__doorway">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="menu" class="speakeasy__menu">
+		<div class="speakeasy__section-head">
+			<h2>Three drinks the room is built around</h2>
+			<p>The card changes every quarter. These three never leave it.</p>
+		</div>
+
+		<ul class="speakeasy__pours">
+			@for (pour of housePours; track pour.name) {
+				<li class="speakeasy__pour">
+					<img
+						[ngSrc]="pour.photo.src"
+						[width]="pour.photo.width"
+						[height]="pour.photo.height"
+						[alt]="pour.photo.alt"
+					/>
+					<div class="speakeasy__pour-text">
+						<h3>{{ pour.name }}</h3>
+						<p>{{ pour.ingredients }}</p>
+						<span class="speakeasy__price">{{ pour.price }}</span>
+					</div>
+				</li>
+			}
+		</ul>
+
+		<div class="speakeasy__card">
+			<h3 class="speakeasy__card-title">Also on the card this season</h3>
+			<ul class="speakeasy__card-list">
+				@for (line of cardLines; track line.name) {
+					<li>
+						<div class="speakeasy__card-row">
+							<span class="speakeasy__card-name">{{ line.name }}</span>
+							<span class="speakeasy__card-dots" aria-hidden="true"></span>
+							<span class="speakeasy__price">{{ line.price }}</span>
+						</div>
+						<p>{{ line.ingredients }}</p>
+					</li>
+				}
+			</ul>
+		</div>
+	</section>
+
+	<section id="room" class="speakeasy__room">
+		<figure class="speakeasy__room-photo">
+			<img
+				[ngSrc]="roomPhoto.src"
+				[width]="roomPhoto.width"
+				[height]="roomPhoto.height"
+				[alt]="roomPhoto.alt"
+			/>
+		</figure>
+
+		<div class="speakeasy__room-copy">
+			<h2>A short walk past the shelves. A different decade.</h2>
+			<p>
+				Push the third shelf from the left. Inside: dark oak, a brass rail, and a counter
+				where you can watch every drink being made.
+			</p>
+			<dl class="speakeasy__facts">
+				@for (fact of roomFacts; track fact.label) {
+					<div>
+						<dt>{{ fact.value }}</dt>
+						<dd>{{ fact.label }}</dd>
+					</div>
+				}
+			</dl>
+		</div>
+
+		<ul class="speakeasy__strip">
+			@for (photo of roomStrip; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="rules" class="speakeasy__rules">
+		<div class="speakeasy__section-head">
+			<h2>House rules</h2>
+			<p>Four of them. They keep the room the way guests like it.</p>
+		</div>
+
+		<ol class="speakeasy__rule-list">
+			@for (rule of houseRules; track rule.title) {
+				<li>
+					<h3>{{ rule.title }}</h3>
+					<p>{{ rule.text }}</p>
+				</li>
+			}
+		</ol>
+	</section>
+
+	<section id="reserve" class="speakeasy__reserve">
+		<div class="speakeasy__reserve-copy">
+			<h2>By reservation, most evenings</h2>
+			<p>
+				Call after 4pm and we will hold a table or two stools at the counter. Parties of
+				up to six.
+			</p>
+			<a class="speakeasy__button theme-focus" href="tel:+15550101929">
+				Call +1 (555) 010 1929
+			</a>
+		</div>
+
+		<dl class="speakeasy__details">
+			<div>
+				<dt>Address</dt>
+				<dd>123 Library Street. Enter through the bookshop.</dd>
+			</div>
+			<div>
+				<dt>Hours</dt>
+				<dd>Wednesday to Saturday, 7pm to 1am. Last call 12:30am.</dd>
+			</div>
+			<div>
+				<dt>Dress</dt>
+				<dd>Come as you would to dinner. No sportswear.</dd>
+			</div>
+			<div>
+				<dt>Private hire</dt>
+				<dd>The whole room on Sundays to Tuesdays, up to 24 guests.</dd>
+			</div>
+		</dl>
+	</section>
+
+	<footer class="speakeasy__footer">
+		<p class="speakeasy__footer-brand">The Bookcase</p>
+		<p>Speakeasy Cocktail design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="speakeasy__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

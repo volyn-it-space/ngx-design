@@ -1,0 +1,138 @@
+<article class="bakery">
+	<header class="bakery__header">
+		<a class="bakery__brand theme-focus" routerLink="." fragment="top">Little Oven Bakehouse</a>
+		<nav class="bakery__nav" aria-label="Bakery sections">
+			<a class="theme-focus" routerLink="." fragment="oven">Today's bakes</a>
+			<a class="theme-focus" routerLink="." fragment="menu">Menu</a>
+			<a class="theme-focus" routerLink="." fragment="counter">The counter</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="bakery__hero">
+		<h1>Bread, buns and coffee, fresh from the oven all morning.</h1>
+		<p class="bakery__lede">
+			A small neighbourhood bakery. The first tray comes out at 7:00, and the last one at 14:00.
+		</p>
+		<div class="bakery__actions">
+			<a class="bakery__button theme-focus" routerLink="." fragment="oven">See what is baking</a>
+			<a class="bakery__link theme-focus" routerLink="." fragment="visit">Opening hours</a>
+		</div>
+		<figure class="bakery__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="oven" class="bakery__oven">
+		<div class="bakery__section-head">
+			<h2>Out of the oven today</h2>
+			<p>Four bakes a day. Come at the time that suits the thing you want.</p>
+		</div>
+		<ol class="bakery__timetable">
+			@for (slot of ovenSlots; track slot.time) {
+				<li>
+					<span class="bakery__time">{{ slot.time }}</span>
+					<div>
+						<h3>{{ slot.bakes }}</h3>
+						<p>{{ slot.note }}</p>
+					</div>
+				</li>
+			}
+		</ol>
+	</section>
+
+	<section id="menu" class="bakery__menu">
+		<div class="bakery__section-head">
+			<h2>Coffee and bakes</h2>
+			<p>Everything is made on the premises. Prices include tax.</p>
+		</div>
+		<div class="bakery__columns">
+			@for (column of menuColumns; track column.title) {
+				<div class="bakery__column">
+					<h3>{{ column.title }}</h3>
+					<ul>
+						@for (line of column.lines; track line.name) {
+							<li>
+								<span class="bakery__item">
+									<strong>{{ line.name }}</strong>
+									<span>{{ line.note }}</span>
+								</span>
+								<span class="bakery__price">{{ line.price }}</span>
+							</li>
+						}
+					</ul>
+				</div>
+			}
+		</div>
+	</section>
+
+	<section id="counter" class="bakery__counter">
+		<div class="bakery__section-head">
+			<h2>A look at the counter</h2>
+			<p>Flour from a mill 40 km away, butter from one dairy, and a lot of patience.</p>
+		</div>
+		<ul class="bakery__mosaic">
+			@for (item of counterTop; track item.photo.src) {
+				<li [class.bakery__mosaic-wide]="item.shape === 'wide'">
+					<img
+						[ngSrc]="item.photo.src"
+						[width]="item.photo.width"
+						[height]="item.photo.height"
+						[alt]="item.photo.alt"
+					/>
+				</li>
+			}
+			@for (item of counterBottom; track item.photo.src) {
+				<li [class.bakery__mosaic-wide]="item.shape === 'wide'">
+					<img
+						[ngSrc]="item.photo.src"
+						[width]="item.photo.width"
+						[height]="item.photo.height"
+						[alt]="item.photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="visit" class="bakery__visit">
+		<figure class="bakery__visit-photo">
+			<img
+				[ngSrc]="visitPhoto.src"
+				[width]="visitPhoto.width"
+				[height]="visitPhoto.height"
+				[alt]="visitPhoto.alt"
+			/>
+		</figure>
+		<div class="bakery__visit-copy">
+			<h2>Come by for breakfast</h2>
+			<p>14 Mill Lane, next to the bus stop. Order ahead for whole loaves and large boxes.</p>
+			<table class="bakery__hours">
+				<caption>
+					Opening hours
+				</caption>
+				<tbody>
+					@for (row of openingHours; track row.days) {
+						<tr>
+							<th scope="row">{{ row.days }}</th>
+							<td>{{ row.hours }}</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+			<a class="bakery__button theme-focus" href="tel:+15550104410">Call +1 (555) 010 4410</a>
+		</div>
+	</section>
+
+	<footer class="bakery__footer">
+		<p class="bakery__footer-brand">Little Oven Bakehouse</p>
+		<p>Cafe Bakery design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="bakery__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

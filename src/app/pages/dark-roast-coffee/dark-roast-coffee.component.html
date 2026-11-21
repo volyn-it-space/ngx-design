@@ -1,0 +1,160 @@
+<article class="roast">
+	<header class="roast__header">
+		<a class="roast__brand theme-focus" routerLink="." fragment="top">Cinder &amp; Bean</a>
+		<nav class="roast__nav" aria-label="Coffee roaster sections">
+			<a class="theme-focus" routerLink="." fragment="beans">Beans</a>
+			<a class="theme-focus" routerLink="." fragment="bar">Brew bar</a>
+			<a class="theme-focus" routerLink="." fragment="cups">Cups</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="roast__hero">
+		<div class="roast__hero-copy">
+			<h1>Roasted darker, a little at a time.</h1>
+			<p class="roast__lede">
+				A small roastery and cafe. We roast in 12 kg batches, five days a week, and sell the
+				coffee within ten days.
+			</p>
+			<div class="roast__actions">
+				<a class="roast__button theme-focus" routerLink="." fragment="beans">Meet the beans</a>
+				<a class="roast__link theme-focus" routerLink="." fragment="visit">Opening hours</a>
+			</div>
+		</div>
+		<figure class="roast__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="beans" class="roast__beans">
+		<div class="roast__head">
+			<h2>Three coffees on the shelf</h2>
+			<p>Prices are per 250 g bag, roasted this week.</p>
+		</div>
+		<ul class="roast__bean-list">
+			@for (bean of beans; track bean.name) {
+				<li>
+					<h3>{{ bean.name }}</h3>
+					<dl>
+						<div>
+							<dt>Origin</dt>
+							<dd>{{ bean.origin }}</dd>
+						</div>
+						<div>
+							<dt>Altitude</dt>
+							<dd>{{ bean.altitude }}</dd>
+						</div>
+						<div>
+							<dt>Process</dt>
+							<dd>{{ bean.process }}</dd>
+						</div>
+					</dl>
+					<p>{{ bean.notes }}</p>
+					<span class="roast__price">{{ bean.price }}</span>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="bar" class="roast__bar">
+		<div class="roast__bar-copy">
+			<h2>The brew bar</h2>
+			<table class="roast__table">
+				<thead>
+					<tr>
+						<th scope="col">Method</th>
+						<th scope="col">Time</th>
+						<th scope="col">Size</th>
+						<th scope="col" class="roast__num">Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					@for (row of brewBar; track row.method) {
+						<tr>
+							<th scope="row">{{ row.method }}</th>
+							<td>{{ row.time }}</td>
+							<td>{{ row.size }}</td>
+							<td class="roast__num">{{ row.price }}</td>
+						</tr>
+					}
+				</tbody>
+			</table>
+
+			<div class="roast__days">
+				<h3>Roast days</h3>
+				<ul>
+					@for (day of roastDays; track day.day) {
+						<li>
+							<span class="roast__day">{{ day.day }}</span>
+							<span>{{ day.roast }}</span>
+						</li>
+					}
+				</ul>
+			</div>
+		</div>
+		<ul class="roast__bar-photos">
+			@for (photo of brewPhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="cups" class="roast__cups">
+		<div class="roast__head">
+			<h2>Three cups to start with</h2>
+			<p>If you are new, begin here.</p>
+		</div>
+		<ul class="roast__cup-list">
+			@for (cup of cups; track cup.name) {
+				<li>
+					<img
+						[ngSrc]="cup.photo.src"
+						[width]="cup.photo.width"
+						[height]="cup.photo.height"
+						[alt]="cup.photo.alt"
+					/>
+					<div class="roast__cup-text">
+						<h3>{{ cup.name }}</h3>
+						<span class="roast__price">{{ cup.price }}</span>
+						<p>{{ cup.note }}</p>
+					</div>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="visit" class="roast__visit">
+		<div class="roast__visit-copy">
+			<h2>Come in from the cold</h2>
+			<p>Bring a bag for refills. We take a dollar off for every bag returned.</p>
+			<a class="roast__button theme-focus" href="tel:+15550106677">Call +1 (555) 010 6677</a>
+		</div>
+		<dl class="roast__details">
+			@for (line of visit; track line.label) {
+				<div>
+					<dt>{{ line.label }}</dt>
+					<dd>{{ line.value }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<footer class="roast__footer">
+		<p class="roast__footer-brand">Cinder &amp; Bean</p>
+		<p>Dark Roast Coffee design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="roast__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

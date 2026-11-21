@@ -1,0 +1,136 @@
+<article class="jazz">
+	<header class="jazz__header">
+		<a class="jazz__brand theme-focus" routerLink="." fragment="top">The Blue Hour</a>
+		<nav class="jazz__nav" aria-label="Jazz lounge sections">
+			<a class="theme-focus" routerLink="." fragment="week">This week</a>
+			<a class="theme-focus" routerLink="." fragment="supper">Supper</a>
+			<a class="theme-focus" routerLink="." fragment="room">The room</a>
+			<a class="theme-focus" routerLink="." fragment="reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section id="top" class="jazz__hero">
+		<div class="jazz__hero-copy">
+			<h1>Live jazz, six nights a week.</h1>
+			<p class="jazz__lede">
+				A 60-seat supper club with a stage at one end and a bar at the other. Come for the
+				first set, stay for the second.
+			</p>
+			<div class="jazz__bill">
+				<p class="jazz__bill-title">Tonight</p>
+				<p class="jazz__bill-act">{{ tonight.act }}</p>
+				<p>{{ tonight.style }}</p>
+				<p>{{ tonight.sets }}</p>
+				<p class="jazz__bill-cover">{{ tonight.cover }}</p>
+			</div>
+			<a class="jazz__button theme-focus" routerLink="." fragment="reserve">Reserve a table</a>
+		</div>
+		<figure class="jazz__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="week" class="jazz__week">
+		<div class="jazz__week-copy">
+			<h2>The week at a glance</h2>
+			<p>We are dark on Monday. Friday and Saturday are the big nights, so book early.</p>
+			<figure class="jazz__sax">
+				<img
+					[ngSrc]="saxPhoto.src"
+					[width]="saxPhoto.width"
+					[height]="saxPhoto.height"
+					[alt]="saxPhoto.alt"
+				/>
+			</figure>
+		</div>
+		<ul class="jazz__lineup">
+			@for (night of week; track night.day) {
+				<li [class.jazz__night--featured]="night.featured">
+					<span class="jazz__day">{{ night.day }}</span>
+					<div>
+						<h3>{{ night.act }}</h3>
+						<p>{{ night.style }}</p>
+					</div>
+					<span class="jazz__cover">{{ night.cover }}</span>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="supper" class="jazz__supper">
+		<div class="jazz__head">
+			<h2>Supper, served until the last set</h2>
+			<p>A short menu you can eat in the dark without losing the plot.</p>
+		</div>
+		<div class="jazz__groups">
+			@for (group of supper; track group.title) {
+				<div class="jazz__group">
+					<h3>{{ group.title }}</h3>
+					<ul>
+						@for (line of group.lines; track line.name) {
+							<li>
+								<span>{{ line.name }}</span>
+								<span class="jazz__price">{{ line.price }}</span>
+							</li>
+						}
+					</ul>
+				</div>
+			}
+		</div>
+	</section>
+
+	<section id="room" class="jazz__room">
+		<div class="jazz__room-copy">
+			<h2>A small room, a good piano</h2>
+			<p>
+				Tables sit close to the stage, and no seat is more than twelve metres from the
+				piano. The bar stays open through both sets.
+			</p>
+			<dl class="jazz__facts">
+				@for (fact of roomFacts; track fact.label) {
+					<div>
+						<dt>{{ fact.label }}</dt>
+						<dd>{{ fact.value }}</dd>
+					</div>
+				}
+			</dl>
+		</div>
+		<ul class="jazz__room-photos">
+			@for (photo of roomPhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="reserve" class="jazz__reserve">
+		<div>
+			<h2>Reserve a table</h2>
+			<p>
+				Call after 3pm. Tables are held until 8:15. Cover is waived when you order supper.
+			</p>
+		</div>
+		<div class="jazz__reserve-side">
+			<a class="jazz__button theme-focus" href="tel:+15550104455">Call +1 (555) 010 4455</a>
+			<p>31 Harlan Street. Tuesday to Sunday, doors at 6pm.</p>
+		</div>
+	</section>
+
+	<footer class="jazz__footer">
+		<p class="jazz__footer-brand">The Blue Hour</p>
+		<p>Jazz Lounge design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="jazz__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

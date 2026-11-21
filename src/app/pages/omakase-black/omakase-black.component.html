@@ -1,0 +1,89 @@
+<article class="omakase">
+	<header class="omakase__header">
+		<a class="omakase__brand theme-focus" routerLink="." fragment="top">Kuro Counter</a>
+		<nav class="omakase__nav" aria-label="Sushi counter sections">
+			<a class="theme-focus" routerLink="." fragment="menu">Menu</a>
+			<a class="theme-focus" routerLink="." fragment="counter">The counter</a>
+			<a class="theme-focus" routerLink="." fragment="policy">Policy</a>
+			<a class="theme-focus" routerLink="." fragment="reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section id="top" class="omakase__hero">
+		<h1>Eight seats. One menu. Ninety minutes.</h1>
+		<p class="omakase__lede">
+			An omakase counter where the chef decides. Ten courses, served one at a time.
+		</p>
+		<span class="omakase__seal" aria-hidden="true"></span>
+		<figure class="omakase__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="menu" class="omakase__menu">
+		<h2>The menu</h2>
+		<ol class="omakase__courses">
+			@for (course of courses; track course.name) {
+				<li>
+					<h3>{{ course.name }}</h3>
+					<p>{{ course.note }}</p>
+				</li>
+			}
+		</ol>
+		<p class="omakase__price">$185 per guest. Sake pairing $75.</p>
+	</section>
+
+	<section id="counter" class="omakase__counter">
+		<ul class="omakase__numerals">
+			@for (n of numerals; track n.label) {
+				<li>
+					<span class="omakase__number">{{ n.value }}</span>
+					<span>{{ n.label }}</span>
+				</li>
+			}
+		</ul>
+		<ul class="omakase__photos">
+			@for (photo of counterPhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="policy" class="omakase__policy">
+		<h2>Before you come</h2>
+		<ul>
+			@for (policy of policies; track policy.title) {
+				<li>
+					<h3>{{ policy.title }}</h3>
+					<p>{{ policy.text }}</p>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="reserve" class="omakase__reserve">
+		<h2>Reservations</h2>
+		<p>Call between 2pm and 6pm. Tuesday to Saturday, seatings at 6pm and 8:30pm.</p>
+		<a class="omakase__button theme-focus" href="tel:+15550103030">Call +1 (555) 010 3030</a>
+		<p class="omakase__address">27 Willow Alley, ground floor. No sign on the door.</p>
+	</section>
+
+	<footer class="omakase__footer">
+		<p class="omakase__footer-brand">Kuro Counter</p>
+		<p>Omakase Black design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="omakase__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

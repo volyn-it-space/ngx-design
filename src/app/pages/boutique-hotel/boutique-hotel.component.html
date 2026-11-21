@@ -1,0 +1,126 @@
+<article class="stay">
+	<header class="stay__header">
+		<a class="stay__brand theme-focus" routerLink="." fragment="top">Hotel Lantern</a>
+		<nav class="stay__nav" aria-label="Hotel sections">
+			<a class="theme-focus" routerLink="." fragment="rooms">Rooms</a>
+			<a class="theme-focus" routerLink="." fragment="area">The area</a>
+			<a class="theme-focus" routerLink="." fragment="amenities">Amenities</a>
+			<a class="theme-focus" routerLink="." fragment="book">Book</a>
+		</nav>
+	</header>
+
+	<section id="top" class="stay__hero">
+		<div class="stay__hero-copy">
+			<h1>Twenty-four rooms by the old harbour.</h1>
+			<p class="stay__lede">
+				A small hotel in a restored customs house. Quiet rooms, a good breakfast and a front
+				desk that knows the neighbourhood.
+			</p>
+			<div class="stay__actions">
+				<a class="stay__button theme-focus" routerLink="." fragment="book">Book a room</a>
+				<a class="stay__link theme-focus" routerLink="." fragment="rooms">See the rooms</a>
+			</div>
+			<dl class="stay__strip">
+				@for (fact of stay; track fact.label) {
+					<div>
+						<dt>{{ fact.label }}</dt>
+						<dd>{{ fact.value }}</dd>
+					</div>
+				}
+			</dl>
+		</div>
+		<figure class="stay__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="rooms" class="stay__rooms">
+		<div class="stay__head">
+			<h2>Three kinds of room</h2>
+			<p>Rates are per night for two guests, with breakfast included.</p>
+		</div>
+		<ul class="stay__room-list">
+			@for (room of rooms; track room.name) {
+				<li>
+					<figure>
+						<img
+							[ngSrc]="room.photo.src"
+							[width]="room.photo.width"
+							[height]="room.photo.height"
+							[alt]="room.photo.alt"
+						/>
+					</figure>
+					<div class="stay__room-text">
+						<h3>{{ room.name }}</h3>
+						<p class="stay__size">{{ room.size }}</p>
+						<p>{{ room.text }}</p>
+						<p class="stay__from">
+							from <strong>{{ room.from }}</strong> a night
+						</p>
+					</div>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="area" class="stay__area">
+		<div class="stay__head">
+			<h2>Five places within a ten-minute walk</h2>
+			<p>Our front desk keeps a printed map. Ask for it at check-in.</p>
+		</div>
+		<ol class="stay__places">
+			@for (place of places; track place.name) {
+				<li>
+					<span class="stay__place-name">{{ place.name }}</span>
+					<span>{{ place.note }}</span>
+					<span class="stay__walk">{{ place.walk }}</span>
+				</li>
+			}
+		</ol>
+	</section>
+
+	<section id="amenities" class="stay__amenities">
+		<figure class="stay__amenity-photo">
+			<img
+				[ngSrc]="lobbyPhoto.src"
+				[width]="lobbyPhoto.width"
+				[height]="lobbyPhoto.height"
+				[alt]="lobbyPhoto.alt"
+			/>
+		</figure>
+		<div class="stay__amenity-copy">
+			<h2>What is included</h2>
+			<ul>
+				@for (item of amenities; track item) {
+					<li>{{ item }}</li>
+				}
+			</ul>
+		</div>
+	</section>
+
+	<section id="book" class="stay__book">
+		<div class="stay__book-copy">
+			<h2>Book direct</h2>
+			<p>
+				Call or write for the best rate. Free cancellation up to 48 hours before arrival.
+			</p>
+		</div>
+		<div class="stay__book-actions">
+			<a class="stay__button theme-focus" href="tel:+15550105151">Call +1 (555) 010 5151</a>
+			<a class="stay__link theme-focus" href="mailto:stay@example.com">stay&#64;example.com</a>
+			<p>2 Customs Wharf, Old Harbour.</p>
+		</div>
+	</section>
+
+	<footer class="stay__footer">
+		<p class="stay__footer-brand">Hotel Lantern</p>
+		<p>Boutique Hotel design demo. Venue and rates are fictional. Photos from Pexels.</p>
+		<a class="stay__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

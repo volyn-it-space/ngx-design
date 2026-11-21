@@ -1,0 +1,201 @@
+<article class="cellar">
+	<header class="cellar__header">
+		<a class="cellar__brand theme-focus" routerLink="." fragment="top">Enoteca Volta</a>
+
+		<nav class="cellar__nav" aria-label="Wine bar sections">
+			<a class="theme-focus" routerLink="." fragment="list">The list</a>
+			<a class="theme-focus" routerLink="." fragment="flights">Flights</a>
+			<a class="theme-focus" routerLink="." fragment="tastings">Tastings</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="cellar__hero">
+		<figure class="cellar__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+
+		<div class="cellar__hero-copy">
+			<h1>A long list, a low room, no hurry.</h1>
+			<p class="cellar__lede">
+				Enoteca Volta keeps 1,400 bottles under a brick vault on Cellar Lane. Forty of them
+				are open by the glass every evening.
+			</p>
+			<div class="cellar__actions">
+				<a class="cellar__button theme-focus" routerLink="." fragment="visit">
+					Reserve a table
+				</a>
+				<a class="cellar__link theme-focus" routerLink="." fragment="list">Read the list</a>
+			</div>
+			<p class="cellar__hours">Tuesday to Saturday, 5pm to 11pm. 47 Cellar Lane.</p>
+		</div>
+	</section>
+
+	<section id="list" class="cellar__list">
+		<div class="cellar__head">
+			<h2>A page from the list</h2>
+			<p>
+				Nine wines from three regions we know best. The full list runs to 14 regions. Ask
+				for it at the table.
+			</p>
+		</div>
+
+		<table class="cellar__table">
+			<thead>
+				<tr>
+					<th scope="col">Wine</th>
+					<th scope="col">Grape</th>
+					<th scope="col">Year</th>
+					<th class="cellar__num" scope="col">Glass</th>
+					<th class="cellar__num" scope="col">Bottle</th>
+				</tr>
+			</thead>
+			@for (region of regions; track region.name) {
+				<tbody>
+					<tr class="cellar__region">
+						<th colspan="5" scope="colgroup">{{ region.name }}</th>
+					</tr>
+					@for (wine of region.wines; track wine.name) {
+						<tr>
+							<th class="cellar__wine" scope="row">{{ wine.name }}</th>
+							<td class="cellar__grape">{{ wine.grape }}</td>
+							<td class="cellar__year">{{ wine.year }}</td>
+							<td class="cellar__num cellar__glass">{{ wine.glass }}</td>
+							<td class="cellar__num cellar__bottle">{{ wine.bottle }}</td>
+						</tr>
+					}
+				</tbody>
+			}
+		</table>
+	</section>
+
+	<section id="flights" class="cellar__flights">
+		<div class="cellar__head">
+			<h2>Three flights, three glasses each</h2>
+			<p>Half pours, served together so you can go back and forth.</p>
+		</div>
+
+		<figure class="cellar__flights-photo">
+			<img
+				[ngSrc]="flightsPhoto.src"
+				[width]="flightsPhoto.width"
+				[height]="flightsPhoto.height"
+				[alt]="flightsPhoto.alt"
+			/>
+		</figure>
+
+		<ul class="cellar__flight-grid">
+			@for (flight of flights; track flight.name) {
+				<li class="cellar__flight">
+					<h3>{{ flight.name }}</h3>
+					<p class="cellar__flight-theme">{{ flight.theme }}</p>
+					<ol>
+						@for (wine of flight.wines; track wine) {
+							<li>{{ wine }}</li>
+						}
+					</ol>
+					<p class="cellar__flight-price">{{ flight.price }}</p>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="cellar" class="cellar__cellar">
+		<div class="cellar__cellar-copy">
+			<h2>From the cellar</h2>
+			<p>
+				Sommelier Mara Bianchi buys from growers she has visited, a few cases at a time.
+				Bottles rest here for at least a year before they reach the list.
+			</p>
+			<dl class="cellar__facts">
+				@for (fact of cellarFacts; track fact.label) {
+					<div>
+						<dt>{{ fact.value }}</dt>
+						<dd>{{ fact.label }}</dd>
+					</div>
+				}
+			</dl>
+		</div>
+
+		<figure class="cellar__cellar-photo">
+			<img
+				[ngSrc]="cellarPhoto.src"
+				[width]="cellarPhoto.width"
+				[height]="cellarPhoto.height"
+				[alt]="cellarPhoto.alt"
+			/>
+		</figure>
+	</section>
+
+	<section id="tastings" class="cellar__tastings">
+		<figure class="cellar__tastings-photo">
+			<img
+				[ngSrc]="tastingsPhoto.src"
+				[width]="tastingsPhoto.width"
+				[height]="tastingsPhoto.height"
+				[alt]="tastingsPhoto.alt"
+			/>
+		</figure>
+
+		<div class="cellar__tastings-body">
+			<div class="cellar__head">
+				<h2>Tastings this month</h2>
+				<p>All start at 7pm at the long table. Twelve seats, booked by phone.</p>
+			</div>
+
+			<ul class="cellar__dates">
+				@for (tasting of tastings; track tasting.day) {
+					<li>
+						<p class="cellar__date-day">{{ tasting.day }}</p>
+						<div>
+							<h3>{{ tasting.title }}</h3>
+							<p>{{ tasting.note }}</p>
+						</div>
+						<p class="cellar__date-price">{{ tasting.price }}</p>
+					</li>
+				}
+			</ul>
+		</div>
+	</section>
+
+	<section id="visit" class="cellar__visit">
+		<figure class="cellar__visit-photo">
+			<img
+				[ngSrc]="visitPhoto.src"
+				[width]="visitPhoto.width"
+				[height]="visitPhoto.height"
+				[alt]="visitPhoto.alt"
+			/>
+		</figure>
+
+		<div class="cellar__visit-copy">
+			<h2>Come down the stairs</h2>
+			<p>
+				Call from 3pm to book a table or a seat at a tasting. Walk-ins are welcome at the
+				bar, which has ten stools.
+			</p>
+			<a class="cellar__button theme-focus" href="tel:+15550101974">Call +1 (555) 010 1974</a>
+		</div>
+
+		<dl class="cellar__details">
+			@for (detail of visitDetails; track detail.label) {
+				<div>
+					<dt>{{ detail.label }}</dt>
+					<dd>{{ detail.text }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<footer class="cellar__footer">
+		<p class="cellar__footer-brand">Enoteca Volta</p>
+		<p>Wine Cellar design demo. Venue and wine list are fictional. Photos from Pexels.</p>
+		<a class="cellar__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

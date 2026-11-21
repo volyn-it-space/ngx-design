@@ -1,0 +1,139 @@
+<article class="spa">
+	<header class="spa__header">
+		<a class="spa__brand theme-focus" routerLink="." fragment="top">Still Water Spa</a>
+		<nav class="spa__nav" aria-label="Spa sections">
+			<a class="theme-focus" routerLink="." fragment="treatments">Treatments</a>
+			<a class="theme-focus" routerLink="." fragment="day">A day here</a>
+			<a class="theme-focus" routerLink="." fragment="stays">Stays</a>
+			<a class="theme-focus" routerLink="." fragment="book">Book</a>
+		</nav>
+	</header>
+
+	<section id="top" class="spa__hero">
+		<div class="spa__hero-copy">
+			<h1>Slow mornings by the water.</h1>
+			<p class="spa__lede">
+				A small spa resort with twenty rooms, a warm pool and nothing you have to do. Stay a
+				night or stay a week.
+			</p>
+			<div class="spa__actions">
+				<a class="spa__button theme-focus" routerLink="." fragment="book">Book your stay</a>
+				<a class="spa__link theme-focus" routerLink="." fragment="treatments">See treatments</a>
+			</div>
+		</div>
+		<figure class="spa__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="treatments" class="spa__treatments">
+		<div class="spa__head">
+			<h2>Treatments</h2>
+			<p>Every treatment starts with a foot bath and a cup of tea. Prices include tax.</p>
+		</div>
+		<div class="spa__lists">
+			@for (group of treatments; track group.title) {
+				<div class="spa__group">
+					<h3>{{ group.title }}</h3>
+					<ul>
+						@for (item of group.items; track item.name) {
+							<li>
+								<span class="spa__item">
+									<strong>{{ item.name }}</strong>
+									<span>{{ item.minutes }}</span>
+								</span>
+								<span class="spa__price">{{ item.price }}</span>
+							</li>
+						}
+					</ul>
+				</div>
+			}
+		</div>
+	</section>
+
+	<section id="day" class="spa__day">
+		<div class="spa__head">
+			<h2>A day at Still Water</h2>
+			<p>There is no schedule. This is only what a good day can look like.</p>
+		</div>
+		<ol class="spa__timeline">
+			@for (moment of day; track moment.time) {
+				<li>
+					<span class="spa__time">{{ moment.time }}</span>
+					<div class="spa__moment">
+						<h3>{{ moment.title }}</h3>
+						<p>{{ moment.text }}</p>
+						@if (moment.photo; as photo) {
+							<img
+								[ngSrc]="photo.src"
+								[width]="photo.width"
+								[height]="photo.height"
+								[alt]="photo.alt"
+							/>
+						}
+					</div>
+				</li>
+			}
+		</ol>
+	</section>
+
+	<section id="stays" class="spa__stays">
+		<div class="spa__head">
+			<h2>Three ways to stay</h2>
+			<p>Prices are per person, sharing a room. Treatments can be swapped at any time.</p>
+		</div>
+		<ul class="spa__stay-list">
+			@for (stay of stays; track stay.name) {
+				<li>
+					<h3>{{ stay.name }}</h3>
+					<p class="spa__nights">{{ stay.nights }}</p>
+					<p>{{ stay.text }}</p>
+					<p class="spa__from">
+						from <strong>{{ stay.from }}</strong>
+					</p>
+				</li>
+			}
+		</ul>
+		<ul class="spa__pool-photos">
+			@for (photo of poolPhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="book" class="spa__book">
+		<figure class="spa__closing">
+			<img
+				[ngSrc]="closingPhoto.src"
+				[width]="closingPhoto.width"
+				[height]="closingPhoto.height"
+				[alt]="closingPhoto.alt"
+			/>
+		</figure>
+		<div class="spa__book-copy">
+			<h2>Come and rest</h2>
+			<p>Call or write and we will find a room. Arrival from 2pm, departure by 11am.</p>
+			<a class="spa__button theme-focus" href="tel:+15550106161">Call +1 (555) 010 6161</a>
+			<p class="spa__address">9 Lakeshore Drive. Open every day, 8am to 8pm.</p>
+		</div>
+	</section>
+
+	<footer class="spa__footer">
+		<p class="spa__footer-brand">Still Water Spa</p>
+		<p>Resort Spa design demo. Venue and prices are fictional. Photos from Pexels.</p>
+		<a class="spa__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

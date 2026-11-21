@@ -1,0 +1,128 @@
+<article class="brew">
+	<header class="brew__header">
+		<a class="brew__brand theme-focus" routerLink="." fragment="top">Foundry Yard Brewing</a>
+		<nav class="brew__nav" aria-label="Brewery sections">
+			<a class="theme-focus" routerLink="." fragment="taps">Tap list</a>
+			<a class="theme-focus" routerLink="." fragment="tour">Tour</a>
+			<a class="theme-focus" routerLink="." fragment="pairings">Taproom</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="brew__hero">
+		<div class="brew__hero-copy">
+			<h1>Beer brewed in the building you drink it in.</h1>
+			<p class="brew__lede">
+				A working brewery in an old iron foundry. Twelve taps, a tour on Saturdays and a
+				bottle filled to take home.
+			</p>
+			<div class="brew__actions">
+				<a class="brew__button theme-focus" routerLink="." fragment="visit">Plan a visit</a>
+				<a class="brew__link theme-focus" routerLink="." fragment="tour">Book the tour</a>
+			</div>
+		</div>
+
+		<div id="taps" class="brew__board">
+			<h2>On tap today</h2>
+			<ul>
+				@for (tap of taps; track tap.no) {
+					<li>
+						<span class="brew__tap-no">{{ tap.no }}</span>
+						<span class="brew__tap-name">
+							<strong>{{ tap.beer }}</strong>
+							<span>{{ tap.style }}, {{ tap.abv }}</span>
+						</span>
+						<span class="brew__price">{{ tap.price }}</span>
+					</li>
+				}
+			</ul>
+			<p>Pint prices. Flights of four 5 oz pours, $14.</p>
+		</div>
+
+		<figure class="brew__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section class="brew__numbers">
+		<ul>
+			@for (n of numerals; track n.label) {
+				<li>
+					<span class="brew__number">{{ n.value }}</span>
+					<span>{{ n.label }}</span>
+				</li>
+			}
+		</ul>
+		<figure class="brew__beer-photo">
+			<img
+				[ngSrc]="beerPhoto.src"
+				[width]="beerPhoto.width"
+				[height]="beerPhoto.height"
+				[alt]="beerPhoto.alt"
+			/>
+		</figure>
+	</section>
+
+	<section id="tour" class="brew__tour">
+		<div class="brew__head">
+			<h2>The Saturday tour</h2>
+			<p>45 minutes, $22 per person, with a four-beer flight at the end.</p>
+		</div>
+		<ol class="brew__steps">
+			@for (step of tour; track step.title; let i = $index) {
+				<li>
+					<span class="brew__step-no" aria-hidden="true">{{ i + 1 }}</span>
+					<h3>{{ step.title }}</h3>
+					<p>{{ step.text }}</p>
+				</li>
+			}
+		</ol>
+	</section>
+
+	<section id="pairings" class="brew__taproom">
+		<div class="brew__head">
+			<h2>The taproom bar</h2>
+			<p>Steel, copper and a long counter. Pretzels, sausages and cheese come from next door.</p>
+		</div>
+		<ul class="brew__tiles">
+			@for (photo of pairingPhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="visit" class="brew__visit">
+		<div class="brew__visit-copy">
+			<h2>Come and drink at the source</h2>
+			<p>Dogs and children are welcome until 7pm. Food trucks park in the yard on weekends.</p>
+			<a class="brew__button theme-focus" href="tel:+15550105566">Call +1 (555) 010 5566</a>
+		</div>
+		<dl class="brew__details">
+			@for (line of visit; track line.label) {
+				<div>
+					<dt>{{ line.label }}</dt>
+					<dd>{{ line.value }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<footer class="brew__footer">
+		<p class="brew__footer-brand">Foundry Yard Brewing</p>
+		<p>Industrial Brewery design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="brew__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

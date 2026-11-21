@@ -1,0 +1,158 @@
+<article class="den">
+	<header class="den__header">
+		<a class="den__brand theme-focus" routerLink="." fragment="top">Cask &amp; Ledger</a>
+		<nav class="den__nav" aria-label="Whisky bar sections">
+			<a class="theme-focus" routerLink="." fragment="ledger">The ledger</a>
+			<a class="theme-focus" routerLink="." fragment="flights">Flights</a>
+			<a class="theme-focus" routerLink="." fragment="lounge">The lounge</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="den__hero">
+		<div class="den__hero-copy">
+			<h1>Two hundred and forty bottles, written down.</h1>
+			<p class="den__lede">
+				A whisky bar below Distillery Row. Every dram is listed by region, age and cask, and
+				poured by the 25 ml, 50 ml or full 75 ml.
+			</p>
+			<div class="den__actions">
+				<a class="den__button theme-focus" routerLink="." fragment="ledger">Read the ledger</a>
+				<a class="den__link theme-focus" routerLink="." fragment="visit">Book the lounge</a>
+			</div>
+		</div>
+		<figure class="den__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="ledger" class="den__ledger">
+		<div class="den__head">
+			<h2>The ledger</h2>
+			<p>A page from the list. Prices are for a 50 ml dram. Ask for 25 ml at half the price.</p>
+		</div>
+
+		<div class="den__tables">
+			@for (region of regions; track region.name) {
+				<table class="den__table">
+					<caption>
+						<span class="den__region">{{ region.name }}</span>
+						<span class="den__region-note">{{ region.note }}</span>
+					</caption>
+					<thead>
+						<tr>
+							<th scope="col">Whisky</th>
+							<th scope="col">Age</th>
+							<th scope="col">Cask</th>
+							<th scope="col" class="den__num">Dram</th>
+						</tr>
+					</thead>
+					<tbody>
+						@for (dram of region.drams; track dram.name) {
+							<tr>
+								<th scope="row">{{ dram.name }}</th>
+								<td>{{ dram.age }}</td>
+								<td>{{ dram.cask }}</td>
+								<td class="den__num">{{ dram.price }}</td>
+							</tr>
+						}
+					</tbody>
+				</table>
+			}
+		</div>
+	</section>
+
+	<section id="flights" class="den__flights">
+		<figure class="den__flight-photo">
+			<img
+				[ngSrc]="flightPhoto.src"
+				[width]="flightPhoto.width"
+				[height]="flightPhoto.height"
+				[alt]="flightPhoto.alt"
+			/>
+		</figure>
+		<div class="den__flight-copy">
+			<div class="den__head">
+				<h2>Three flights for the undecided</h2>
+				<p>Each flight is three 25 ml drams, served with water and a short card.</p>
+			</div>
+			<ul class="den__flight-list">
+				@for (flight of flights; track flight.name) {
+					<li>
+						<div>
+							<h3>{{ flight.name }}</h3>
+							<p>{{ flight.text }}</p>
+						</div>
+						<span class="den__price">{{ flight.price }}</span>
+					</li>
+				}
+			</ul>
+		</div>
+	</section>
+
+	<section id="lounge" class="den__lounge">
+		<figure class="den__lounge-main">
+			<img
+				[ngSrc]="shelfPhoto.src"
+				[width]="shelfPhoto.width"
+				[height]="shelfPhoto.height"
+				[alt]="shelfPhoto.alt"
+			/>
+		</figure>
+		<div class="den__lounge-copy">
+			<h2>A lounge with the lights kept low</h2>
+			<p>
+				Leather chairs, small tables and no music louder than a conversation. Sit at the bar
+				to talk to the pourer, or take a table to talk to each other.
+			</p>
+			<dl class="den__facts">
+				@for (fact of houseFacts; track fact.label) {
+					<div>
+						<dt>{{ fact.label }}</dt>
+						<dd>{{ fact.value }}</dd>
+					</div>
+				}
+			</dl>
+		</div>
+		<ul class="den__pair">
+			@for (photo of loungePhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="visit" class="den__visit">
+		<div class="den__visit-copy">
+			<h2>Find the door under the stairs</h2>
+			<p>Walk-ins are welcome at the bar. Call ahead for a lounge table.</p>
+			<a class="den__button theme-focus" href="tel:+15550102240">Call +1 (555) 010 2240</a>
+		</div>
+		<dl class="den__details">
+			@for (line of visit; track line.label) {
+				<div>
+					<dt>{{ line.label }}</dt>
+					<dd>{{ line.value }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<footer class="den__footer">
+		<p class="den__footer-brand">Cask &amp; Ledger</p>
+		<p>Whisky Den design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="den__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

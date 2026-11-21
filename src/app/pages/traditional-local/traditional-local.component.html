@@ -1,0 +1,121 @@
+<article class="local">
+	<header class="local__header">
+		<a class="local__brand theme-focus" routerLink="." fragment="top">The Hearth House</a>
+		<nav class="local__nav" aria-label="Restaurant sections">
+			<a class="theme-focus" routerLink="." fragment="dishes">House recipes</a>
+			<a class="theme-focus" routerLink="." fragment="history">Our story</a>
+			<a class="theme-focus" routerLink="." fragment="region">From the region</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+	<div class="local__band" aria-hidden="true"></div>
+
+	<section id="top" class="local__hero">
+		<div class="local__hero-copy">
+			<h1>Recipes older than the oven they are baked in.</h1>
+			<p class="local__lede">
+				Village cooking from three generations of one family. Soups, roasts and bread, all
+				made on a wood fire.
+			</p>
+			<div class="local__actions">
+				<a class="local__button theme-focus" routerLink="." fragment="visit">Visit the hearth</a>
+				<a class="local__link theme-focus" routerLink="." fragment="dishes">The house recipes</a>
+			</div>
+		</div>
+		<figure class="local__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="dishes" class="local__dishes">
+		<div class="local__head">
+			<h2>Four dishes we have always cooked</h2>
+			<p>The same recipes since 1952, made with the same patience.</p>
+		</div>
+		<ul class="local__dish-list">
+			@for (dish of dishes; track dish.name) {
+				<li>
+					<img
+						[ngSrc]="dish.photo.src"
+						[width]="dish.photo.width"
+						[height]="dish.photo.height"
+						[alt]="dish.photo.alt"
+					/>
+					<div class="local__dish-text">
+						<h3>{{ dish.name }}</h3>
+						<span class="local__price">{{ dish.price }}</span>
+						<p>{{ dish.text }}</p>
+					</div>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="history" class="local__history">
+		<div class="local__head">
+			<h2>Seventy years, four dates</h2>
+		</div>
+		<ol class="local__timeline">
+			@for (item of timeline; track item.year) {
+				<li>
+					<span class="local__year">{{ item.year }}</span>
+					<p>{{ item.text }}</p>
+				</li>
+			}
+		</ol>
+	</section>
+
+	<section id="region" class="local__region">
+		<div class="local__region-copy">
+			<h2>Everything we can, from nearby</h2>
+			<p>Four neighbours supply most of what is on the table. None is more than 20 km away.</p>
+			<ul class="local__suppliers">
+				@for (supplier of suppliers; track supplier.name) {
+					<li>
+						<span>
+							<strong>{{ supplier.name }}</strong>
+							<span>{{ supplier.gives }}</span>
+						</span>
+						<span class="local__distance">{{ supplier.distance }}</span>
+					</li>
+				}
+			</ul>
+		</div>
+		<figure class="local__room-photo">
+			<img
+				[ngSrc]="roomPhoto.src"
+				[width]="roomPhoto.width"
+				[height]="roomPhoto.height"
+				[alt]="roomPhoto.alt"
+			/>
+		</figure>
+	</section>
+
+	<section id="visit" class="local__visit">
+		<div class="local__visit-copy">
+			<h2>Come hungry, sit near the fire</h2>
+			<p>Book ahead for Sundays. Weekday tables are held for walk-ins until 7pm.</p>
+			<a class="local__button theme-focus" href="tel:+15550103838">Call +1 (555) 010 3838</a>
+		</div>
+		<dl class="local__details">
+			@for (line of visit; track line.label) {
+				<div>
+					<dt>{{ line.label }}</dt>
+					<dd>{{ line.value }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<footer class="local__footer">
+		<p class="local__footer-brand">The Hearth House</p>
+		<p>Traditional Local design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="local__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

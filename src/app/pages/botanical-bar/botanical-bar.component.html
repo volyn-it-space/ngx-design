@@ -1,0 +1,137 @@
+<article class="green">
+	<header class="green__header">
+		<a class="green__brand theme-focus" routerLink="." fragment="top">The Glasshouse Bar</a>
+		<nav class="green__nav" aria-label="Botanical bar sections">
+			<a class="theme-focus" routerLink="." fragment="menu">Drinks</a>
+			<a class="theme-focus" routerLink="." fragment="garden">The garden</a>
+			<a class="theme-focus" routerLink="." fragment="season">This season</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="green__hero">
+		<div class="green__hero-copy">
+			<h1>Cocktails picked from the garden out back.</h1>
+			<p class="green__lede">
+				A glasshouse bar with its own herb beds. Every drink starts with something that was
+				growing this morning.
+			</p>
+			<div class="green__actions">
+				<a class="green__button theme-focus" routerLink="." fragment="menu">See the drinks</a>
+				<a class="green__link theme-focus" routerLink="." fragment="visit">Find the glasshouse</a>
+			</div>
+		</div>
+		<div class="green__hero-art">
+			<figure class="green__blob">
+				<img
+					[ngSrc]="heroPhoto.src"
+					[width]="heroPhoto.width"
+					[height]="heroPhoto.height"
+					[alt]="heroPhoto.alt"
+					priority
+				/>
+			</figure>
+			<figure class="green__round">
+				<img
+					[ngSrc]="heroRound.src"
+					[width]="heroRound.width"
+					[height]="heroRound.height"
+					[alt]="heroRound.alt"
+				/>
+			</figure>
+		</div>
+	</section>
+
+	<section id="menu" class="green__menu">
+		<div class="green__head">
+			<h2>Drinks by plant family</h2>
+			<p>Nine drinks, grouped by what they grow from. Each can be made without alcohol.</p>
+		</div>
+		<div class="green__families">
+			@for (family of families; track family.name) {
+				<div class="green__family">
+					<h3>{{ family.name }}</h3>
+					<p class="green__family-note">{{ family.note }}</p>
+					<ul>
+						@for (drink of family.drinks; track drink.name) {
+							<li>
+								<span class="green__drink">
+									<strong>{{ drink.name }}</strong>
+									<span>{{ drink.ingredients }}</span>
+								</span>
+								<span class="green__price">{{ drink.price }}</span>
+							</li>
+						}
+					</ul>
+				</div>
+			}
+		</div>
+	</section>
+
+	<section id="garden" class="green__garden">
+		<figure class="green__garden-photo">
+			<img
+				[ngSrc]="gardenPhoto.src"
+				[width]="gardenPhoto.width"
+				[height]="gardenPhoto.height"
+				[alt]="gardenPhoto.alt"
+			/>
+		</figure>
+		<div class="green__garden-copy">
+			<h2>What is in the beds this month</h2>
+			<p>
+				Ten plants grow behind the bar. Ask the bartender to take you out for a leaf before
+				you order.
+			</p>
+			<ul class="green__plants">
+				@for (plant of plants; track plant) {
+					<li>{{ plant }}</li>
+				}
+			</ul>
+		</div>
+	</section>
+
+	<section id="season" class="green__season">
+		<div class="green__season-copy">
+			<h2>Autumn on the card</h2>
+			<p>
+				From October the herbs give way to roots, quince and smoked apple. Two drinks leave
+				the card and two arrive: a sage and pear sour, and a parsnip old fashioned.
+			</p>
+		</div>
+		<ul class="green__season-photos">
+			@for (photo of seasonPhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="visit" class="green__visit">
+		<div class="green__visit-copy">
+			<h2>Come in through the greenhouse door</h2>
+			<p>Walk-ins are welcome. Tables for four or more can be held by phone.</p>
+			<a class="green__button theme-focus" href="tel:+15550107788">Call +1 (555) 010 7788</a>
+		</div>
+		<dl class="green__details">
+			@for (line of visit; track line.label) {
+				<div>
+					<dt>{{ line.label }}</dt>
+					<dd>{{ line.value }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<footer class="green__footer">
+		<p class="green__footer-brand">The Glasshouse Bar</p>
+		<p>Botanical Bar design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="green__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

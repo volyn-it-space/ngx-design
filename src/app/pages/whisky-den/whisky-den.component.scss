@@ -1,0 +1,464 @@
+:host {
+	display: block;
+}
+
+.den {
+	--bg: #2a1810;
+	--bg-2: #3a2418;
+	--text-strong: #f0e5c8;
+	--text: #d2c3a4;
+	--text-muted: #ad9c84;
+	--brass: #b8934a;
+	--border: #4d3123;
+	--display: 'Cinzel', Georgia, 'Times New Roman', serif;
+	--body: 'Lora', Georgia, 'Times New Roman', serif;
+	--gutter: clamp(1rem, 4vw, 3rem);
+	--section-gap: clamp(4rem, 9vw, 7rem);
+
+	display: grid;
+	gap: var(--section-gap);
+	padding-bottom: 3rem;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--body);
+	font-size: 1rem;
+	line-height: 1.7;
+
+	h1,
+	h2,
+	h3 {
+		margin: 0;
+		color: var(--text-strong);
+		font-family: var(--display);
+		font-weight: 500;
+		letter-spacing: 0.02em;
+		text-wrap: balance;
+	}
+
+	h2 {
+		font-size: clamp(1.625rem, 3.2vw, 2.5rem);
+		line-height: 1.2;
+	}
+
+	p,
+	ul,
+	dl,
+	dd,
+	figure {
+		margin: 0;
+	}
+
+	ul {
+		padding: 0;
+		list-style: none;
+	}
+
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		filter: saturate(0.85) brightness(0.9);
+	}
+}
+
+.den__header,
+.den__hero,
+.den__ledger,
+.den__flights,
+.den__lounge,
+.den__visit,
+.den__footer {
+	width: min(100% - 2 * var(--gutter), 72rem);
+	margin-inline: auto;
+}
+
+.den__header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.25rem 2rem;
+	padding-block: 1.25rem;
+	border-bottom: 1px solid var(--border);
+	margin-bottom: calc(var(--section-gap) * -0.5);
+}
+
+.den__brand {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--brass);
+	font-family: var(--display);
+	font-size: 1.375rem;
+	font-weight: 600;
+	letter-spacing: 0.06em;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.den__nav {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0 1.5rem;
+
+	a {
+		display: inline-flex;
+		align-items: center;
+		min-height: 2.75rem;
+		color: var(--text);
+		font-size: 0.9375rem;
+		text-decoration: none;
+
+		&:hover {
+			color: var(--brass);
+		}
+	}
+}
+
+/* Hero: split, wide low-light photo */
+
+.den__hero {
+	display: grid;
+	grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+	align-items: center;
+	gap: 2rem clamp(2rem, 5vw, 4rem);
+
+	h1 {
+		font-size: clamp(2.25rem, 4.6vw, 3.75rem);
+		line-height: 1.12;
+	}
+}
+
+.den__hero-copy {
+	display: grid;
+	gap: 1.5rem;
+	justify-items: start;
+}
+
+.den__lede {
+	font-size: 1.125rem;
+}
+
+.den__actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.5rem 1.5rem;
+}
+
+.den__button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 3rem;
+	padding: 0.5rem 1.75rem;
+	background: var(--brass);
+	color: #2a1810;
+	font-weight: 600;
+	text-decoration: none;
+	transition: background-color 0.15s ease;
+
+	&:hover {
+		background: #cfa95c;
+	}
+}
+
+.den__link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 2.75rem;
+	color: var(--brass);
+	text-decoration: underline;
+	text-underline-offset: 0.3em;
+}
+
+.den__hero-photo {
+	aspect-ratio: 15 / 8;
+	border: 1px solid var(--border);
+}
+
+.den__head {
+	display: grid;
+	gap: 0.625rem;
+	max-width: 40rem;
+
+	p {
+		font-size: 1.0625rem;
+	}
+}
+
+/* Ledger tables */
+
+.den__ledger {
+	display: grid;
+	gap: 2.5rem;
+}
+
+.den__tables {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 2.5rem clamp(2rem, 5vw, 4rem);
+	align-items: start;
+}
+
+.den__table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 0.9375rem;
+
+	caption {
+		display: grid;
+		gap: 0.125rem;
+		padding-bottom: 0.75rem;
+		border-bottom: 2px solid var(--brass);
+		text-align: left;
+	}
+
+	th,
+	td {
+		padding: 0.625rem 0.5rem 0.625rem 0;
+		border-bottom: 1px solid var(--border);
+		text-align: left;
+		vertical-align: top;
+	}
+
+	thead th {
+		color: var(--text-muted);
+		font-size: 0.8125rem;
+		font-weight: 500;
+		letter-spacing: 0.04em;
+		text-transform: uppercase;
+	}
+
+	tbody th {
+		color: var(--text-strong);
+		font-weight: 600;
+	}
+
+	.den__num {
+		padding-right: 0;
+		color: var(--brass);
+		font-variant-numeric: tabular-nums;
+		font-weight: 600;
+		text-align: right;
+	}
+}
+
+.den__region {
+	color: var(--text-strong);
+	font-family: var(--display);
+	font-size: 1.375rem;
+}
+
+.den__region-note {
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+	font-style: italic;
+}
+
+/* Flights */
+
+.den__flights {
+	display: grid;
+	grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr);
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+	align-items: center;
+}
+
+.den__flight-photo {
+	aspect-ratio: 4 / 5;
+}
+
+.den__flight-copy {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.den__flight-list li {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding-block: 1.125rem;
+	border-top: 1px solid var(--border);
+
+	&:last-child {
+		border-bottom: 1px solid var(--border);
+	}
+
+	h3 {
+		font-size: 1.25rem;
+	}
+}
+
+.den__price {
+	color: var(--brass);
+	font-family: var(--display);
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+
+/* Lounge */
+
+.den__lounge {
+	display: grid;
+	grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+	gap: 1.5rem clamp(2rem, 5vw, 4rem);
+	align-items: center;
+}
+
+.den__lounge-main {
+	aspect-ratio: 3 / 2;
+}
+
+.den__lounge-copy {
+	display: grid;
+	gap: 1.25rem;
+}
+
+.den__facts {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 1rem;
+	padding-top: 1.25rem;
+	border-top: 1px solid var(--border);
+
+	div {
+		display: flex;
+		flex-direction: column-reverse;
+		justify-content: flex-end;
+		gap: 0.25rem;
+	}
+
+	dt {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+		line-height: 1.4;
+	}
+
+	dd {
+		color: var(--brass);
+		font-family: var(--display);
+		font-size: 2rem;
+		line-height: 1.1;
+	}
+}
+
+.den__pair {
+	display: grid;
+	grid-column: 1 / -1;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 1.5rem;
+
+	li {
+		aspect-ratio: 3 / 2;
+	}
+}
+
+/* Visit */
+
+.den__visit {
+	display: grid;
+	grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+	gap: 2rem clamp(2rem, 6vw, 5rem);
+	padding: clamp(1.5rem, 5vw, 3.5rem);
+	border: 1px solid var(--brass);
+	background: linear-gradient(160deg, rgba(90, 26, 26, 0.5), var(--bg-2) 65%);
+}
+
+.den__visit-copy {
+	display: grid;
+	gap: 1.25rem;
+	align-content: start;
+	justify-items: start;
+}
+
+.den__details {
+	display: grid;
+
+	div {
+		display: grid;
+		grid-template-columns: 6rem minmax(0, 1fr);
+		gap: 1rem;
+		padding-block: 0.75rem;
+		border-top: 1px solid var(--border);
+	}
+
+	dt {
+		color: var(--text-muted);
+		font-size: 0.9375rem;
+	}
+
+	dd {
+		color: var(--text-strong);
+	}
+}
+
+.den__footer {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 0.5rem 2rem;
+	padding-top: 1.5rem;
+	border-top: 1px solid var(--border);
+	color: var(--text-muted);
+	font-size: 0.9375rem;
+}
+
+.den__footer-brand {
+	color: var(--brass);
+	font-family: var(--display);
+	font-size: 1.125rem;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+}
+
+@media (max-width: 60rem) {
+	.den__hero,
+	.den__flights,
+	.den__lounge,
+	.den__visit,
+	.den__tables {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.den__flight-photo {
+		aspect-ratio: 3 / 2;
+	}
+}
+
+@media (max-width: 40rem) {
+	.den__table {
+		font-size: 0.875rem;
+
+		th,
+		td {
+			padding-right: 0.375rem;
+		}
+	}
+
+	.den__pair {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.den__facts {
+		gap: 0.5rem;
+
+		dd {
+			font-size: 1.5rem;
+		}
+	}
+
+	.den__details div {
+		grid-template-columns: minmax(0, 1fr);
+		gap: 0.125rem;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.den * {
+		transition: none;
+	}
+}

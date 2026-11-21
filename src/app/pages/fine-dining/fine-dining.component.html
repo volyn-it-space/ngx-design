@@ -1,0 +1,128 @@
+<article class="tasting">
+	<header class="tasting__header">
+		<a class="tasting__brand theme-focus" routerLink="." fragment="top">Maison Linden</a>
+		<nav class="tasting__nav" aria-label="Restaurant sections">
+			<a class="theme-focus" routerLink="." fragment="menu">Tasting menu</a>
+			<a class="theme-focus" routerLink="." fragment="chef">The kitchen</a>
+			<a class="theme-focus" routerLink="." fragment="wine">Wine</a>
+			<a class="theme-focus" routerLink="." fragment="reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section id="top" class="tasting__hero">
+		<figure class="tasting__hero-photo">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+		<div class="tasting__panel">
+			<h1>Seven courses, cooked for one table at a time.</h1>
+			<p class="tasting__lede">
+				A 28-seat dining room serving a single tasting menu. The kitchen cooks what the
+				market sends that morning.
+			</p>
+			<div class="tasting__actions">
+				<a class="tasting__button theme-focus" routerLink="." fragment="reserve">
+					Reserve a table
+				</a>
+				<a class="tasting__link theme-focus" routerLink="." fragment="menu">Read the menu</a>
+			</div>
+		</div>
+	</section>
+
+	<section id="menu" class="tasting__menu">
+		<h2>The tasting menu</h2>
+		<ol class="tasting__courses">
+			@for (course of courses; track course.name) {
+				<li>
+					<h3>{{ course.name }}</h3>
+					<p>{{ course.note }}</p>
+				</li>
+			}
+		</ol>
+		<p class="tasting__price">$165 per guest. Wine pairing $95.</p>
+	</section>
+
+	<section id="chef" class="tasting__chef">
+		<figure class="tasting__chef-photo">
+			<img
+				[ngSrc]="kitchenPhoto.src"
+				[width]="kitchenPhoto.width"
+				[height]="kitchenPhoto.height"
+				[alt]="kitchenPhoto.alt"
+			/>
+		</figure>
+		<div class="tasting__chef-copy">
+			<h2>A note from the kitchen</h2>
+			<p>
+				We keep the menu short so every plate gets full attention. Most ingredients come
+				from within an hour of the restaurant, and the rest from people we have bought
+				from for years.
+			</p>
+			<p>The menu changes when the produce does, usually every three weeks.</p>
+			<ul class="tasting__plates">
+				@for (photo of platePhotos; track photo.src) {
+					<li>
+						<img
+							[ngSrc]="photo.src"
+							[width]="photo.width"
+							[height]="photo.height"
+							[alt]="photo.alt"
+						/>
+					</li>
+				}
+			</ul>
+		</div>
+	</section>
+
+	<section id="wine" class="tasting__wine">
+		<h2>The wine pairing</h2>
+		<table class="tasting__table">
+			<thead>
+				<tr>
+					<th scope="col">With</th>
+					<th scope="col">Wine</th>
+					<th scope="col">Region</th>
+				</tr>
+			</thead>
+			<tbody>
+				@for (pairing of pairings; track pairing.wine) {
+					<tr>
+						<th scope="row">{{ pairing.course }}</th>
+						<td>{{ pairing.wine }}</td>
+						<td>{{ pairing.region }}</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</section>
+
+	<section id="reserve" class="tasting__reserve">
+		<div class="tasting__reserve-copy">
+			<h2>Reservations</h2>
+			<p>
+				Book by phone from noon to 6pm. We confirm every booking the day before and ask for a
+				card to hold the table.
+			</p>
+			<a class="tasting__button theme-focus" href="tel:+15550108899">Call +1 (555) 010 8899</a>
+		</div>
+		<dl class="tasting__details">
+			@for (line of details; track line.label) {
+				<div>
+					<dt>{{ line.label }}</dt>
+					<dd>{{ line.value }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<footer class="tasting__footer">
+		<p class="tasting__footer-brand">Maison Linden</p>
+		<p>Fine Dining design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="tasting__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

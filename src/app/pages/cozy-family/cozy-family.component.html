@@ -1,0 +1,125 @@
+<article class="family">
+	<header class="family__header">
+		<a class="family__brand theme-focus" routerLink="." fragment="top">Nonna Rosa's Table</a>
+		<nav class="family__nav" aria-label="Family restaurant sections">
+			<a class="theme-focus" routerLink="." fragment="week">This week</a>
+			<a class="theme-focus" routerLink="." fragment="families">For families</a>
+			<a class="theme-focus" routerLink="." fragment="story">Our story</a>
+			<a class="theme-focus" routerLink="." fragment="visit">Visit</a>
+		</nav>
+	</header>
+
+	<section id="top" class="family__hero">
+		<div class="family__hero-copy">
+			<h1>Big tables, warm plates, room for everyone.</h1>
+			<p class="family__lede">
+				A neighbourhood restaurant where the whole family fits. Kids are welcome, noise is
+				fine, and dinner arrives while it is still hot.
+			</p>
+			<div class="family__actions">
+				<a class="family__button theme-focus" href="tel:+15550109090">Book a family table</a>
+				<a class="family__link theme-focus" routerLink="." fragment="week">See this week</a>
+			</div>
+		</div>
+		<div class="family__stack">
+			@for (photo of heroPhotos; track photo.src; let i = $index) {
+				<figure [class]="'family__snap family__snap--' + (i + 1)">
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+						[priority]="i === 0"
+					/>
+				</figure>
+			}
+		</div>
+	</section>
+
+	<section id="week" class="family__week">
+		<div class="family__head">
+			<h2>This week at the table</h2>
+			<p>One special a day, with a salad and bread. Kids portions are half price.</p>
+		</div>
+		<ul class="family__days">
+			@for (item of week; track item.day) {
+				<li>
+					<span class="family__day">{{ item.day }}</span>
+					<span class="family__dish">{{ item.dish }}</span>
+					<span class="family__price">{{ item.price }}</span>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="families" class="family__facts">
+		<figure class="family__fact-photo">
+			<img
+				[ngSrc]="factPhoto.src"
+				[width]="factPhoto.width"
+				[height]="factPhoto.height"
+				[alt]="factPhoto.alt"
+			/>
+		</figure>
+		<div class="family__fact-list">
+			<h2>Easy with little ones</h2>
+			<ul>
+				@for (fact of facts; track fact.title) {
+					<li>
+						<h3>{{ fact.title }}</h3>
+						<p>{{ fact.text }}</p>
+					</li>
+				}
+			</ul>
+		</div>
+	</section>
+
+	<section id="story" class="family__story">
+		<div class="family__story-copy">
+			<h2>It started at one kitchen table</h2>
+			<p>
+				Rosa cooked Sunday lunch for twelve cousins, and the neighbours kept turning up. In
+				2009 her son opened the doors on Orchard Street so everyone could have a chair.
+			</p>
+			<p>
+				The recipes are still hers. The sauce takes four hours, and the kids menu is made from
+				the same pots as everyone else.
+			</p>
+		</div>
+		<figure class="family__story-photo">
+			<img
+				[ngSrc]="storyPhoto.src"
+				[width]="storyPhoto.width"
+				[height]="storyPhoto.height"
+				[alt]="storyPhoto.alt"
+			/>
+		</figure>
+	</section>
+
+	<section id="visit" class="family__visit">
+		<div class="family__visit-copy">
+			<h2>Come as you are, bring everyone</h2>
+			<p>43 Orchard Street. Tables for six or more are best booked by phone.</p>
+			<a class="family__button theme-focus" href="tel:+15550109090">Call +1 (555) 010 9090</a>
+		</div>
+		<table class="family__hours">
+			<caption>
+				Opening hours
+			</caption>
+			<tbody>
+				@for (row of hours; track row.days) {
+					<tr>
+						<th scope="row">{{ row.days }}</th>
+						<td>{{ row.hours }}</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	</section>
+
+	<footer class="family__footer">
+		<p class="family__footer-brand">Nonna Rosa's Table</p>
+		<p>Cozy Family design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="family__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>

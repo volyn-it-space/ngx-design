@@ -1,0 +1,131 @@
+<article class="carte">
+	<header class="carte__header">
+		<a class="carte__brand theme-focus" routerLink="." fragment="top">Le Regent</a>
+		<nav class="carte__nav" aria-label="Restaurant sections">
+			<a class="theme-focus" routerLink="." fragment="menu">The carte</a>
+			<a class="theme-focus" routerLink="." fragment="private">Private dining</a>
+			<a class="theme-focus" routerLink="." fragment="history">Our house</a>
+			<a class="theme-focus" routerLink="." fragment="reserve">Reserve</a>
+		</nav>
+	</header>
+
+	<section id="top" class="carte__hero">
+		<h1>Classic French cooking, served as it should be.</h1>
+		<span class="carte__rule" aria-hidden="true"></span>
+		<p class="carte__lede">
+			A dining room on Regent Square since 1974. White linen, a trolley of cheese, and a
+			kitchen that has not hurried for fifty years.
+		</p>
+		<div class="carte__actions">
+			<a class="carte__button theme-focus" routerLink="." fragment="reserve">Reserve a table</a>
+			<a class="carte__link theme-focus" routerLink="." fragment="menu">View the carte</a>
+		</div>
+		<figure class="carte__frame">
+			<img
+				[ngSrc]="heroPhoto.src"
+				[width]="heroPhoto.width"
+				[height]="heroPhoto.height"
+				[alt]="heroPhoto.alt"
+				priority
+			/>
+		</figure>
+	</section>
+
+	<section id="menu" class="carte__menu">
+		<h2>A la carte</h2>
+		<span class="carte__rule" aria-hidden="true"></span>
+		<div class="carte__columns">
+			@for (section of carte; track section.title) {
+				<div class="carte__section">
+					<h3>{{ section.title }}</h3>
+					<ul>
+						@for (line of section.lines; track line.name) {
+							<li>
+								<span class="carte__dish">
+									<strong>{{ line.name }}</strong>
+									<span>{{ line.note }}</span>
+								</span>
+								<span class="carte__price">{{ line.price }}</span>
+							</li>
+						}
+					</ul>
+				</div>
+			}
+		</div>
+		<p class="carte__note">Three courses with coffee, $68. Served at lunch only.</p>
+	</section>
+
+	<section id="private" class="carte__private">
+		<div class="carte__private-copy">
+			<h2>The private room</h2>
+			<span class="carte__rule" aria-hidden="true"></span>
+			<p>
+				A panelled room above the main dining room, with its own entrance, cloakroom and
+				menu. Suitable for family dinners, small weddings and company evenings.
+			</p>
+			<dl class="carte__facts">
+				@for (fact of roomFacts; track fact.label) {
+					<div>
+						<dt>{{ fact.label }}</dt>
+						<dd>{{ fact.value }}</dd>
+					</div>
+				}
+			</dl>
+		</div>
+		<ul class="carte__private-photos">
+			@for (photo of diningPhotos; track photo.src) {
+				<li>
+					<img
+						[ngSrc]="photo.src"
+						[width]="photo.width"
+						[height]="photo.height"
+						[alt]="photo.alt"
+					/>
+				</li>
+			}
+		</ul>
+	</section>
+
+	<section id="history" class="carte__history">
+		<figure class="carte__history-photo">
+			<img
+				[ngSrc]="historyPhoto.src"
+				[width]="historyPhoto.width"
+				[height]="historyPhoto.height"
+				[alt]="historyPhoto.alt"
+			/>
+		</figure>
+		<div class="carte__history-copy">
+			<h2>Fifty years at the same address</h2>
+			<span class="carte__rule" aria-hidden="true"></span>
+			<p>
+				Le Regent opened in 1974 with eleven tables and one menu. The marble floor, the
+				chandeliers and the recipe for the veal stock are all original.
+			</p>
+			<p>
+				Three head chefs have run the kitchen, and each of them trained under the one before.
+			</p>
+		</div>
+	</section>
+
+	<section id="reserve" class="carte__reserve">
+		<h2>Reservations</h2>
+		<span class="carte__rule" aria-hidden="true"></span>
+		<p>Please call between 10am and 6pm. We hold tables for fifteen minutes.</p>
+		<a class="carte__button theme-focus" href="tel:+15550101974">Call +1 (555) 010 1974</a>
+		<dl class="carte__details">
+			@for (line of details; track line.label) {
+				<div>
+					<dt>{{ line.label }}</dt>
+					<dd>{{ line.value }}</dd>
+				</div>
+			}
+		</dl>
+	</section>
+
+	<footer class="carte__footer">
+		<p class="carte__footer-brand">Le Regent</p>
+		<p>Classic Elegant design demo. Venue and menu are fictional. Photos from Pexels.</p>
+		<a class="carte__link theme-focus" routerLink="/">Back to catalog</a>
+	</footer>
+</article>
